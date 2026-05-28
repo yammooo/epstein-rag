@@ -1,0 +1,6 @@
+jupyterlab
+ipykernel
+ipywidgets
+datasets
+transformers
+langchain-text-splitters
