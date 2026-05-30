@@ -4,3 +4,4 @@ ipywidgets
 datasets
 transformers
 langchain-text-splitters
+sentence-transformers
