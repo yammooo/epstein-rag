@@ -1,0 +1,416 @@
+
+--- Cell 0 (markdown) ---
+# **PART II: RAG SYSTEM**
+
+Group Members:
+
+-Casucci Leonardo, student ID: 2196383
+  
+  -Frigo Gianmaria,  student ID: 2196376
+
+Master Program: Computer Engineering
+
+[Short Description and project goal]
+
+--- Cell 1 (code) ---
+from pathlib import Path
+
+CACHE_DIR = Path("artifacts")
+RAW_DATA_PATH = CACHE_DIR / "raw_dataset.parquet"
+CHUNKS_DF_PATH = CACHE_DIR / "chunks_df.parquet"
+EMBEDDINGS_PATH = CACHE_DIR / "embeddings.npy"
+CACHE_DIR.mkdir(parents=True, exist_ok=True)
+
+FORCE_RECOMPUTE = False
+FORCE_RECOMPUTE_DATA = FORCE_RECOMPUTE
+FORCE_RECOMPUTE_CHUNKS = FORCE_RECOMPUTE
+FORCE_RECOMPUTE_EMBEDDINGS = FORCE_RECOMPUTE
+
+--- Cell 2 (markdown) ---
+# **DATASET**
+
+[introduction + summary of your dataset through descriptive statistics]
+
+--- Cell 3 (markdown) ---
+## Dataset Loading
+
+--- Cell 4 (code) ---
+from datasets import load_dataset
+import pandas as pd
+
+if RAW_DATA_PATH.exists() and not FORCE_RECOMPUTE_DATA:
+    df = pd.read_parquet(RAW_DATA_PATH)
+else:
+    dataset = load_dataset(
+        "KillerShoaib/Jeffrey-Epstein-Emails-From-Epstein-Files"
+    )
+    df = dataset["train"].to_pandas()
+    df.to_parquet(RAW_DATA_PATH, index=False)
+
+
+df.head()
+
+--- Cell 5 (markdown) ---
+## Dataset Profiling
+
+--- Cell 6 (code) ---
+df.shape
+df.info()
+df.isna().sum()
+
+--- Cell 7 (code) ---
+print(f"Number of unique senders: {df['from_email'].nunique()}")
+print(f"Number of unique recipients: {df['to'].nunique()}")
+
+--- Cell 8 (code) ---
+df["body"].str.len().describe()
+
+--- Cell 9 (code) ---
+df["subject"].value_counts().head(10)
+
+--- Cell 10 (markdown) ---
+## Dataset Clean Up
+
+--- Cell 11 (markdown) ---
+#### Checking for near-empty bodies. They are all reasonable, so we keep them.
+
+--- Cell 12 (code) ---
+df["body_len"] = df["body"].str.len()
+
+short_bodies = df[df["body_len"] < 20]
+df.sort_values("body_len")[["doc_id", "subject", "body", "body_len"]].head(20)
+
+--- Cell 13 (markdown) ---
+#### Normalizing whitespace.
+
+--- Cell 14 (code) ---
+import re
+
+def normalize_text(text):
+    text = str(text)
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
+
+for col in ["subject", "preview", "from_name", "from_email", "to", "date", "body"]:
+    df[col] = df[col].apply(normalize_text)
+
+--- Cell 15 (markdown) ---
+#### Counting recipients
+
+--- Cell 16 (code) ---
+import re
+
+def count_recipients_by_angle_brackets(to_field):
+    if not isinstance(to_field, str) or to_field.strip() == "":
+        return 0
+
+    return max(1, len(re.findall(r"<[^<>]+>", to_field)))
+
+df["num_recipients"] = df["to"].apply(count_recipients_by_angle_brackets)
+df[["to", "num_recipients"]].sort_values("num_recipients", ascending=False).head(20)
+
+--- Cell 17 (markdown) ---
+#### Row Deduplication.
+
+--- Cell 18 (markdown) ---
+Checking if dates are formatted in a consistent way before removing duplicates.
+
+--- Cell 19 (code) ---
+import pandas as pd
+
+df["parsed_date"] = pd.to_datetime(df["date"], errors="coerce")
+
+print("Unparseable dates:", df["parsed_date"].isna().sum())
+print("Date range:", df["parsed_date"].min(), "to", df["parsed_date"].max())
+
+--- Cell 20 (markdown) ---
+There is a large number of repeated records appears when using a content-based duplicate key
+
+--- Cell 21 (code) ---
+dedup_key = ["subject", "from_email", "to", "num_recipients", "date", "body"]
+
+print("Full-row duplicates:", df.duplicated().sum())
+print("Content-based duplicates:", df.duplicated(subset=dedup_key).sum())
+
+--- Cell 22 (code) ---
+duplicate_groups = (
+    df[df.duplicated(subset=dedup_key, keep=False)]
+    .groupby(dedup_key)
+    .agg(
+        n_rows=("doc_id", "size"),
+        doc_ids=("doc_id", lambda x: list(x)),
+        n_unique_doc_ids=("doc_id", "nunique"),
+        n_unique_previews=("preview", "nunique"),
+        n_unique_from_names=("from_name", "nunique")
+    )
+    .reset_index()
+    .sort_values("n_rows", ascending=False)
+)
+
+duplicate_groups.head(10)
+
+--- Cell 23 (markdown) ---
+For the RAG system, repeated identical email content is not useful and may cause the top-k results to contain multiple copies of the same evidence.
+
+The internal document IDs are still useful for source reporting. Therefore, we collapse rows with identical email content into a single row that preserves all `doc_id`s.
+
+
+--- Cell 24 (code) ---
+df_grouped = (
+    df.groupby(dedup_key, dropna=False)
+    .agg(
+        doc_ids=("doc_id", lambda x: sorted(set(x))),
+        n_original_rows=("doc_id", "size"),
+        preview=("preview", "first"),
+        from_name=("from_name", "first"),
+        parsed_date=("parsed_date", "first")
+    )
+    .reset_index()
+)
+
+print("Original rows:", len(df))
+print("Rows after content-based grouping:", len(df_grouped))
+print("Rows collapsed:", len(df) - len(df_grouped))
+
+--- Cell 25 (markdown) ---
+## Chunking
+
+--- Cell 26 (code) ---
+def build_header(row):
+    # Show up to 5 document IDs to avoid long headers
+    doc_ids = ", ".join(row["doc_ids"][:5])
+    
+    if len(row["doc_ids"]) > 5:
+        doc_ids += f", ... ({len(row['doc_ids'])} total)"
+
+    # Truncate recipient list if it's too long
+    recipients = str(row["to"])
+    if len(recipients) > 200:
+        recipients = recipients[:200].rstrip() + " ... (truncated)"
+
+    # Truncate subject if it's too long
+    subject = str(row["subject"])
+    if len(subject) > 200:
+        subject = subject[:200].rstrip() + " ... (truncated)"
+
+    return f"""Subject: {subject}
+From: {row['from_name']} <{row['from_email']}>
+To: {recipients} of {row['num_recipients']} total recipients
+Date: {row['date']}
+Source document IDs: {doc_ids}
+"""
+
+--- Cell 27 (code) ---
+from transformers import AutoTokenizer
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+
+tokenizer = AutoTokenizer.from_pretrained("BAAI/bge-base-en-v1.5")
+
+splitter = RecursiveCharacterTextSplitter.from_huggingface_tokenizer(
+    tokenizer=tokenizer,
+    chunk_size=512,
+    chunk_overlap=64,
+    separators=["\n\n", "\n", ". ", " ", ""]
+)
+
+--- Cell 28 (code) ---
+if CHUNKS_DF_PATH.exists() and not FORCE_RECOMPUTE_CHUNKS:
+    chunks_df = pd.read_parquet(CHUNKS_DF_PATH)
+else:
+    chunk_records = []
+
+    for row_idx, row in df_grouped.iterrows():
+        header = build_header(row)
+
+        body_chunks = splitter.split_text(row["body"])
+
+        for chunk_idx, body_chunk in enumerate(body_chunks):
+            chunk_text = f"""{header}
+
+Body chunk {chunk_idx + 1} of {len(body_chunks)}:
+{body_chunk}"""
+
+            chunk_records.append({
+                "chunk_id": f"{row_idx}_{chunk_idx}",
+                "email_id": row_idx,
+                "chunk_index": chunk_idx,
+                "num_chunks": len(body_chunks),
+
+                # Metadata
+                "doc_ids": row["doc_ids"],
+                "n_original_rows": row["n_original_rows"],
+                "subject": row["subject"],
+                "from_name": row["from_name"],
+                "from_email": row["from_email"],
+                "to": row["to"],
+                "date": row["date"],
+
+                # Text used for retrieval and prompt
+                "text_for_embedding": body_chunk,
+                "text_for_prompt": chunk_text,
+            })
+
+    chunks_df = pd.DataFrame(chunk_records)
+    chunks_df.to_parquet(CHUNKS_DF_PATH, index=False)
+
+chunks_df.head()
+
+--- Cell 29 (code) ---
+print(f"Description of number of chunks per email:\n{chunks_df['num_chunks'].describe()}")
+
+
+--- Cell 30 (code) ---
+chunks_df[chunks_df["text_for_embedding"].str.len() < 5]
+
+--- Cell 31 (code) ---
+chunks_len = chunks_df["text_for_embedding"].apply(
+    lambda x: len(tokenizer.encode(x, add_special_tokens=True))
+)
+longest = chunks_len.max()
+longest_chunk = chunks_df.iloc[chunks_len.idxmax()]
+
+
+print(f"Longest chunk with header: {longest} tokens")
+print(f"Text of longest chunk:\n{longest_chunk['text_for_prompt']}")
+
+--- Cell 32 (markdown) ---
+# **EMBEDDING INDEX AND RETRIEVAL**
+
+--- Cell 33 (code) ---
+import numpy as np
+
+--- Cell 34 (code) ---
+import torch
+
+device = "cuda" if torch.cuda.is_available() else "cpu"
+print("Using device:", device)
+
+--- Cell 35 (code) ---
+def compute_embeddings(chunks_df, embedding_model, batch_size=64):
+    
+    texts = chunks_df["text_for_embedding"].tolist()
+
+    embeddings = embedding_model.encode(
+        texts,
+        batch_size=batch_size,
+        show_progress_bar=True,
+        normalize_embeddings=True
+    )
+
+    return embeddings.astype("float32")
+
+--- Cell 36 (code) ---
+def load_or_compute_embeddings(
+    chunks_df,
+    embedding_model,
+    embeddings_path=EMBEDDINGS_PATH,
+    force_recompute=False
+):
+    """
+    Load embeddings from disk if available and compatible.
+    Otherwise compute and save them.
+    """
+    if embeddings_path.exists() and not force_recompute:
+        print(f"Loading embeddings from {embeddings_path}...")
+        embeddings = np.load(embeddings_path)
+
+        if embeddings.shape[0] == len(chunks_df):
+            return embeddings.astype("float32")
+
+        print(
+            "Saved embeddings are incompatible with chunks_df "
+            f"({embeddings.shape[0]} embeddings vs {len(chunks_df)} chunks). "
+            "Recomputing..."
+        )
+
+    else:
+        print("No saved embeddings found. Computing embeddings...")
+
+    embeddings = compute_embeddings(chunks_df, embedding_model)
+
+    np.save(embeddings_path, embeddings)
+    print(f"Saved embeddings to {embeddings_path}")
+
+    return embeddings
+
+--- Cell 37 (code) ---
+from sentence_transformers import SentenceTransformer
+
+embedding_model = SentenceTransformer(
+    "BAAI/bge-base-en-v1.5",
+    device=device
+)
+
+embeddings = load_or_compute_embeddings(
+    chunks_df=chunks_df,
+    embedding_model=embedding_model,
+    force_recompute=FORCE_RECOMPUTE_EMBEDDINGS
+)
+
+embeddings.shape
+
+--- Cell 38 (markdown) ---
+## Embedding Index Creation
+
+--- Cell 39 (code) ---
+import faiss
+
+embedding_matrix = embeddings.astype("float32")
+
+index = faiss.IndexFlatIP(embedding_matrix.shape[1])
+index.add(embedding_matrix)
+
+--- Cell 40 (markdown) ---
+## Retrieval
+
+--- Cell 41 (code) ---
+def retrieve(query, k=5):
+    query_embedding = embedding_model.encode(
+        [query],
+        normalize_embeddings=True
+    ).astype("float32")
+
+    scores, indices = index.search(query_embedding, k)
+
+    results = chunks_df.iloc[indices[0]].copy()
+    results["score"] = scores[0]
+
+    return results
+
+--- Cell 42 (code) ---
+retrieve("What emails mention Bill Clinton private orgy?", k=5)
+
+--- Cell 43 (markdown) ---
+# **LIBRARIES USED**
+
+[Introduction + documentation of libraries used for sentence embedding, vector store, LLM quantization, etc.]
+
+--- Cell 44 (code) ---
+#code for setup and initialization of libraries
+
+--- Cell 45 (markdown) ---
+# **PROMPT ENGINEERING**
+
+[Define function that given a query, retrieves significant documents and crafts the query]
+
+[Discussion of design choices taken + results: first bad option discared because..., second option, ..., final option]
+
+--- Cell 46 (code) ---
+#code for the prompt crafting
+
+--- Cell 47 (markdown) ---
+# **TESTING**
+
+[Choose around 10 to 20 passages from your document repository, and for each passage extract question/answer pairs.]
+
+[To evaluate your system on the micro-test set, use the same chatBot that has extracted the question/answer pairs, and prompt it to act as a judge, passing the question, the gold answer, and the answer you obtain from your system, and ask to provide some score in a given range.]
+
+[Analyse possible errors and inaccuracies, and discuss possible ways of improving your system.]
+
+--- Cell 48 (code) ---
+#code for testing
+
+--- Cell 49 (markdown) ---
+# **USE OF GENERATIVE AI**
+
+[Describe how AI has been used including examples of used promts]
