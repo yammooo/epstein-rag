@@ -5,6 +5,5 @@ datasets
 transformers
 langchain-text-splitters
 sentence-transformers
-bitsandbytes
-accelerate
 google-generativeai
+llama-cpp-python
