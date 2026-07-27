@@ -1,0 +1,107 @@
+[
+  {
+    "question": "What is the main topic discussed in the email regarding the meeting schedule?",
+    "gold": "The main topic is confirming the time and attendees for the upcoming legal strategy meeting.",
+    "rag": "The email discusses confirming the time and list of attendees for the upcoming legal strategy meeting.",
+    "score": 10,
+    "reasoning": "The System Answer correctly identifies the facts present in the Gold Answer, avoiding any hallucination."
+  },
+  {
+    "question": "Who was the primary sender of the documents regarding the financial transactions?",
+    "gold": "The documents were primarily sent by the chief financial officer.",
+    "rag": "The documents were sent by the CFO.",
+    "score": 9,
+    "reasoning": "The system correctly identified the CFO, though it used an acronym instead of the full title."
+  },
+  {
+    "question": "What specific dates were mentioned for the travel itinerary?",
+    "gold": "The travel itinerary specified departures on October 12th and returns on October 15th.",
+    "rag": "The itinerary mentions travel in October.",
+    "score": 4,
+    "reasoning": "The system failed to extract the specific departure and return dates."
+  },
+  {
+    "question": "Did the correspondence indicate any disagreements between the parties?",
+    "gold": "Yes, there were noted disagreements regarding the valuation of the assets in question.",
+    "rag": "Yes, the parties disagreed on the asset valuation.",
+    "score": 10,
+    "reasoning": "Perfect match with the gold answer's facts."
+  },
+  {
+    "question": "How many individuals were CC'd on the critical policy update email?",
+    "gold": "There were four individuals CC'd on the policy update email.",
+    "rag": "Four individuals were CC'd on the email.",
+    "score": 10,
+    "reasoning": "The system correctly identified the exact number of individuals."
+  },
+  {
+    "question": "What action was requested by the end of the business day?",
+    "gold": "A final review and signature on the attached nondisclosure agreement was requested.",
+    "rag": "They needed to review and sign the NDA by the end of the day.",
+    "score": 10,
+    "reasoning": "The system answer is highly accurate and faithful to the gold answer."
+  },
+  {
+    "question": "Which specific legal case was referenced as a precedent?",
+    "gold": "The email referenced the Smith v. Jones case as a legal precedent.",
+    "rag": "I do not have enough context to answer this question.",
+    "score": 1,
+    "reasoning": "The system failed to retrieve the necessary context to answer the question."
+  },
+  {
+    "question": "What was the proposed budget for the upcoming quarter?",
+    "gold": "The proposed budget was set at $2.5 million.",
+    "rag": "The budget was proposed at 2.5 million dollars.",
+    "score": 10,
+    "reasoning": "The facts match perfectly."
+  },
+  {
+    "question": "Was there any mention of international travel in the logs?",
+    "gold": "Yes, several flights to Paris and London were explicitly logged.",
+    "rag": "Flights to Paris and London were logged.",
+    "score": 9,
+    "reasoning": "Accurate, though slightly less detailed than the gold answer."
+  },
+  {
+    "question": "Who requested the immediate halt on the press release?",
+    "gold": "The immediate halt was requested by the head of public relations.",
+    "rag": "The head of PR requested the halt.",
+    "score": 10,
+    "reasoning": "Accurate and faithful representation of the gold answer."
+  },
+  {
+    "question": "What was the primary reason given for the project delay?",
+    "gold": "The delay was attributed to unexpected regulatory compliance reviews.",
+    "rag": "Regulatory compliance reviews caused the delay.",
+    "score": 10,
+    "reasoning": "Matches the gold answer perfectly."
+  },
+  {
+    "question": "Which external firm was hired for the audit?",
+    "gold": "The firm hired for the audit was KPMG.",
+    "rag": "KPMG was hired for the audit.",
+    "score": 10,
+    "reasoning": "The system correctly identified the external firm."
+  },
+  {
+    "question": "What was the outcome of the board's vote on the merger?",
+    "gold": "The board voted unanimously to approve the merger.",
+    "rag": "The board approved the merger.",
+    "score": 8,
+    "reasoning": "Accurate, but misses the 'unanimously' detail."
+  },
+  {
+    "question": "What security measures were discussed for the new server?",
+    "gold": "The discussion included implementing end-to-end encryption and two-factor authentication.",
+    "rag": "They discussed end-to-end encryption and 2FA for the server.",
+    "score": 10,
+    "reasoning": "Accurate and completely faithful to the gold answer."
+  },
+  {
+    "question": "When is the final deadline for the quarterly report submission?",
+    "gold": "The final deadline is noted as November 30th at 5:00 PM EST.",
+    "rag": "The deadline is November 30th.",
+    "score": 7,
+    "reasoning": "Partially accurate, but missing the specific time (5:00 PM EST)."
+  }
+]

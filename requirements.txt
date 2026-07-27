@@ -7,3 +7,8 @@ langchain-text-splitters
 sentence-transformers
 google-generativeai
 llama-cpp-python
+torch
+numpy
+pandas
+faiss-cpu
+python-dotenv

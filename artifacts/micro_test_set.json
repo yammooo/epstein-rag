@@ -1,0 +1,77 @@
+[
+  {
+    "question": "What is the main topic discussed in the email regarding the meeting schedule?",
+    "answer": "The main topic is confirming the time and attendees for the upcoming legal strategy meeting.",
+    "source_doc_ids": ["12345"]
+  },
+  {
+    "question": "Who was the primary sender of the documents regarding the financial transactions?",
+    "answer": "The documents were primarily sent by the chief financial officer.",
+    "source_doc_ids": ["12346"]
+  },
+  {
+    "question": "What specific dates were mentioned for the travel itinerary?",
+    "answer": "The travel itinerary specified departures on October 12th and returns on October 15th.",
+    "source_doc_ids": ["12347"]
+  },
+  {
+    "question": "Did the correspondence indicate any disagreements between the parties?",
+    "answer": "Yes, there were noted disagreements regarding the valuation of the assets in question.",
+    "source_doc_ids": ["12348"]
+  },
+  {
+    "question": "How many individuals were CC'd on the critical policy update email?",
+    "answer": "There were four individuals CC'd on the policy update email.",
+    "source_doc_ids": ["12349"]
+  },
+  {
+    "question": "What action was requested by the end of the business day?",
+    "answer": "A final review and signature on the attached nondisclosure agreement was requested.",
+    "source_doc_ids": ["12350"]
+  },
+  {
+    "question": "Which specific legal case was referenced as a precedent?",
+    "answer": "The email referenced the Smith v. Jones case as a legal precedent.",
+    "source_doc_ids": ["12351"]
+  },
+  {
+    "question": "What was the proposed budget for the upcoming quarter?",
+    "answer": "The proposed budget was set at $2.5 million.",
+    "source_doc_ids": ["12352"]
+  },
+  {
+    "question": "Was there any mention of international travel in the logs?",
+    "answer": "Yes, several flights to Paris and London were explicitly logged.",
+    "source_doc_ids": ["12353"]
+  },
+  {
+    "question": "Who requested the immediate halt on the press release?",
+    "answer": "The immediate halt was requested by the head of public relations.",
+    "source_doc_ids": ["12354"]
+  },
+  {
+    "question": "What was the primary reason given for the project delay?",
+    "answer": "The delay was attributed to unexpected regulatory compliance reviews.",
+    "source_doc_ids": ["12355"]
+  },
+  {
+    "question": "Which external firm was hired for the audit?",
+    "answer": "The firm hired for the audit was KPMG.",
+    "source_doc_ids": ["12356"]
+  },
+  {
+    "question": "What was the outcome of the board's vote on the merger?",
+    "answer": "The board voted unanimously to approve the merger.",
+    "source_doc_ids": ["12357"]
+  },
+  {
+    "question": "What security measures were discussed for the new server?",
+    "answer": "The discussion included implementing end-to-end encryption and two-factor authentication.",
+    "source_doc_ids": ["12358"]
+  },
+  {
+    "question": "When is the final deadline for the quarterly report submission?",
+    "answer": "The final deadline is noted as November 30th at 5:00 PM EST.",
+    "source_doc_ids": ["12359"]
+  }
+]
