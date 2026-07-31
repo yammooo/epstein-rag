@@ -11,3 +11,6 @@ numpy
 pandas
 faiss-cpu
 python-dotenv
+opencv-python
+pytesseract
+pdf2image
