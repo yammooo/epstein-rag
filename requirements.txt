@@ -5,8 +5,7 @@ datasets
 transformers
 langchain-text-splitters
 sentence-transformers
-google-generativeai
-llama-cpp-python
+google-genai
 torch
 numpy
 pandas
