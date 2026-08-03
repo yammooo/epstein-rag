@@ -31,10 +31,9 @@ python -m pip install --upgrade --force-reinstall
   --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu124
 ```
 
-## WSL dependencies for PDF OCR
+## Dependencies for PDF OCR
 
-PDF OCR also needs Tesseract and Poppler inside WSL (a Windows installation is
-not enough for a WSL notebook kernel):
+PDF OCR also needs Tesseract and Poppler:
 
 ```bash
 sudo apt update

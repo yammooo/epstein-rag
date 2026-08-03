@@ -1,77 +1,107 @@
 [
   {
-    "question": "What is the main topic discussed in the email regarding the meeting schedule?",
-    "answer": "The main topic is confirming the time and attendees for the upcoming legal strategy meeting.",
-    "source_doc_ids": ["12345"]
+    "question": "According to German weekly Stern writer Gernot Kramper, where did Steve Bannon establish his European headquarters, and what nickname did business partners give him due to his phenomenal memory?",
+    "answer": "Kramper wrote in Stern that Bannon established his European headquarters in Italy. Because of his phenomenal memory, Bannon's nickname was \"the encyclopedia.\"",
+    "source_ids": [
+      "HOUSE_OVERSIGHT_025517"
+    ]
   },
   {
-    "question": "Who was the primary sender of the documents regarding the financial transactions?",
-    "answer": "The documents were primarily sent by the chief financial officer.",
-    "source_doc_ids": ["12346"]
+    "question": "On April 20, 2013, Jeffrey Epstein emailed Ehud Barak proposing two meeting times. What were those times, and from which event did Barak say he was free?",
+    "answer": "Jeffrey proposed meeting at 2 and then at Jes office at 4:30. Barak said he was free from Monday's evening event.",
+    "source_ids": [
+      "3ac340832f29c11538fbe2d6f75e8bcc"
+    ]
   },
   {
-    "question": "What specific dates were mentioned for the travel itinerary?",
-    "answer": "The travel itinerary specified departures on October 12th and returns on October 15th.",
-    "source_doc_ids": ["12347"]
+    "question": "Who was leading the EDSA scope, what island designation did the Master Plan cover, and which organization maintained the FTP web site for project designs?",
+    "answer": "J.p. was leading the EDSA scope. The Master Plan covered the island designated as FB-1. The Maguire Group maintained the FTP web site for the project.",
+    "source_ids": [
+      "bc5741df96abf19f6f370920e3bc4938"
+    ]
   },
   {
-    "question": "Did the correspondence indicate any disagreements between the parties?",
-    "answer": "Yes, there were noted disagreements regarding the valuation of the assets in question.",
-    "source_doc_ids": ["12348"]
+    "question": "Who requested an accounting of how the deposit funds would be used, why did Marshall refuse, and what closing date was Lyn expecting?",
+    "answer": "Jamie asked Marshall for an accounting of how the funds would be used. Marshall refused because it appeared a large portion of the requested advance was for personal reasons based on Lyn's expecting closing on March 31, 2007.",
+    "source_ids": [
+      "ef94eac560a4814d46cbd864a9983c6e"
+    ]
   },
   {
-    "question": "How many individuals were CC'd on the critical policy update email?",
-    "answer": "There were four individuals CC'd on the policy update email.",
-    "source_doc_ids": ["12349"]
+    "question": "Why was the meeting between Jeffrey Epstein and Mr. Barak moved to Hotel Raphael, and what time was it scheduled for?",
+    "answer": "The meeting was moved due to security difficulties. It was scheduled for 8:30 p.m. on Tuesday at Hotel Raphael, located at 17 Ave. Kleber, Paris 16.",
+    "source_ids": [
+      "0fccf6efabce3da5a0606a33ffc0e7cb"
+    ]
   },
   {
-    "question": "What action was requested by the end of the business day?",
-    "answer": "A final review and signature on the attached nondisclosure agreement was requested.",
-    "source_doc_ids": ["12350"]
+    "question": "What was the asking price for the 1998 Bell 430, who was its original owner, and what minimum price did Paul Schrader say he would have asked?",
+    "answer": "The 1998 Bell 430 was listed at $3.9 million. Its original owner was Rite Aid, and Paul Schrader said he would have asked at least $4.2 million.",
+    "source_ids": [
+      "6ebf3648d70b34e1345b6fc3b2d25f37"
+    ]
   },
   {
-    "question": "Which specific legal case was referenced as a precedent?",
-    "answer": "The email referenced the Smith v. Jones case as a legal precedent.",
-    "source_doc_ids": ["12351"]
+    "question": "On Jan 20, 2017, David Grosof said Jonathan Victor had met the recipient in their office years ago. What connection does Reese Jones have to Singularity University?",
+    "answer": "Jonathan Victor met the recipient in the recipient's office a few years ago. Reese Jones is one of the founders of Singularity University and serves on its board; he also backed apps that claim to play music to enhance productivity and focus.",
+    "source_ids": [
+      "HOUSE_OVERSIGHT_025185"
+    ]
   },
   {
-    "question": "What was the proposed budget for the upcoming quarter?",
-    "answer": "The proposed budget was set at $2.5 million.",
-    "source_doc_ids": ["12352"]
+    "question": "What was Morgan Stanley's revised price target for Apple, and how many iPhone shipments did they model for the June 2019 quarter?",
+    "answer": "Morgan Stanley lowered its price target for Apple to $231 from $240. They modeled 37 million iPhone shipments in the June quarter.",
+    "source_ids": [
+      "HOUSE_OVERSIGHT_033362"
+    ]
   },
   {
-    "question": "Was there any mention of international travel in the logs?",
-    "answer": "Yes, several flights to Paris and London were explicitly logged.",
-    "source_doc_ids": ["12353"]
+    "question": "At what time on February 15, 2008, was Darren's meeting with DPNR's attorney Brathwait, and what purported violation was the meeting about?",
+    "answer": "Darren's meeting with DPNR's attorney Brathwait was at 2:00 pm on February 15, 2008. It concerned a purported violation for the intake line and barge landing bulkhead.",
+    "source_ids": [
+      "48c5b960e5aace433894b9c063691574"
+    ]
   },
   {
-    "question": "Who requested the immediate halt on the press release?",
-    "answer": "The immediate halt was requested by the head of public relations.",
-    "source_doc_ids": ["12354"]
+    "question": "How many satellites did Orbital Sciences launch on November 19th, how many did Kosmotras launch 30 hours later, and what was the cost of the cheapest chipsat mentioned?",
+    "answer": "Orbital Sciences launched 29 satellites on November 19th, and Kosmotras launched 32 satellites thirty hours later. The cheapest chipsat so far was assembled for just $25.",
+    "source_ids": [
+      "HOUSE_OVERSIGHT_028508"
+    ]
   },
   {
-    "question": "What was the primary reason given for the project delay?",
-    "answer": "The delay was attributed to unexpected regulatory compliance reviews.",
-    "source_doc_ids": ["12355"]
+    "question": "According to Jeffrey E.'s review, what clarification should the reporter make about the young women, and what did Jeffrey E. say about the $50 million lawsuit involving VR?",
+    "answer": "Jeffrey E. said the reporter should clarify that the young women at Michael Wolff's house and later on his plane were comely but clearly not underage. He also said the $50 million VR lawsuit against Michael Wolff was not true—the case was over—and any denial should be limited to Clinton and Gore.",
+    "source_ids": [
+      "HOUSE_OVERSIGHT_030751"
+    ]
   },
   {
-    "question": "Which external firm was hired for the audit?",
-    "answer": "The firm hired for the audit was KPMG.",
-    "source_doc_ids": ["12356"]
+    "question": "By what date did J. Epstein demand a wind power analysis, and what did John Amerling identify as the primary problem with wind generation in the Territory, including who promised to address it?",
+    "answer": "J. Epstein demanded the wind power analysis no later than May 15. John Amerling identified the primary problem as wind towers not being a permitted use in any zone in the Territory, and said the Governor promised to rectify that before the end of the year.",
+    "source_ids": [
+      "8d77193a6299d1e29b49c8d2a18f9588"
+    ]
   },
   {
-    "question": "What was the outcome of the board's vote on the merger?",
-    "answer": "The board voted unanimously to approve the merger.",
-    "source_doc_ids": ["12357"]
+    "question": "On May 9, 2008, William Rowles of which company sent Darren Indyke an updated schedule with what attachment filename?",
+    "answer": "William Rowles of Lafayette Contractors, LLC sent the updated schedule. The attachment was named LSJMasterScheduleRev09May08.mpp.",
+    "source_ids": [
+      "a8fe7c1f7482fb176fc15e7bd89551b8"
+    ]
   },
   {
-    "question": "What security measures were discussed for the new server?",
-    "answer": "The discussion included implementing end-to-end encryption and two-factor authentication.",
-    "source_doc_ids": ["12358"]
+    "question": "What annual salary and contract term were proposed for Caroline Poznanski, and what prior lawsuit amount did Nathalie report from Next when she left for Elite?",
+    "answer": "Caroline's contract called for a salary of $250,000 per year with a 1-year term subject to auto-renewal. Nathalie said Next sued her when she left to work for Elite, and the legal bill amounted to approximately $70,000 even though she ultimately prevailed.",
+    "source_ids": [
+      "4f4dde3e4d531f89b5bb8e3046df9aa4"
+    ]
   },
   {
-    "question": "When is the final deadline for the quarterly report submission?",
-    "answer": "The final deadline is noted as November 30th at 5:00 PM EST.",
-    "source_doc_ids": ["12359"]
+    "question": "Which two researchers are linked to the two different project objectives for pattern-recognition models, and what are their respective institutions?",
+    "answer": "Yann LeCun, at Courant, is aligned with the most successful pattern-recognition model, while Misha Tsodyks, at the Weizmann Institute, is aligned with the most biologically accurate model.",
+    "source_ids": [
+      "ec65abcca7f581f39a090551045e5430"
+    ]
   }
 ]
