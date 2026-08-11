@@ -53,7 +53,8 @@ def normalize_body(value: object) -> str:
     text = text.replace("\r\n", "\n").replace("\r", "\n")
     text = re.sub(r"[ \t]+", " ", text)
     text = re.sub(r"\n{3,}", "\n\n", text)
-    return text.strip()
+    text = text.strip()
+    return text
 
 
 def normalize_email_fields(emails: pd.DataFrame) -> pd.DataFrame:
@@ -173,7 +174,6 @@ def load_or_ocr_pdfs(
         pages = convert_from_path(pdf_path, dpi=dpi)
         for page_number, page in enumerate(pages, start=1):
             image = np.array(page)[:, :, ::-1].copy()
-            image = _mark_redactions(image, cv2)
             text = normalize_body(pytesseract.image_to_string(image, config="--psm 3"))
             if not text:
                 continue
@@ -292,34 +292,10 @@ def _format_sender(name: object, email: object) -> str:
         return f"{name} <{email}>"
     return name or email
 
-
 def _truncate(value: object, limit: int) -> str:
     value = normalize_metadata(value)
     return value if len(value) <= limit else value[:limit].rstrip() + " ... (truncated)"
 
-
-def _mark_redactions(image, cv2):
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    blurred = cv2.GaussianBlur(gray, (5, 5), 0)
-    edges = cv2.Canny(blurred, 50, 150)
-    contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-
-    for contour in contours:
-        epsilon = 0.02 * cv2.arcLength(contour, True)
-        approx = cv2.approxPolyDP(contour, epsilon, True)
-        x, y, width, height = cv2.boundingRect(contour)
-        if len(approx) >= 4 and width > 50 and height > 15 and width * height > 1000:
-            cv2.rectangle(image, (x, y), (x + width, y + height), (255, 255, 255), -1)
-            cv2.putText(
-                image,
-                "[REDACTED]",
-                (x + 10, y + height // 2 + 10),
-                cv2.FONT_HERSHEY_DUPLEX,
-                1.2,
-                (0, 0, 0),
-                2,
-            )
-    return image
 
 
 def _files_fingerprint(paths: list[Path], settings: dict[str, object]) -> str:
