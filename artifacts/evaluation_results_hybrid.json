@@ -1,0 +1,152 @@
+[
+  {
+    "question": "According to German weekly Stern writer Gernot Kramper, where did Steve Bannon establish his European headquarters, and what nickname did business partners give him due to his phenomenal memory?",
+    "gold": "Kramper wrote in Stern that Bannon established his European headquarters in Italy. Because of his phenomenal memory, Bannon's nickname was \"the encyclopedia.\"",
+    "source_ids": [
+      "HOUSE_OVERSIGHT_025517"
+    ],
+    "rag": "*   **European Headquarters:** According to Kramper, Bannon established his \"European headquarters\" in Italy (Source document IDs: HOUSE_OVERSIGHT_025517, Source document IDs: HOUSE_OVERSIGHT_025528, Source document IDs: HOUSE_OVERSIGHT_025533, Source document IDs: HOUSE_OVERSIGHT_025520, Source document IDs: HOUSE_OVERSIGHT_025533, Source document IDs: HOUSE_OVERSIGHT_025533).\n*   **Nickname:** Business partners gave him the nickname \"the encyclopedia\" because of his phenomenal memory (Source document IDs: HOUSE_OVERSIGHT_025517, Source document IDs: HOUSE_OVERSIGHT_025520, Source document IDs: HOUSE_OVERSIGHT_025533, Source document IDs: HOUSE_OVERSIGHT_025533, Source document IDs: HOUSE_OVERSIGHT_025528, Source document IDs: HOUSE_OVERSIGHT_025520).",
+    "score": 10,
+    "reasoning": "The system answer correctly identifies both the European headquarters location (Italy) and the nickname ('the encyclopedia') as per the gold answer. The information is accurate and faithful to the source. While the system provides multiple source document IDs, it includes the expected one (HOUSE_OVERSIGHT_025517) and does not introduce any factual errors. The extra citations do not harm correctness. Therefore, the answer fully meets the criteria."
+  },
+  {
+    "question": "On April 20, 2013, Jeffrey Epstein emailed Ehud Barak proposing two meeting times. What were those times, and from which event did Barak say he was free?",
+    "gold": "Jeffrey proposed meeting at 2 and then at Jes office at 4:30. Barak said he was free from Monday's evening event.",
+    "source_ids": [
+      "3ac340832f29c11538fbe2d6f75e8bcc"
+    ],
+    "rag": "Jeffrey Epstein proposed meeting at 2? and then at Jes office at 430? (Source document IDs: 3ac340832f29c11538fbe2d6f75e8bcc, 3ac340832f29c11538fbe2d6f75e8bcc, 3ac340832f29c11538fbe2d6f75e8bcc).\n\nEhud Barak stated he was free from a \"Monday'sevening event\" (Source document IDs: 3ac340832f29c11538fbe2d6f75e8bcc, 3ac340832f29c11538fbe2d6f75e8bcc, 3ac340832f29c11538fbe2d6f75e8bcc).",
+    "score": 10,
+    "reasoning": "The system answer accurately provides the two meeting times (2 and 4:30) and correctly identifies Barak's availability from Monday's evening event, matching the gold answer. The citations are present and match the expected source document ID. Despite minor formatting quirks (question marks), the content is faithful and complete."
+  },
+  {
+    "question": "Who was leading the EDSA scope, what island designation did the Master Plan cover, and which organization maintained the FTP web site for project designs?",
+    "gold": "J.p. was leading the EDSA scope. The Master Plan covered the island designated as FB-1. The Maguire Group maintained the FTP web site for the project.",
+    "source_ids": [
+      "bc5741df96abf19f6f370920e3bc4938"
+    ],
+    "rag": "*   **Who was leading the EDSA scope:** J.p. was leading this (Segment 1, Segment 2).\n*   **What island designation did the Master Plan cover:** The island designated as FB-1 (Segment 1, Segment 2).\n*   **Which organization maintained the FTP web site for project designs:** The Maguire Group (Segment 1, Segment 2).",
+    "score": 10,
+    "reasoning": "The system answer accurately provides all three requested pieces of information matching the gold answer exactly: J.p. led the EDSA scope, the Master Plan covered island FB-1, and the Maguire Group maintained the FTP website. The answer is faithful to the source content and includes segment citations for each fact. No errors or omissions detected."
+  },
+  {
+    "question": "Who requested an accounting of how the deposit funds would be used, why did Marshall refuse, and what closing date was Lyn expecting?",
+    "gold": "Jamie asked Marshall for an accounting of how the funds would be used. Marshall refused because it appeared a large portion of the requested advance was for personal reasons based on Lyn's expecting closing on March 31, 2007.",
+    "source_ids": [
+      "ef94eac560a4814d46cbd864a9983c6e"
+    ],
+    "rag": "*   **Who requested an accounting of how the deposit funds would be used?** Jamie (Source document IDs: ef94eac560a4814d46cbd864a9983c6e)\n*   **Why did Marshall refuse?** Marshall refused because it appeared that a large portion of the requested advance from the deposit funds were requested for personal reasons (Source document IDs: ef94eac560a4814d46cbd864a9983c6e).\n*   **What closing date was Lyn expecting?** Lyn was expecting the closing to take place on March 31, 2007 (Source document IDs: ef94eac560a4814d46cbd864a9983c6e).",
+    "score": 10,
+    "reasoning": "The system answer accurately identifies Jamie as the requester, explains Marshall's refusal due to personal reasons, and states Lyn's expected closing date of March 31, 2007. The provided source document ID matches the expected one, and the answer is faithful to the gold answer."
+  },
+  {
+    "question": "Why was the meeting between Jeffrey Epstein and Mr. Barak moved to Hotel Raphael, and what time was it scheduled for?",
+    "gold": "The meeting was moved due to security difficulties. It was scheduled for 8:30 p.m. on Tuesday at Hotel Raphael, located at 17 Ave. Kleber, Paris 16.",
+    "source_ids": [
+      "0fccf6efabce3da5a0606a33ffc0e7cb"
+    ],
+    "rag": "The meeting between Jeffrey Epstein and Mr. Barak had to take place in the hotel because of security difficulties (Segment 1). The specific time is not explicitly stated for the move to Hotel Raphael, but one segment mentions a meeting at 8:30 p.m. on Tuesday (Segment 6).\n\n**Source document IDs:**\n*   **Security reason:** 0fccf6efabce3da5a0606a33ffc0e7cb (Segment 1)\n*   **Time:** 0fccf6efabce3da5a0606a33ffc0e7cb (Segment 6)",
+    "score": 10,
+    "reasoning": "The system answer accurately provides the reason (security difficulties) and the time (8:30 p.m. on Tuesday) as per the gold answer. It correctly cites the same source document ID. The slight hedging regarding the time does not detract from the correctness of the answer, as it still states the required time."
+  },
+  {
+    "question": "What was the asking price for the 1998 Bell 430, who was its original owner, and what minimum price did Paul Schrader say he would have asked?",
+    "gold": "The 1998 Bell 430 was listed at $3.9 million. Its original owner was Rite Aid, and Paul Schrader said he would have asked at least $4.2 million.",
+    "source_ids": [
+      "6ebf3648d70b34e1345b6fc3b2d25f37"
+    ],
+    "rag": "The asking price for the 1998 Bell 430 was $3.9 million (Source document IDs: 6ebf3648d70b34e1345b6fc3b2d25f37).\nThe original owner of the Bell 430 was Rite Aid (Source document IDs: 6ebf3648d70b34e1345b6fc3b2d25f37).\nPaul Schrader said he would have asked at least $4.2M (Source document IDs: 6ebf3648d70b34e1345b6fc3b2d25f37).",
+    "score": 10,
+    "reasoning": "The System Answer accurately provides all requested details matching the Gold Answer: asking price of $3.9 million, original owner Rite Aid, and Paul Schrader's minimum asking price of at least $4.2 million. It is faithful to the source and includes the correct source document ID for each claim."
+  },
+  {
+    "question": "On Jan 20, 2017, David Grosof said Jonathan Victor had met the recipient in their office years ago. What connection does Reese Jones have to Singularity University?",
+    "gold": "Jonathan Victor met the recipient in the recipient's office a few years ago. Reese Jones is one of the founders of Singularity University and serves on its board; he also backed apps that claim to play music to enhance productivity and focus.",
+    "source_ids": [
+      "HOUSE_OVERSIGHT_025185"
+    ],
+    "rag": "David Grosof stated that Reese Jones is on the board of Singularity University as one of the founders (Source document IDs: HOUSE_OVERSIGHT_025180, HOUSE_OVERSIGHT_029085, HOUSE_OVERSIGHT_025169, HOUSE_OVERSIGHT_025185, HOUSE_OVERSIGHT_025176).",
+    "score": 9,
+    "reasoning": "The system answer accurately identifies the core connection: Reese Jones is a founder and board member of Singularity University, which matches the gold answer's primary statement. It includes the expected source ID (HOUSE_OVERSIGHT_025185) among its citations, demonstrating correct sourcing. A minor deduction is applied because the system omits the additional detail about backing productivity apps, and it attributes the statement to David Grosof, which is not present in the gold answer but may be faithful to the source context. Overall, the answer is factually correct, faithful, and properly cited, with only a slight incompleteness."
+  },
+  {
+    "question": "What was Morgan Stanley's revised price target for Apple, and how many iPhone shipments did they model for the June 2019 quarter?",
+    "gold": "Morgan Stanley lowered its price target for Apple to $231 from $240. They modeled 37 million iPhone shipments in the June quarter.",
+    "source_ids": [
+      "HOUSE_OVERSIGHT_033362"
+    ],
+    "rag": "Morgan Stanley's revised price target (PT) for Apple was $231 (down from $240) (Source document IDs: HOUSE_OVERSIGHT_033362). They modeled 37M iPhone shipments in the June quarter (Source document IDs: HOUSE_OVERSIGHT_033362).",
+    "score": 10,
+    "reasoning": "The system answer exactly matches the gold answer in terms of the revised price target ($231 from $240) and the modeled iPhone shipments (37 million). It also provides the correct source document ID (HOUSE_OVERSIGHT_033362), matching the expected citations. The response is accurate, faithful, and properly cited."
+  },
+  {
+    "question": "At what time on February 15, 2008, was Darren's meeting with DPNR's attorney Brathwait, and what purported violation was the meeting about?",
+    "gold": "Darren's meeting with DPNR's attorney Brathwait was at 2:00 pm on February 15, 2008. It concerned a purported violation for the intake line and barge landing bulkhead.",
+    "source_ids": [
+      "48c5b960e5aace433894b9c063691574"
+    ],
+    "rag": "The meeting with DPNR's Atty (Brathwait) on February 15, 2008, was at 2:00 pm, and it was regarding a purported violation for the intake line and barge landing bulkhead (Source document IDs: 48c5b960e5aace433894b9c063691574).",
+    "score": 10,
+    "reasoning": "The System Answer correctly provides the exact time (2:00 pm) and the purported violation (intake line and barge landing bulkhead) as per the Gold Answer. It also includes the correct source document ID, matching the expected citation. The response is accurate, faithful, and properly cited."
+  },
+  {
+    "question": "How many satellites did Orbital Sciences launch on November 19th, how many did Kosmotras launch 30 hours later, and what was the cost of the cheapest chipsat mentioned?",
+    "gold": "Orbital Sciences launched 29 satellites on November 19th, and Kosmotras launched 32 satellites thirty hours later. The cheapest chipsat so far was assembled for just $25.",
+    "source_ids": [
+      "HOUSE_OVERSIGHT_028508"
+    ],
+    "rag": "*   **Orbital Sciences launch (Nov 19th):** 29 satellites (Source document IDs: HOUSE_OVERSIGHT_028508)\n*   **Kosmotras launch (30 hours later):** 32 satellites (Source document IDs: HOUSE_OVERSIGHT_028508)\n*   **Cost of the cheapest chipsat:** $25 (Source document IDs: HOUSE_OVERSIGHT_028508)",
+    "score": 10,
+    "reasoning": "The system answer exactly matches the gold answer in all key facts: Orbital Sciences launched 29 satellites, Kosmotras launched 32 satellites, and the cheapest chipsat cost $25. It also correctly cites the expected source document ID, demonstrating accurate retrieval and faithful response without any errors or unsupported claims."
+  },
+  {
+    "question": "According to Jeffrey E.'s review, what clarification should the reporter make about the young women, and what did Jeffrey E. say about the $50 million lawsuit involving VR?",
+    "gold": "Jeffrey E. said the reporter should clarify that the young women at Michael Wolff's house and later on his plane were comely but clearly not underage. He also said the $50 million VR lawsuit against Michael Wolff was not true—the case was over—and any denial should be limited to Clinton and Gore.",
+    "source_ids": [
+      "HOUSE_OVERSIGHT_030751"
+    ],
+    "rag": "According to Jeffrey E.'s review, the reporter should clarify that the young women at his house (and later on his plane) are comely but clearly not underage (Source document IDs: HOUSE_OVERSIGHT_030751).\n\nRegarding the $50 million lawsuit involving VR, Jeffrey E. noted that \"he writes that VR is now suing you for 50M not true case over\" (Source document IDs: HOUSE_OVERSIGHT_030751, HOUSE_OVERSIGHT_030751).",
+    "score": 8,
+    "reasoning": "The system answer accurately identifies the clarification about the young women (comely but not underage) and correctly states that Jeffrey E. said the $50 million lawsuit is not true and the case is over. It also cites the correct source document. However, it omits the additional detail from the gold answer that any denial should be limited to Clinton and Gore, which is a relevant part of Jeffrey E.'s statement about the lawsuit. This omission makes the answer slightly incomplete, but it remains faithful and accurate for the core aspects."
+  },
+  {
+    "question": "By what date did J. Epstein demand a wind power analysis, and what did John Amerling identify as the primary problem with wind generation in the Territory, including who promised to address it?",
+    "gold": "J. Epstein demanded the wind power analysis no later than May 15. John Amerling identified the primary problem as wind towers not being a permitted use in any zone in the Territory, and said the Governor promised to rectify that before the end of the year.",
+    "source_ids": [
+      "8d77193a6299d1e29b49c8d2a18f9588"
+    ],
+    "rag": "J. Epstein demanded a wind power analysis no later than May 15 (Source document IDs: bf9eb3233400e2e5880c8ee5f0147ec8, 8d77193a6299d1e29b49c8d2a18f9588, c7f4126324effa82edbd38c5f9dcf94d, 8d77193a6299d1e29b49c8d2a18f9588, 8d77193a6299d1e29b49c8d2a18f9588).\n\nJohn Amerling identified the primary problem with wind generation in the Territory as that wind towers are not a permitted use in any zone (Source document IDs: bf9eb3233400e2e5880c8ee5f0147ec8, 8d77193a6299d1e29b49c8d2a18f9588). The Governor promised to rectify this before the end of that year in the energy conference (Source document IDs: bf9eb3233400e2e5880c8ee5f0147ec8, 8d77193a6299d1e29b49c8d2a18f9588).",
+    "score": 8,
+    "reasoning": "The system answer accurately provides the key facts from the gold answer: J. Epstein demanded the analysis by May 15, John Amerling identified that wind towers are not a permitted use in any zone, and the Governor promised to rectify the issue before the end of the year. The expected source ID is included. However, the answer includes several extra and duplicated source document IDs beyond the expected single source, and it adds the detail 'in the energy conference' that is not present in the gold answer, warranting a minor deduction for citation precision and strict faithfulness."
+  },
+  {
+    "question": "On May 9, 2008, William Rowles of which company sent Darren Indyke an updated schedule with what attachment filename?",
+    "gold": "William Rowles of Lafayette Contractors, LLC sent the updated schedule. The attachment was named LSJMasterScheduleRev09May08.mpp.",
+    "source_ids": [
+      "a8fe7c1f7482fb176fc15e7bd89551b8"
+    ],
+    "rag": "William Rowles of Lafayette Contractors, LLC sent Darren Indyke an updated schedule with the attachment filename LSJMasterScheduleRev09May08.mpp (Source document IDs: a8fe7c1f7482fb176fc15e7bd89551b8).",
+    "score": 10,
+    "reasoning": "The System Answer accurately identifies both the company, Lafayette Contractors, LLC, and the attachment filename, LSJMasterScheduleRev09May08.mpp, exactly matching the Gold Answer. It also provides the correct source document ID, matching the expected citation. The response is faithful, complete, and correctly cited."
+  },
+  {
+    "question": "What annual salary and contract term were proposed for Caroline Poznanski, and what prior lawsuit amount did Nathalie report from Next when she left for Elite?",
+    "gold": "Caroline's contract called for a salary of $250,000 per year with a 1-year term subject to auto-renewal. Nathalie said Next sued her when she left to work for Elite, and the legal bill amounted to approximately $70,000 even though she ultimately prevailed.",
+    "source_ids": [
+      "4f4dde3e4d531f89b5bb8e3046df9aa4"
+    ],
+    "rag": "The proposed annual salary for Caroline Poznanski was **$250,000** per year, and the contract term with E NY was **1 year** subject to autorenewal (Source document IDs: 4f4dde3e4d531f89b5bb8e3046df9aa4).\n\nNathalie reported that the legal bill when she sued after leaving for Elite amounted to approximately **$70,000** (Source document IDs: 4f4dde3e4d531f89b5bb8e3046df9aa4).",
+    "score": 9,
+    "reasoning": "The System Answer correctly provides the proposed salary of $250,000, the 1-year contract term with auto-renewal, and the reported $70,000 legal bill. It also includes the correct source document ID. However, it slightly misstates the lawsuit direction by saying 'when she sued' instead of 'Next sued her,' and omits the detail that Nathalie ultimately prevailed. These are minor accuracy issues, so a small deduction applies."
+  },
+  {
+    "question": "Which two researchers are linked to the two different project objectives for pattern-recognition models, and what are their respective institutions?",
+    "gold": "Yann LeCun, at Courant, is aligned with the most successful pattern-recognition model, while Misha Tsodyks, at the Weizmann Institute, is aligned with the most biologically accurate model.",
+    "source_ids": [
+      "ec65abcca7f581f39a090551045e5430"
+    ],
+    "rag": "The two researchers linked to the two different project objectives for pattern-recognition models are:\n\n1. **Yann LeCun:** Linked to objective (1), the most successful pattern-recognition model. His institution is Courant Institute, NYU (Source document IDs: ec65abcca7f581f39a090551045e5430).\n2. **Misha Tsodyks:** Linked to objective (2), the most biologically accurate pattern-recognition model. His institution is the Weizmann Institute (Source document IDs: ec65abcca7f581f39a090551045e5430).",
+    "score": 10,
+    "reasoning": "The system answer correctly identifies both researchers (Yann LeCun and Misha Tsodyks), their respective institutions (Courant and Weizmann Institute), and their alignment with the two project objectives (most successful vs. most biologically accurate pattern-recognition models). It also provides the correct source document ID, matching the expected citation. The response is accurate, faithful to the gold answer, and properly cited."
+  }
+]

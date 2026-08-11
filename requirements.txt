@@ -5,6 +5,7 @@ datasets
 transformers
 langchain-text-splitters
 sentence-transformers
+scikit-learn
 google-genai
 torch
 numpy

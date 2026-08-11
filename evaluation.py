@@ -9,7 +9,6 @@ from pathlib import Path
 import pandas as pd
 
 from documents import build_header
-from rag import retrieve
 
 
 def make_text_generator(provider: str, model: str, api_key: str | None):
@@ -114,9 +113,7 @@ BODY:
 
 def evaluate_retrieval(
     test_set: list[dict],
-    embedding_model,
-    index,
-    chunks: pd.DataFrame,
+    retrieve_question,
     cutoffs: tuple[int, ...] = (5, 8, 10),
 ) -> pd.DataFrame:
     """Measure whether each expected source appears within retrieval cutoffs."""
@@ -125,7 +122,7 @@ def evaluate_retrieval(
 
     for item in test_set:
         expected_ids = set(map(str, item["source_ids"]))
-        results = retrieve(item["question"], embedding_model, index, chunks, k=max_k)
+        results = retrieve_question(item["question"], max_k)
         retrieved_ids = [set(map(str, source_ids)) for source_ids in results["source_ids"]]
         first_hit_rank = next(
             (

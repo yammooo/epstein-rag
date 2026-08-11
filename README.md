@@ -4,8 +4,8 @@ The notebook keeps the experimental workflow visible while reusable code is
 split into three small modules:
 
 - `documents.py`: email preparation, PDF OCR, source-aware documents, and chunking.
-- `rag.py`: embeddings, FAISS retrieval, prompt construction, and local generation.
-- `evaluation.py`: Gemini test-set generation and evaluation.
+- `rag.py`: dense and hybrid retrieval, reranking, prompting, and local generation.
+- `evaluation.py`: provider-neutral test-set generation and method comparison.
 
 Run Jupyter from the repository root so the notebook can import these modules.
 
