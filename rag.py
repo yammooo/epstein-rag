@@ -16,6 +16,12 @@ def load_embedding_model(model_id: str, device: str):
     return SentenceTransformer(model_id, device=device)
 
 
+def load_reranker(model_id: str, device: str):
+    from sentence_transformers import CrossEncoder
+
+    return CrossEncoder(model_id, device=device)
+
+
 def compute_embeddings(chunks: pd.DataFrame, embedding_model, batch_size: int = 64) -> np.ndarray:
     embeddings = embedding_model.encode(
         chunks["text"].tolist(),
@@ -60,7 +66,20 @@ def build_index(embeddings: np.ndarray):
     return index
 
 
-def retrieve(
+def build_tfidf_index(chunks: pd.DataFrame):
+    """Build the lightweight lexical index used by hybrid retrieval."""
+    from sklearn.feature_extraction.text import TfidfVectorizer
+
+    vectorizer = TfidfVectorizer(
+        stop_words="english",
+        ngram_range=(1, 2),
+        sublinear_tf=True,
+        token_pattern=r"(?u)\b\w+\b",
+    )
+    return vectorizer, vectorizer.fit_transform(chunks["text"])
+
+
+def retrieve_dense(
     query: str,
     embedding_model,
     index,
@@ -79,6 +98,83 @@ def retrieve(
     results["score"] = scores[0]
     return results
 
+
+def retrieve_hybrid(
+    query: str,
+    embedding_model,
+    dense_index,
+    tfidf_vectorizer,
+    tfidf_matrix,
+    reranker,
+    chunks: pd.DataFrame,
+    dense_k: int = 20,
+    tfidf_k: int = 20,
+    rerank_k: int = 5,
+    neighbors: int = 1,
+    max_chunks: int = 10,
+) -> pd.DataFrame:
+    """Retrieve dense and lexical candidates, rerank them, then add neighbors."""
+    if chunks.empty:
+        raise ValueError("Cannot retrieve from an empty chunk collection.")
+    if tfidf_matrix.shape[0] != len(chunks):
+        raise ValueError("TF-IDF index does not match the chunk collection.")
+    if max_chunks < 1:
+        raise ValueError("max_chunks must be positive.")
+
+    dense = retrieve_dense(query, embedding_model, dense_index, chunks, k=dense_k)
+
+    query_vector = tfidf_vectorizer.transform([query])
+    tfidf_scores = (tfidf_matrix @ query_vector.T).toarray().ravel()
+    tfidf_indices = np.argsort(-tfidf_scores)[: min(tfidf_k, len(chunks))]
+    lexical = chunks.iloc[tfidf_indices].copy()
+
+    candidates = pd.concat([dense, lexical], ignore_index=True).drop_duplicates("chunk_id")
+    pairs = [(query, text) for text in candidates["text"]]
+    candidates["score"] = np.asarray(reranker.predict(pairs, batch_size=16)).reshape(-1)
+
+    anchor_count = min(rerank_k, max_chunks, len(candidates))
+    anchors = candidates.nlargest(anchor_count, "score").copy()
+    anchors["retrieval_role"] = "anchor"
+    return _add_neighbors(anchors, chunks, neighbors, max_chunks)
+
+
+def _add_neighbors(
+    anchors: pd.DataFrame,
+    chunks: pd.DataFrame,
+    neighbors: int,
+    max_chunks: int,
+) -> pd.DataFrame:
+    """Append nearby chunks without dropping any reranked anchor."""
+    anchors = anchors.head(max_chunks).copy()
+    if neighbors < 1 or len(anchors) >= max_chunks:
+        return anchors.reset_index(drop=True)
+
+    positions = {
+        (row["document_index"], row["chunk_index"]): index
+        for index, row in chunks.iterrows()
+    }
+    selected = [anchors]
+    seen = set(anchors["chunk_id"])
+
+    for _, anchor in anchors.iterrows():
+        for distance in range(1, neighbors + 1):
+            for chunk_index in (
+                anchor["chunk_index"] - distance,
+                anchor["chunk_index"] + distance,
+            ):
+                index = positions.get((anchor["document_index"], chunk_index))
+                if index is None or chunks.at[index, "chunk_id"] in seen:
+                    continue
+
+                neighbor = chunks.loc[[index]].copy()
+                neighbor["score"] = np.nan
+                neighbor["retrieval_role"] = "neighbor"
+                selected.append(neighbor)
+                seen.add(chunks.at[index, "chunk_id"])
+                if len(seen) >= max_chunks:
+                    return pd.concat(selected, ignore_index=True)
+
+    return pd.concat(selected, ignore_index=True)
 
 def build_prompt(query: str, results: pd.DataFrame) -> str:
     """Format retrieved evidence for the Gemma instruction template."""
