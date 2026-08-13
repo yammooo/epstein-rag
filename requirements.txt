@@ -14,4 +14,5 @@ pandas
 faiss-cpu
 python-dotenv
 paddleocr>=3.7,<4
+paddlex[ocr]>=3.7,<3.8
 requests

@@ -33,9 +33,10 @@ python -m pip install --upgrade --force-reinstall
 
 ## PDF OCR
 
-PDF pages are read directly with PP-OCRv6, without layout classification.
-OCR uses the Transformers/PyTorch backend and the GPU when PyTorch detects one.
-The first OCR run downloads the model weights.
+PDF pages are read directly with PPStructureV3 and PP-OCRv6 through the
+Transformers/PyTorch backend. Layout regions restore multi-column reading
+order, but only recognized text is stored; table, formula, chart, seal, and
+image outputs are disabled. The first OCR run downloads the model weights.
 
 The notebook caches raw emails, OCR pages, chunks, embeddings, and evaluation
 results in `artifacts/`. Cache metadata invalidates OCR pages, chunks, and
