@@ -1,4 +1,4 @@
-"""Provider-neutral helpers for RAG test-set generation and evaluation."""
+"""Provider-neutral helpers for RAG ground-truth generation, retrieval evaluation, and LLM answer judging."""
 
 from __future__ import annotations
 
@@ -12,7 +12,20 @@ from documents import build_header
 
 
 def make_text_generator(provider: str, model: str, api_key: str | None):
-    """Return one prompt-to-text function for the configured evaluation provider."""
+    """Create a unified text generation closure for evaluation providers (Gemini or OpenRouter).
+
+    Args:
+        provider: Provider identifier ('gemini' or 'openrouter').
+        model: Target model name/ID string.
+        api_key: Authentication API key. Returns None if key is missing or empty.
+
+    Returns:
+        Callable[[str], str] | None: Function taking prompt string and returning text response,
+            or None if no API key is provided.
+
+    Raises:
+        ValueError: If provider is not 'gemini' or 'openrouter'.
+    """
     if not api_key:
         return None
 
@@ -52,7 +65,24 @@ def generate_ground_truth(
     request_delay: int = 13,
     random_state: int = 42,
 ) -> list[dict]:
-    """Create or load a small, reproducible source-grounded test set."""
+    """Generate or load a reproducible benchmark test set of source-grounded question/answer pairs.
+
+    Samples candidate documents longer than 1000 characters, prompts the generation model to
+    create multi-fact questions and ground-truth gold answers, attaches document source IDs,
+    and caches the test set as a JSON file.
+
+    Args:
+        documents: Master document DataFrame complying with DOCUMENT_COLUMNS.
+        generate_text: Text generation closure returned by make_text_generator().
+        cache_path: File system path for JSON test set cache.
+        force: If True, bypass cache and regenerate test set.
+        n: Number of document evaluation cases to generate (default 15).
+        request_delay: Delay in seconds between API calls for rate limiting (default 13).
+        random_state: Random seed for reproducible document sampling (default 42).
+
+    Returns:
+        list[dict]: List of test item dicts containing 'question', 'answer', and 'source_ids'.
+    """
     if cache_path.exists() and not force:
         with cache_path.open(encoding="utf-8") as handle:
             cached = json.load(handle)
@@ -116,7 +146,17 @@ def evaluate_retrieval(
     retrieve_question,
     cutoffs: tuple[int, ...] = (5, 8, 10),
 ) -> pd.DataFrame:
-    """Measure whether each expected source appears within retrieval cutoffs."""
+    """Evaluate retrieval performance against a benchmark test set across cutoffs and rank metrics.
+
+    Args:
+        test_set: Benchmark test set containing 'question' and expected 'source_ids'.
+        retrieve_question: Retrieval function taking (query, max_k) and returning retrieved chunks DataFrame.
+        cutoffs: Depth cutoff thresholds for Hit@K calculation (default (5, 8, 10)).
+
+    Returns:
+        pd.DataFrame: Evaluation matrix listing question, expected source IDs, rank of first hit
+            (first_hit_rank), and boolean hit flags at specified cutoffs (hit_at_5, hit_at_8, hit_at_10).
+    """
     rows = []
     max_k = max(cutoffs)
 
@@ -157,7 +197,20 @@ def evaluate_answers(
     force: bool = False,
     request_delay: int = 13,
 ) -> list[dict]:
-    """Use the configured provider to judge source-grounded RAG answers."""
+    """Evaluate generated RAG system answers against gold answers using an LLM-as-a-Judge.
+
+    Args:
+        test_set: Benchmark test set containing questions and gold answers.
+        answer_question: RAG generation function taking query string and returning answer.
+        generate_text: LLM generation closure for judge model.
+        cache_path: File system path for JSON evaluation cache.
+        force: If True, bypass cache and re-evaluate answers.
+        request_delay: Delay in seconds between API requests (default 13).
+
+    Returns:
+        list[dict]: Evaluation entries containing 'question', 'gold', 'source_ids', 'rag',
+            numerical 'score' (1-10), and text 'reasoning'.
+    """
     if cache_path.exists() and not force:
         with cache_path.open(encoding="utf-8") as handle:
             cached = json.load(handle)
@@ -203,6 +256,14 @@ Return only JSON with keys 'score' (int) and 'reasoning' (string)."""
 
 
 def _has_source_ids(test_set: object) -> bool:
+    """Validate that a cached test set is a non-empty list of items with valid source_ids.
+
+    Args:
+        test_set: Object loaded from JSON cache.
+
+    Returns:
+        bool: True if test set structure is valid and contains source IDs; False otherwise.
+    """
     return (
         isinstance(test_set, list)
         and bool(test_set)
@@ -211,6 +272,15 @@ def _has_source_ids(test_set: object) -> bool:
 
 
 def _matches_test_set(results: object, test_set: list[dict]) -> bool:
+    """Check if cached evaluation results match the question/answer/source_ids of the active test set.
+
+    Args:
+        results: Object loaded from cached evaluation JSON file.
+        test_set: Active test set list.
+
+    Returns:
+        bool: True if cached evaluation matches current test set 1-to-1; False otherwise.
+    """
     if not isinstance(results, list):
         return False
     cached_cases = [(item.get("question"), item.get("gold"), item.get("source_ids")) for item in results]
@@ -219,4 +289,13 @@ def _matches_test_set(results: object, test_set: list[dict]) -> bool:
 
 
 def _parse_json_response(text: str) -> dict:
+    """Strip markdown code fences and parse JSON string into a Python dictionary.
+
+    Args:
+        text: Raw text output string from LLM response.
+
+    Returns:
+        dict: Parsed dictionary payload.
+    """
     return json.loads(text.strip().removeprefix("```json").removesuffix("```").strip())
+

@@ -1,4 +1,4 @@
-"""Document ingestion and preparation for the RAG notebook."""
+"""Document ingestion, cleaning, metadata normalization, deduplication, OCR, and chunking for RAG."""
 
 from __future__ import annotations
 
@@ -25,7 +25,15 @@ DOCUMENT_COLUMNS = [
 
 
 def load_email_dataset(cache_path: Path, force: bool = False) -> pd.DataFrame:
-    """Load the email dataset, using a local Parquet cache when available."""
+    """Load the Epstein email dataset from Hugging Face or read from local Parquet cache.
+
+    Args:
+        cache_path: File system path pointing to the Parquet cache location.
+        force: If True, bypass existing cache and re-download from Hugging Face.
+
+    Returns:
+        pd.DataFrame containing raw email dataset records.
+    """
     if cache_path.exists() and not force:
         return pd.read_parquet(cache_path)
 
@@ -38,14 +46,31 @@ def load_email_dataset(cache_path: Path, force: bool = False) -> pd.DataFrame:
 
 
 def normalize_metadata(value: object) -> str:
-    """Normalize one-line metadata without turning missing values into 'nan'."""
+    """Normalize a single-line metadata field using NFKC normalization and whitespace collapsing.
+
+    Args:
+        value: Input metadata value (string, float, NaN, or non-string object).
+
+    Returns:
+        Cleaned metadata string, or an empty string if input is missing/NaN.
+    """
     if pd.isna(value):
         return ""
     return re.sub(r"\s+", " ", unicodedata.normalize("NFKC", str(value))).strip()
 
 
 def normalize_body(value: object) -> str:
-    """Preserve paragraphs while removing OCR and email whitespace noise."""
+    """Clean and standardize document body text while preserving paragraph structure.
+
+    Performs Unicode NFKC normalization, standardizes CRLF line endings to LF,
+    collapses inline spaces/tabs, and caps consecutive blank lines to at most two newlines.
+
+    Args:
+        value: Input text body value (string, NaN, or non-string object).
+
+    Returns:
+        Cleaned text string with standardized paragraph breaks.
+    """
     if pd.isna(value):
         return ""
 
@@ -58,7 +83,15 @@ def normalize_body(value: object) -> str:
 
 
 def normalize_email_fields(emails: pd.DataFrame) -> pd.DataFrame:
-    """Normalize the email fields used for profiling, deduplication, and retrieval."""
+    """Normalize metadata and body text fields across an entire email DataFrame.
+
+    Args:
+        emails: Input DataFrame containing raw email columns ('subject', 'preview',
+            'from_name', 'from_email', 'to', 'date', 'body').
+
+    Returns:
+        pd.DataFrame: A copy of the input DataFrame with normalized text fields.
+    """
     emails = emails.copy()
     for column in ["subject", "preview", "from_name", "from_email", "to", "date"]:
         emails[column] = emails[column].map(normalize_metadata)
@@ -67,14 +100,29 @@ def normalize_email_fields(emails: pd.DataFrame) -> pd.DataFrame:
 
 
 def count_recipients(value: object) -> int:
-    """Estimate recipient count from email address brackets in a To field."""
+    """Estimate the number of email recipients by counting angle-bracketed email patterns.
+
+    Args:
+        value: Raw text from an email 'To' header field.
+
+    Returns:
+        Estimated count of recipient addresses (0 if empty/invalid, minimum 1 if text is present).
+    """
     if not isinstance(value, str) or not value.strip():
         return 0
     return max(1, len(re.findall(r"<[^<>]+>", value)))
 
 
 def add_email_fields(emails: pd.DataFrame) -> pd.DataFrame:
-    """Add parsed date and recipient-count fields used by email-only analysis."""
+    """Enrich an email DataFrame with computed recipient count and parsed datetime columns.
+
+    Args:
+        emails: DataFrame containing normalized email fields ('to', 'date').
+
+    Returns:
+        pd.DataFrame: Copy of input DataFrame enriched with 'num_recipients' (int)
+            and 'parsed_date' (datetime64[ns]) columns.
+    """
     emails = emails.copy()
     emails["num_recipients"] = emails["to"].map(count_recipients)
     emails["parsed_date"] = pd.to_datetime(emails["date"], errors="coerce")
@@ -82,12 +130,25 @@ def add_email_fields(emails: pd.DataFrame) -> pd.DataFrame:
 
 
 def email_dedup_key() -> list[str]:
-    """Return the exact-content key used to collapse duplicate email records."""
+    """Return column names defining exact content equality for email deduplication.
+
+    Returns:
+        List of column names used as composite unique key:
+        ['subject', 'from_email', 'to', 'num_recipients', 'date', 'body'].
+    """
     return ["subject", "from_email", "to", "num_recipients", "date", "body"]
 
 
 def duplicate_email_groups(emails: pd.DataFrame) -> pd.DataFrame:
-    """Summarize duplicate emails for display in the notebook."""
+    """Summarize duplicate email groups for exploratory analysis and profiling.
+
+    Args:
+        emails: DataFrame with prepared email fields and original 'doc_id' column.
+
+    Returns:
+        pd.DataFrame: Aggregated DataFrame listing duplicate groups with row counts,
+            associated document ID lists, and uniqueness metrics, sorted descending by size.
+    """
     key = email_dedup_key()
     return (
         emails[emails.duplicated(subset=key, keep=False)]
@@ -105,7 +166,19 @@ def duplicate_email_groups(emails: pd.DataFrame) -> pd.DataFrame:
 
 
 def deduplicate_emails(emails: pd.DataFrame) -> pd.DataFrame:
-    """Collapse identical emails while retaining every original source ID."""
+    """Collapse identical emails while preserving all original document source IDs.
+
+    Groups records matching the exact deduplication key and consolidates their
+    doc_ids into a sorted list of unique source IDs.
+
+    Args:
+        emails: DataFrame containing prepared email records with 'doc_id'.
+
+    Returns:
+        pd.DataFrame: Grouped DataFrame with consolidated 'source_ids' lists,
+            original row counts, and standardized column names ('title', 'sender_email',
+            'recipients', 'text').
+    """
     key = email_dedup_key()
     grouped = (
         emails.groupby(key, dropna=False)
@@ -128,7 +201,15 @@ def deduplicate_emails(emails: pd.DataFrame) -> pd.DataFrame:
 
 
 def emails_to_documents(grouped_emails: pd.DataFrame) -> pd.DataFrame:
-    """Convert deduplicated emails to the common document schema."""
+    """Map deduplicated email records into the unified RAG document schema.
+
+    Args:
+        grouped_emails: Deduplicated emails DataFrame from deduplicate_emails().
+
+    Returns:
+        pd.DataFrame: DataFrame strictly conforming to DOCUMENT_COLUMNS schema with
+            source_type='email'.
+    """
     documents = pd.DataFrame(
         {
             "source_ids": grouped_emails["source_ids"],
@@ -253,7 +334,17 @@ def _ocr_result_text(result) -> str:
 
 
 def combine_documents(*frames: pd.DataFrame) -> pd.DataFrame:
-    """Combine source-specific documents and validate the common RAG input."""
+    """Concatenate document DataFrames from multiple sources and validate data completeness.
+
+    Args:
+        *frames: Arbitrary number of document DataFrames matching DOCUMENT_COLUMNS.
+
+    Returns:
+        pd.DataFrame: Combined unified document DataFrame.
+
+    Raises:
+        ValueError: If any document contains empty text or lacks source IDs.
+    """
     documents = pd.concat(frames, ignore_index=True)
     documents = documents[DOCUMENT_COLUMNS]
     if documents["text"].str.strip().eq("").any():
@@ -264,7 +355,15 @@ def combine_documents(*frames: pd.DataFrame) -> pd.DataFrame:
 
 
 def build_header(document: pd.Series) -> str:
-    """Create a retrieval header that preserves source-specific provenance."""
+    """Construct a structured context header preserving document provenance.
+
+    Args:
+        document: A single row (pd.Series) from a document DataFrame.
+
+    Returns:
+        Formatted multi-line text header string containing metadata (Type, Subject/Title,
+        Sender, Recipients, Page, Source document IDs).
+    """
     source_ids = ", ".join(map(str, document["source_ids"][:5]))
     if len(document["source_ids"]) > 5:
         source_ids += f", ... ({len(document['source_ids'])} total)"
@@ -291,7 +390,26 @@ def load_or_build_chunks(
     force: bool = False,
     max_tokens: int = 512,
 ) -> pd.DataFrame:
-    """Build token-aware chunks and invalidate the cache when documents change."""
+    """Split documents into token-budget-aware chunks with prepended provenance headers.
+
+    Calculates header token count, allocates remaining token budget for document body,
+    splits text recursively using Hugging Face tokenizer token counts, prepends metadata header
+    to each chunk, and caches output with SHA-256 fingerprint validation.
+
+    Args:
+        documents: Input document DataFrame adhering to DOCUMENT_COLUMNS schema.
+        tokenizer: Pre-trained Hugging Face tokenizer instance.
+        cache_path: File system path to Parquet chunk cache.
+        force: If True, re-split documents ignoring existing cache.
+        max_tokens: Total token limit allowed per chunk including header (default 512).
+
+    Returns:
+        pd.DataFrame: DataFrame containing chunk records with chunk_id, document index,
+            chunk index, headers, and full prepended text.
+
+    Raises:
+        ValueError: If a document header exceeds max_tokens allocation.
+    """
     fingerprint = _frame_fingerprint(
         documents,
         {"max_tokens": max_tokens, "tokenizer": getattr(tokenizer, "name_or_path", "")},
@@ -341,19 +459,46 @@ def load_or_build_chunks(
 
 
 def _format_sender(name: object, email: object) -> str:
+    """Format sender display name and email address into a standard 'Name <email>' string.
+
+    Args:
+        name: Sender display name.
+        email: Sender email address.
+
+    Returns:
+        Formatted email sender string, or single non-empty string fallback.
+    """
     name = normalize_metadata(name)
     email = normalize_metadata(email)
     if name and email:
         return f"{name} <{email}>"
     return name or email
 
+
 def _truncate(value: object, limit: int) -> str:
+    """Truncate text to specified character limit, appending truncation notice if shortened.
+
+    Args:
+        value: Raw text object to truncate.
+        limit: Maximum allowable character length.
+
+    Returns:
+        Truncated text string.
+    """
     value = normalize_metadata(value)
     return value if len(value) <= limit else value[:limit].rstrip() + " ... (truncated)"
 
 
-
 def _files_fingerprint(paths: list[Path], settings: dict[str, object]) -> str:
+    """Compute deterministic SHA-256 fingerprint for a set of files and configuration settings.
+
+    Args:
+        paths: List of file system paths.
+        settings: Key-value dictionary of processing settings.
+
+    Returns:
+        64-character SHA-256 hex digest string.
+    """
     payload = {
         "files": [
             {"name": path.name, "size": path.stat().st_size, "mtime_ns": path.stat().st_mtime_ns}
@@ -365,6 +510,15 @@ def _files_fingerprint(paths: list[Path], settings: dict[str, object]) -> str:
 
 
 def _frame_fingerprint(frame: pd.DataFrame, settings: dict[str, object]) -> str:
+    """Compute deterministic SHA-256 fingerprint for a DataFrame and configuration settings.
+
+    Args:
+        frame: Input pandas DataFrame.
+        settings: Key-value dictionary of processing parameters.
+
+    Returns:
+        64-character SHA-256 hex digest string.
+    """
     payload = {
         "records": json.loads(frame.to_json(orient="records", date_format="iso")),
         "settings": settings,
@@ -373,15 +527,41 @@ def _frame_fingerprint(frame: pd.DataFrame, settings: dict[str, object]) -> str:
 
 
 def _fingerprint(payload: dict[str, object]) -> str:
+    """Compute SHA-256 hex digest from a JSON-serializable dictionary.
+
+    Args:
+        payload: Dictionary payload to hash.
+
+    Returns:
+        64-character SHA-256 hex digest string.
+    """
     encoded = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
     return hashlib.sha256(encoded).hexdigest()
 
 
 def _meta_path(cache_path: Path) -> Path:
+    """Derive the .meta.json sidecar file path corresponding to a cache file.
+
+    Args:
+        cache_path: Primary cache file path (e.g., data.parquet).
+
+    Returns:
+        Path object pointing to sidecar metadata JSON file (e.g., data.parquet.meta.json).
+    """
     return cache_path.with_suffix(cache_path.suffix + ".meta.json")
 
 
 def _load_frame_if_current(cache_path: Path, fingerprint: str, force: bool) -> pd.DataFrame | None:
+    """Load cached DataFrame if cache exists, metadata sidecar exists, and fingerprint matches.
+
+    Args:
+        cache_path: Path to cached Parquet file.
+        fingerprint: Target SHA-256 fingerprint string.
+        force: If True, forces cache miss and returns None.
+
+    Returns:
+        Loaded DataFrame if valid and current; None otherwise.
+    """
     meta_path = _meta_path(cache_path)
     if force or not cache_path.exists() or not meta_path.exists():
         return None
@@ -394,6 +574,14 @@ def _load_frame_if_current(cache_path: Path, fingerprint: str, force: bool) -> p
 
 
 def _save_frame_with_fingerprint(frame: pd.DataFrame, cache_path: Path, fingerprint: str) -> None:
+    """Save DataFrame as Parquet file and write its SHA-256 fingerprint to metadata sidecar.
+
+    Args:
+        frame: DataFrame to serialize.
+        cache_path: Parquet target file path.
+        fingerprint: SHA-256 fingerprint string representing dataset and parameter state.
+    """
     frame.to_parquet(cache_path, index=False)
     with _meta_path(cache_path).open("w", encoding="utf-8") as handle:
         json.dump({"fingerprint": fingerprint}, handle)
+
