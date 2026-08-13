@@ -1,4 +1,4 @@
-"""Embedding, retrieval, prompting, and local generation helpers."""
+"""Embedding computation, dense & hybrid retrieval, reranking, prompting, and LLM inference."""
 
 from __future__ import annotations
 
@@ -11,18 +11,46 @@ import pandas as pd
 
 
 def load_embedding_model(model_id: str, device: str):
+    """Initialize and return a SentenceTransformer dense embedding model.
+
+    Args:
+        model_id: Hugging Face model repository identifier (e.g. 'BAAI/bge-small-en-v1.5').
+        device: Hardware device for model execution ('cuda', 'cpu', 'mps').
+
+    Returns:
+        SentenceTransformer: Initialized sentence transformer model instance.
+    """
     from sentence_transformers import SentenceTransformer
 
     return SentenceTransformer(model_id, device=device)
 
 
 def load_reranker(model_id: str, device: str):
+    """Initialize and return a CrossEncoder model for candidate reranking.
+
+    Args:
+        model_id: Hugging Face model repository identifier (e.g. 'BAAI/bge-reranker-base').
+        device: Hardware device for model execution ('cuda', 'cpu', 'mps').
+
+    Returns:
+        CrossEncoder: Initialized cross-encoder reranker instance.
+    """
     from sentence_transformers import CrossEncoder
 
     return CrossEncoder(model_id, device=device)
 
 
 def compute_embeddings(chunks: pd.DataFrame, embedding_model, batch_size: int = 64) -> np.ndarray:
+    """Generate normalized dense embeddings for document text chunks.
+
+    Args:
+        chunks: DataFrame containing text chunks in a 'text' column.
+        embedding_model: SentenceTransformer instance.
+        batch_size: Inference batch size (default 64).
+
+    Returns:
+        np.ndarray: 2D float32 array of shape (n_chunks, embedding_dim) with L2-normalized vectors.
+    """
     embeddings = embedding_model.encode(
         chunks["text"].tolist(),
         batch_size=batch_size,
@@ -39,7 +67,21 @@ def load_or_compute_embeddings(
     model_id: str,
     force: bool = False,
 ) -> np.ndarray:
-    """Load embeddings only when they match the current chunks and model."""
+    """Load cached chunk embeddings or compute and save them if cache is missing or stale.
+
+    Validates cache integrity using a SHA-256 fingerprint hash based on chunk text contents,
+    chunk IDs, and model ID.
+
+    Args:
+        chunks: DataFrame of document text chunks.
+        embedding_model: SentenceTransformer instance.
+        cache_path: File path to '.npy' binary cache location.
+        model_id: Model repository ID string for cache validation fingerprinting.
+        force: If True, bypass cache and recompute embeddings.
+
+    Returns:
+        np.ndarray: 2D float32 array of dense embeddings.
+    """
     fingerprint = _chunks_fingerprint(chunks, model_id)
     meta_path = cache_path.with_suffix(cache_path.suffix + ".meta.json")
 
@@ -59,6 +101,14 @@ def load_or_compute_embeddings(
 
 
 def build_index(embeddings: np.ndarray):
+    """Build a FAISS flat inner-product index over L2-normalized embeddings for cosine similarity.
+
+    Args:
+        embeddings: 2D float32 array of normalized vector embeddings.
+
+    Returns:
+        faiss.IndexFlatIP: Populated FAISS inner-product vector index.
+    """
     import faiss
 
     index = faiss.IndexFlatIP(embeddings.shape[1])
@@ -67,7 +117,15 @@ def build_index(embeddings: np.ndarray):
 
 
 def build_tfidf_index(chunks: pd.DataFrame):
-    """Build the lightweight lexical index used by hybrid retrieval."""
+    """Construct a TF-IDF vectorizer and sparse document-term matrix for lexical search.
+
+    Args:
+        chunks: DataFrame containing text chunks in a 'text' column.
+
+    Returns:
+        tuple[TfidfVectorizer, scipy.sparse.csr_matrix]: Fitted TfidfVectorizer instance
+            and sparse TF-IDF document-term feature matrix.
+    """
     from sklearn.feature_extraction.text import TfidfVectorizer
 
     vectorizer = TfidfVectorizer(
@@ -86,7 +144,21 @@ def retrieve_dense(
     chunks: pd.DataFrame,
     k: int = 5,
 ) -> pd.DataFrame:
-    """Return the k highest-scoring source chunks for a query."""
+    """Retrieve the top-k highest scoring chunks using dense vector inner-product search.
+
+    Args:
+        query: User input search query string.
+        embedding_model: SentenceTransformer model instance.
+        index: FAISS IndexFlatIP vector index.
+        chunks: Master DataFrame containing chunk records.
+        k: Maximum number of nearest neighbor chunks to return (default 5).
+
+    Returns:
+        pd.DataFrame: Top-k matching chunk records with inner-product similarity in 'score' column.
+
+    Raises:
+        ValueError: If the chunk collection is empty.
+    """
     if chunks.empty:
         raise ValueError("Cannot retrieve from an empty chunk collection.")
 
@@ -113,7 +185,33 @@ def retrieve_hybrid(
     neighbors: int = 1,
     max_chunks: int = 10,
 ) -> pd.DataFrame:
-    """Retrieve dense and lexical candidates, rerank them, then add neighbors."""
+    """Perform hybrid retrieval combining dense and lexical search, cross-encoder reranking, and neighbor expansion.
+
+    Retrieves top candidates from both dense (FAISS) and lexical (TF-IDF) indices,
+    deduplicates candidates, scores query-document pairs with a CrossEncoder reranker,
+    selects top reranked anchor chunks, and expands surrounding document context via neighbor chunks.
+
+    Args:
+        query: User input search query string.
+        embedding_model: SentenceTransformer model instance.
+        dense_index: FAISS vector index.
+        tfidf_vectorizer: Fitted scikit-learn TfidfVectorizer instance.
+        tfidf_matrix: Sparse TF-IDF document-term matrix.
+        reranker: CrossEncoder reranker model instance.
+        chunks: Master DataFrame containing chunk records.
+        dense_k: Number of dense candidates to retrieve (default 20).
+        tfidf_k: Number of lexical candidates to retrieve (default 20).
+        rerank_k: Number of top cross-encoder reranked anchors to retain (default 5).
+        neighbors: Number of adjacent context chunks to append per anchor (default 1).
+        max_chunks: Maximum total chunk count capacity limit (default 10).
+
+    Returns:
+        pd.DataFrame: Combined DataFrame of anchor and neighbor chunks annotated with 'retrieval_role'
+            ('anchor' or 'neighbor') and 'score'.
+
+    Raises:
+        ValueError: If chunks collection is empty, TF-IDF matrix dimension mismatches chunks, or max_chunks < 1.
+    """
     if chunks.empty:
         raise ValueError("Cannot retrieve from an empty chunk collection.")
     if tfidf_matrix.shape[0] != len(chunks):
@@ -144,7 +242,20 @@ def _add_neighbors(
     neighbors: int,
     max_chunks: int,
 ) -> pd.DataFrame:
-    """Append nearby chunks without dropping any reranked anchor."""
+    """Expand retrieved context by adding adjacent document chunks around anchor chunks.
+
+    Appends preceding and succeeding chunks (chunk_index - d, chunk_index + d) from the same
+    source document while preserving anchor ordering and respecting max_chunks limit.
+
+    Args:
+        anchors: DataFrame of top reranked anchor chunks.
+        chunks: Master DataFrame of all document chunks.
+        neighbors: Radial distance of adjacent chunks to append.
+        max_chunks: Hard limit on total total returned chunks.
+
+    Returns:
+        pd.DataFrame: Concatenated DataFrame of anchor and neighbor chunks.
+    """
     anchors = anchors.head(max_chunks).copy()
     if neighbors < 1 or len(anchors) >= max_chunks:
         return anchors.reset_index(drop=True)
@@ -176,8 +287,18 @@ def _add_neighbors(
 
     return pd.concat(selected, ignore_index=True)
 
+
 def build_prompt(query: str, results: pd.DataFrame) -> str:
-    """Format retrieved evidence for the Gemma instruction template."""
+    """Format retrieved context chunks and user question into a Gemma instruction-tuned prompt.
+
+    Args:
+        query: User input question string.
+        results: DataFrame of retrieved chunks containing text and provenance headers.
+
+    Returns:
+        str: Fully formatted prompt string with system instructions, labeled source segments,
+            and model response turn tags.
+    """
     context = "\n\n".join(
         f"[Segment {number}]\n{row['text']}"
         for number, (_, row) in enumerate(results.iterrows(), start=1)
@@ -196,6 +317,17 @@ def build_prompt(query: str, results: pd.DataFrame) -> str:
 
 
 def load_llm(model_id: str, filename: str, token: str | None, gpu_offload: bool):
+    """Load a GGUF format quantized language model via llama-cpp-python.
+
+    Args:
+        model_id: Hugging Face model repository ID (e.g. 'google/gemma-2-9b-it-GGUF').
+        filename: GGUF filename (e.g. 'gemma-2-9b-it-Q4_K_M.gguf').
+        token: Optional Hugging Face access token for private repositories.
+        gpu_offload: If True, offload all model layers to GPU (-1); otherwise CPU (0).
+
+    Returns:
+        Llama: Initialized Llama CPP model instance.
+    """
     from llama_cpp import Llama
 
     return Llama.from_pretrained(
@@ -208,6 +340,16 @@ def load_llm(model_id: str, filename: str, token: str | None, gpu_offload: bool)
 
 
 def generate_answer(llm, prompt: str, max_new_tokens: int = 1024) -> str:
+    """Execute LLM text generation on a formatted prompt and return the stripped answer string.
+
+    Args:
+        llm: Initialized Llama model instance.
+        prompt: Formatted prompt string.
+        max_new_tokens: Token generation budget ceiling (default 1024).
+
+    Returns:
+        str: Generated answer text stripped of leading/trailing whitespace.
+    """
     response = llm(
         prompt,
         max_tokens=max_new_tokens,
@@ -220,9 +362,19 @@ def generate_answer(llm, prompt: str, max_new_tokens: int = 1024) -> str:
 
 
 def _chunks_fingerprint(chunks: pd.DataFrame, model_id: str) -> str:
+    """Compute a SHA-256 fingerprint hash for embedding cache validation.
+
+    Args:
+        chunks: DataFrame containing 'chunk_id' and 'text' columns.
+        model_id: Embedding model ID string.
+
+    Returns:
+        str: 64-character SHA-256 hex digest string.
+    """
     payload = {
         "model_id": model_id,
         "chunks": json.loads(chunks[["chunk_id", "text"]].to_json(orient="records")),
     }
     encoded = json.dumps(payload, sort_keys=True, ensure_ascii=False).encode("utf-8")
     return hashlib.sha256(encoded).hexdigest()
+
