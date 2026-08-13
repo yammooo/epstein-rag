@@ -31,14 +31,11 @@ python -m pip install --upgrade --force-reinstall
   --extra-index-url https://abetlen.github.io/llama-cpp-python/whl/cu124
 ```
 
-## Dependencies for PDF OCR
+## PDF OCR
 
-PDF OCR also needs Tesseract and Poppler:
-
-```bash
-sudo apt update
-sudo apt install -y tesseract-ocr poppler-utils
-```
+PDF pages are read directly with PP-OCRv6, without layout classification.
+OCR uses the Transformers/PyTorch backend and the GPU when PyTorch detects one.
+The first OCR run downloads the model weights.
 
 The notebook caches raw emails, OCR pages, chunks, embeddings, and evaluation
 results in `artifacts/`. Cache metadata invalidates OCR pages, chunks, and

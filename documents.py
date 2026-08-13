@@ -151,11 +151,17 @@ def load_or_ocr_pdfs(
     pdf_dir: Path,
     cache_path: Path,
     force: bool = False,
-    dpi: int = 300,
 ) -> pd.DataFrame:
-    """OCR PDFs into one common-schema record per page, cached by file metadata."""
+    """OCR PDFs with PP-OCRv6 into one common-schema record per page."""
     pdf_paths = sorted(pdf_dir.glob("*.pdf")) if pdf_dir.exists() else []
-    fingerprint = _files_fingerprint(pdf_paths, {"dpi": dpi})
+    settings = {
+        "ocr_version": "PP-OCRv6",
+        "engine": "transformers",
+        "use_doc_orientation_classify": False,
+        "use_doc_unwarping": False,
+        "use_textline_orientation": False,
+    }
+    fingerprint = _files_fingerprint(pdf_paths, settings)
     cached = _load_frame_if_current(cache_path, fingerprint, force)
     if cached is not None:
         return cached
@@ -163,19 +169,19 @@ def load_or_ocr_pdfs(
     if not pdf_paths:
         return pd.DataFrame(columns=DOCUMENT_COLUMNS)
 
-    import cv2
-    import numpy as np
-    import pytesseract
-    from pdf2image import convert_from_path
+    import torch
+    from paddleocr import PaddleOCR
+
+    device = "gpu" if torch.cuda.is_available() else "cpu"
+    ocr = PaddleOCR(**settings, device=device)
 
     records: list[dict[str, object]] = []
     for pdf_path in pdf_paths:
         print(f"Processing {pdf_path.name}...")
-        pages = convert_from_path(pdf_path, dpi=dpi)
-        for page_number, page in enumerate(pages, start=1):
-            image = np.array(page)[:, :, ::-1].copy()
-            text = normalize_body(pytesseract.image_to_string(image, config="--psm 3"))
+        for page_number, result in enumerate(ocr.predict_iter(str(pdf_path)), start=1):
+            text = _ocr_result_text(result)
             if not text:
+                print(f"Skipping empty OCR page {page_number} in {pdf_path.name}.")
                 continue
 
             records.append(
@@ -195,6 +201,12 @@ def load_or_ocr_pdfs(
     documents = pd.DataFrame(records, columns=DOCUMENT_COLUMNS)
     _save_frame_with_fingerprint(documents, cache_path, fingerprint)
     return documents
+
+
+def _ocr_result_text(result) -> str:
+    """Extract normalized text lines from one PaddleOCR page result."""
+    lines = result.json["res"]["rec_texts"]
+    return normalize_body("\n".join(line.strip() for line in lines if line and line.strip()))
 
 
 def combine_documents(*frames: pd.DataFrame) -> pd.DataFrame:
