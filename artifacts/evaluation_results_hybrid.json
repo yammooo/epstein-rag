@@ -1,152 +1,152 @@
 [
   {
-    "question": "According to German weekly Stern writer Gernot Kramper, where did Steve Bannon establish his European headquarters, and what nickname did business partners give him due to his phenomenal memory?",
-    "gold": "Kramper wrote in Stern that Bannon established his European headquarters in Italy. Because of his phenomenal memory, Bannon's nickname was \"the encyclopedia.\"",
+    "question": "On July 16, 2014, Tyler Shears reported how many negative results existed and what was his stated goal to achieve by the end of the year?",
+    "gold": "Tyler Shears reported three negatives and said the goal was to be clean by end of year, assuming no new negative press appeared.",
     "source_ids": [
-      "HOUSE_OVERSIGHT_025517"
+      "HOUSE_OVERSIGHT_025812"
     ],
-    "rag": "*   **European Headquarters:** According to Kramper, Bannon established his \"European headquarters\" in Italy (Source document IDs: HOUSE_OVERSIGHT_025517, Source document IDs: HOUSE_OVERSIGHT_025528, Source document IDs: HOUSE_OVERSIGHT_025533, Source document IDs: HOUSE_OVERSIGHT_025520, Source document IDs: HOUSE_OVERSIGHT_025533, Source document IDs: HOUSE_OVERSIGHT_025533).\n*   **Nickname:** Business partners gave him the nickname \"the encyclopedia\" because of his phenomenal memory (Source document IDs: HOUSE_OVERSIGHT_025517, Source document IDs: HOUSE_OVERSIGHT_025520, Source document IDs: HOUSE_OVERSIGHT_025533, Source document IDs: HOUSE_OVERSIGHT_025533, Source document IDs: HOUSE_OVERSIGHT_025528, Source document IDs: HOUSE_OVERSIGHT_025520).",
+    "rag": "On July 16, 2014, Tyler Shears reported that there were **3 negatives** today (Source document IDs: HOUSE_OVERSIGHT_025812).\n\nHis stated goal was to get down to **1 negative by mid-September** with a goal of being **clean by end of year** (Source document IDs: HOUSE_OVERSIGHT_025812).",
     "score": 10,
-    "reasoning": "The system answer correctly identifies both the European headquarters location (Italy) and the nickname ('the encyclopedia') as per the gold answer. The information is accurate and faithful to the source. While the system provides multiple source document IDs, it includes the expected one (HOUSE_OVERSIGHT_025517) and does not introduce any factual errors. The extra citations do not harm correctness. Therefore, the answer fully meets the criteria."
+    "reasoning": "The system answer correctly states that Tyler Shears reported 3 negatives and identifies the end-of-year goal of being clean, with the correct source citation. The additional intermediate milestone does not contradict the gold answer and the core facts are accurate and faithful."
   },
   {
-    "question": "On April 20, 2013, Jeffrey Epstein emailed Ehud Barak proposing two meeting times. What were those times, and from which event did Barak say he was free?",
-    "gold": "Jeffrey proposed meeting at 2 and then at Jes office at 4:30. Barak said he was free from Monday's evening event.",
+    "question": "What job did J. Epstein offer Ekaterina, and what were the salary and housing benefits, and when does the current assistant leave?",
+    "gold": "He offered her the role of Sarah's assistant, with a salary of $45,000 per year and an apartment in the building she stayed in. The current assistant, Adriana, is leaving in January to be closer to her husband.",
     "source_ids": [
-      "3ac340832f29c11538fbe2d6f75e8bcc"
+      "f59278350702cda011a0aa4b04a3f08b"
     ],
-    "rag": "Jeffrey Epstein proposed meeting at 2? and then at Jes office at 430? (Source document IDs: 3ac340832f29c11538fbe2d6f75e8bcc, 3ac340832f29c11538fbe2d6f75e8bcc, 3ac340832f29c11538fbe2d6f75e8bcc).\n\nEhud Barak stated he was free from a \"Monday'sevening event\" (Source document IDs: 3ac340832f29c11538fbe2d6f75e8bcc, 3ac340832f29c11538fbe2d6f75e8bcc, 3ac340832f29c11538fbe2d6f75e8bcc).",
-    "score": 10,
-    "reasoning": "The system answer accurately provides the two meeting times (2 and 4:30) and correctly identifies Barak's availability from Monday's evening event, matching the gold answer. The citations are present and match the expected source document ID. Despite minor formatting quirks (question marks), the content is faithful and complete."
+    "rag": "J. Epstein offered Ekaterina a job involving **Adriana**, who is Sarah's assistant, and the role is with a **travel shopping organization** (Source document IDs: 0f5c5d4d0d8579c4527f6629090c585f, f59278350702cda011a0aa4b04a3f08b, 372906963b5d522bca4b476cb00f5c7d).\n\nThe benefits included:\n*   **Salary:** 45,000 per year (Source document IDs: 0f5c5d4d0d8579c4527f6629090c585f, f59278350702cda011a0aa4b04a3f08b, 372906963b5d522bca4b476cb00f5c7d).\n*   **Housing:** An apartment in the building where she stayed (Source document IDs: 0f5c5d4d0d8579c4527f6629090c585f, f59278350702cda011a0aa4b04a3f08b, 372906963b5d522bca4b476cb00f5c7d).\n\nThe current assistant, Adriana, leaves in **January** (Source document IDs: 0f5c5d4d0d8579c4527f6629090c585f, f59278350702cda011a0aa4b04a3f08b, 372906963b5d522bca4b476cb00f5c7d).",
+    "score": 5,
+    "reasoning": "The system answer correctly identifies the salary ($45,000/year), housing (apartment in the building), and the timing of the current assistant's departure (January). However, it inaccurately describes the job itself, stating it is 'with a travel shopping organization' and 'involving Adriana,' whereas the gold answer specifies the role as Sarah's assistant. This is a significant factual error on the core question. The citations are present and include the expected source ID, but the extra IDs and the incorrect job description reduce faithfulness to the source."
   },
   {
-    "question": "Who was leading the EDSA scope, what island designation did the Master Plan cover, and which organization maintained the FTP web site for project designs?",
-    "gold": "J.p. was leading the EDSA scope. The Master Plan covered the island designated as FB-1. The Maguire Group maintained the FTP web site for the project.",
+    "question": "What is the proposed charter term, the repair cost for the LCM 8 in Puerto Rico, and the hourly rate for the General II barge?",
+    "gold": "The proposed charter term is 2 years. The repair cost for the LCM 8 in Puerto Rico is $55,000, and the hourly rate for the General II is $300.",
     "source_ids": [
-      "bc5741df96abf19f6f370920e3bc4938"
+      "d693266b145a5b704064d9adf6d0031a"
     ],
-    "rag": "*   **Who was leading the EDSA scope:** J.p. was leading this (Segment 1, Segment 2).\n*   **What island designation did the Master Plan cover:** The island designated as FB-1 (Segment 1, Segment 2).\n*   **Which organization maintained the FTP web site for project designs:** The Maguire Group (Segment 1, Segment 2).",
+    "rag": "The proposed charter term is 2 years (Source document IDs: d693266b145a5b704064d9adf6d0031a).\nThe repair cost for the LCM 8 in Puerto Rico is $55,000 (Source document IDs: d693266b145a5b704064d9adf6d0031a).\nThe hourly rate for the General II barge is $300 an hour (Source document IDs: d693266b145a5b704064d9adf6d0031a).",
     "score": 10,
-    "reasoning": "The system answer accurately provides all three requested pieces of information matching the gold answer exactly: J.p. led the EDSA scope, the Master Plan covered island FB-1, and the Maguire Group maintained the FTP website. The answer is faithful to the source content and includes segment citations for each fact. No errors or omissions detected."
+    "reasoning": "The system answer accurately and faithfully provides all three requested facts exactly as in the gold answer: the proposed charter term is 2 years, the repair cost is $55,000, and the hourly rate for the General II barge is $300. Each fact is supported by the correct expected source document ID."
   },
   {
-    "question": "Who requested an accounting of how the deposit funds would be used, why did Marshall refuse, and what closing date was Lyn expecting?",
-    "gold": "Jamie asked Marshall for an accounting of how the funds would be used. Marshall refused because it appeared a large portion of the requested advance was for personal reasons based on Lyn's expecting closing on March 31, 2007.",
+    "question": "What internship did Ekaterina Mitr complete and for how long, and what kind of job is she seeking in Moscow?",
+    "gold": "Ekaterina Mitr completed a 3-month internship at Dresdner Bank (investment banking) in Munich. She is seeking a job in the finance field in Moscow and asked J. Epstein for contacts with finance companies there.",
     "source_ids": [
-      "ef94eac560a4814d46cbd864a9983c6e"
+      "87a37dfb42737c66260e44cdd490d7d6"
     ],
-    "rag": "*   **Who requested an accounting of how the deposit funds would be used?** Jamie (Source document IDs: ef94eac560a4814d46cbd864a9983c6e)\n*   **Why did Marshall refuse?** Marshall refused because it appeared that a large portion of the requested advance from the deposit funds were requested for personal reasons (Source document IDs: ef94eac560a4814d46cbd864a9983c6e).\n*   **What closing date was Lyn expecting?** Lyn was expecting the closing to take place on March 31, 2007 (Source document IDs: ef94eac560a4814d46cbd864a9983c6e).",
-    "score": 10,
-    "reasoning": "The system answer accurately identifies Jamie as the requester, explains Marshall's refusal due to personal reasons, and states Lyn's expected closing date of March 31, 2007. The provided source document ID matches the expected one, and the answer is faithful to the gold answer."
-  },
-  {
-    "question": "Why was the meeting between Jeffrey Epstein and Mr. Barak moved to Hotel Raphael, and what time was it scheduled for?",
-    "gold": "The meeting was moved due to security difficulties. It was scheduled for 8:30 p.m. on Tuesday at Hotel Raphael, located at 17 Ave. Kleber, Paris 16.",
-    "source_ids": [
-      "0fccf6efabce3da5a0606a33ffc0e7cb"
-    ],
-    "rag": "The meeting between Jeffrey Epstein and Mr. Barak had to take place in the hotel because of security difficulties (Segment 1). The specific time is not explicitly stated for the move to Hotel Raphael, but one segment mentions a meeting at 8:30 p.m. on Tuesday (Segment 6).\n\n**Source document IDs:**\n*   **Security reason:** 0fccf6efabce3da5a0606a33ffc0e7cb (Segment 1)\n*   **Time:** 0fccf6efabce3da5a0606a33ffc0e7cb (Segment 6)",
-    "score": 10,
-    "reasoning": "The system answer accurately provides the reason (security difficulties) and the time (8:30 p.m. on Tuesday) as per the gold answer. It correctly cites the same source document ID. The slight hedging regarding the time does not detract from the correctness of the answer, as it still states the required time."
-  },
-  {
-    "question": "What was the asking price for the 1998 Bell 430, who was its original owner, and what minimum price did Paul Schrader say he would have asked?",
-    "gold": "The 1998 Bell 430 was listed at $3.9 million. Its original owner was Rite Aid, and Paul Schrader said he would have asked at least $4.2 million.",
-    "source_ids": [
-      "6ebf3648d70b34e1345b6fc3b2d25f37"
-    ],
-    "rag": "The asking price for the 1998 Bell 430 was $3.9 million (Source document IDs: 6ebf3648d70b34e1345b6fc3b2d25f37).\nThe original owner of the Bell 430 was Rite Aid (Source document IDs: 6ebf3648d70b34e1345b6fc3b2d25f37).\nPaul Schrader said he would have asked at least $4.2M (Source document IDs: 6ebf3648d70b34e1345b6fc3b2d25f37).",
-    "score": 10,
-    "reasoning": "The System Answer accurately provides all requested details matching the Gold Answer: asking price of $3.9 million, original owner Rite Aid, and Paul Schrader's minimum asking price of at least $4.2 million. It is faithful to the source and includes the correct source document ID for each claim."
-  },
-  {
-    "question": "On Jan 20, 2017, David Grosof said Jonathan Victor had met the recipient in their office years ago. What connection does Reese Jones have to Singularity University?",
-    "gold": "Jonathan Victor met the recipient in the recipient's office a few years ago. Reese Jones is one of the founders of Singularity University and serves on its board; he also backed apps that claim to play music to enhance productivity and focus.",
-    "source_ids": [
-      "HOUSE_OVERSIGHT_025185"
-    ],
-    "rag": "David Grosof stated that Reese Jones is on the board of Singularity University as one of the founders (Source document IDs: HOUSE_OVERSIGHT_025180, HOUSE_OVERSIGHT_029085, HOUSE_OVERSIGHT_025169, HOUSE_OVERSIGHT_025185, HOUSE_OVERSIGHT_025176).",
+    "rag": "Ekaterina Mitr completed an internship at Dresdner bank (investment banking) in Munich for 3 months (Source document IDs: c6ed95f50137500f2bcc52cfa5c7f1fe, b425bdaee7067575326d15501664c28b, 8b1a9953c4611296a827abf8c47804d7, dadebbb42799a2154afa8b1cc3faef2c, 87a37dfb42737c66260e44cdd490d7d6, c6ed95f50137500f2bcc52cfa5c7f1fe, 8b1a9953c4611296a827abf8c47804d7, 8b1a9953c4611296a827abf8c47804d7). She is seeking a job in the finance field in Moscow (Source document IDs: c6ed95f50137500f2bcc52cfa5c7f1fe, b425bdaee7067575326d15501664c28b, 8b1a9953c4611296a827abf8c47804d7, dadebbb42799a2154afa8b1cc3faef2c, 87a37dfb42737c66260e44cdd490d7d6, c6ed95f50137500f2bcc52cfa5c7f1fe, 8b1a9953c4611296a827abf8c47804d7, 8b1a9953c4611296a827abf8c47804d7).",
     "score": 9,
-    "reasoning": "The system answer accurately identifies the core connection: Reese Jones is a founder and board member of Singularity University, which matches the gold answer's primary statement. It includes the expected source ID (HOUSE_OVERSIGHT_025185) among its citations, demonstrating correct sourcing. A minor deduction is applied because the system omits the additional detail about backing productivity apps, and it attributes the statement to David Grosof, which is not present in the gold answer but may be faithful to the source context. Overall, the answer is factually correct, faithful, and properly cited, with only a slight incompleteness."
+    "reasoning": "The system answer accurately and faithfully matches the gold answer, correctly identifying the 3-month internship at Dresdner Bank in investment banking in Munich and the finance job search in Moscow. The response includes citations, though they are over-included with duplicates and not precisely aligned with the expected source ID, which slightly reduces the citation quality. Overall, the content is highly accurate and complete."
   },
   {
-    "question": "What was Morgan Stanley's revised price target for Apple, and how many iPhone shipments did they model for the June 2019 quarter?",
-    "gold": "Morgan Stanley lowered its price target for Apple to $231 from $240. They modeled 37 million iPhone shipments in the June quarter.",
+    "question": "In the email sent by jeffrey on July 13, 2018, what was said about the SPY trades, what was the one-day dip percentage, and which company was referenced?",
+    "gold": "The email said the SPY trades were the results of a rank amateur, mentioned a one-day dip of 25%, and referenced Broadcom.",
     "source_ids": [
-      "HOUSE_OVERSIGHT_033362"
+      "HOUSE_OVERSIGHT_031806"
     ],
-    "rag": "Morgan Stanley's revised price target (PT) for Apple was $231 (down from $240) (Source document IDs: HOUSE_OVERSIGHT_033362). They modeled 37M iPhone shipments in the June quarter (Source document IDs: HOUSE_OVERSIGHT_033362).",
+    "rag": "The following details were provided regarding the email sent by Jeffrey on July 13, 2018:\n\n*   **SPY Trades:** The spy trades were described as the results of a \"rank amateur\" (Source document IDs: HOUSE_OVERSIGHT_033097, HOUSE_OVERSIGHT_031806, HOUSE_OVERSIGHT_031809, HOUSE_OVERSIGHT_031813, HOUSE_OVERSIGHT_031818).\n*   **One-Day Dip Percentage:** The one-day dip was 25% (Source document IDs: HOUSE_OVERSIGHT_033097, HOUSE_OVERSIGHT_031806, HOUSE_OVERSIGHT_031809, HOUSE_OVERSIGHT_031813, HOUSE_OVERSIGHT_031818).\n*   **Referenced Company:** Broadcom was referenced (Source document IDs: HOUSE_OVERSIGHT_033097, HOUSE_OVERSIGHT_031806, HOUSE_OVERSIGHT_031809, HOUSE_OVERSIGHT_031813, HOUSE_OVERSIGHT_031818).",
     "score": 10,
-    "reasoning": "The system answer exactly matches the gold answer in terms of the revised price target ($231 from $240) and the modeled iPhone shipments (37 million). It also provides the correct source document ID (HOUSE_OVERSIGHT_033362), matching the expected citations. The response is accurate, faithful, and properly cited."
+    "reasoning": "The System Answer accurately and faithfully reproduces all three required pieces of information from the Gold Answer: the SPY trades were described as 'rank amateur', the one-day dip was 25%, and Broadcom was referenced. It also provides citations that include the expected source document ID (HOUSE_OVERSIGHT_031806). The extra source IDs do not detract from correctness, and the answer is complete and consistent with the gold answer."
   },
   {
-    "question": "At what time on February 15, 2008, was Darren's meeting with DPNR's attorney Brathwait, and what purported violation was the meeting about?",
-    "gold": "Darren's meeting with DPNR's attorney Brathwait was at 2:00 pm on February 15, 2008. It concerned a purported violation for the intake line and barge landing bulkhead.",
+    "question": "According to the email correspondence, what website did Emad Hanna initially reference, which website did Jeffrey Epstein correct it to, and what was the approximate cost of the Rhino parts before shipping?",
+    "gold": "Emad Hanna initially referenced www.yamahasportscenter.com, but Jeffrey Epstein corrected it to www.Yamaharhino.com. The cost was around $800 before shipping.",
     "source_ids": [
-      "48c5b960e5aace433894b9c063691574"
+      "e9ac1adf0f890edd2722db26714f1a04"
     ],
-    "rag": "The meeting with DPNR's Atty (Brathwait) on February 15, 2008, was at 2:00 pm, and it was regarding a purported violation for the intake line and barge landing bulkhead (Source document IDs: 48c5b960e5aace433894b9c063691574).",
+    "rag": "*   **Initial Website Reference:** Emad Hanna initially referenced `www.yamahasportscenter.com` (Source document IDs: 53d2b1f8a92628dab90393e39e66416d, e6ee137f9a5535e0c4aa52e7131cb44f, e9ac1adf0f890edd2722db26714f1a04, 4 attachments).\n*   **Corrected Website:** Jeffrey Epstein corrected it to `www.Yamaharhino.com` (Source document IDs: 53d2b1f8a92628dab90393e39e66416d, e9ac1adf0f890edd2722db26714f1a04, 4 attachments).\n*   **Approximate Cost:** The cost was around $800 before shipping (Source document IDs: 53d2b1f8a92628dab90393e39e66416d, e6ee137f9a5535e0c4aa52e7131cb44f, e9ac1adf0f890edd2722db26714f1a04).",
     "score": 10,
-    "reasoning": "The System Answer correctly provides the exact time (2:00 pm) and the purported violation (intake line and barge landing bulkhead) as per the Gold Answer. It also includes the correct source document ID, matching the expected citation. The response is accurate, faithful, and properly cited."
+    "reasoning": "The system answer accurately provides all required details matching the gold answer: the initial website (www.yamahasportscenter.com), the corrected website (www.Yamaharhino.com), and the approximate cost ($800). It also includes relevant source document IDs, including the expected one (e9ac1adf0f890edd2722db26714f1a04). No inaccuracies or omissions are present."
   },
   {
-    "question": "How many satellites did Orbital Sciences launch on November 19th, how many did Kosmotras launch 30 hours later, and what was the cost of the cheapest chipsat mentioned?",
-    "gold": "Orbital Sciences launched 29 satellites on November 19th, and Kosmotras launched 32 satellites thirty hours later. The cheapest chipsat so far was assembled for just $25.",
+    "question": "In the exchange about Ranch Lake IV, which entity was the record owner, which entity was its managing member, which entity was the managing member of Barretta, and what reimbursement amount was expected from the forest service agencies?",
+    "gold": "Ranch Lake IV was the record owner. Barretta LLC was its managing member, and Wexner Personal Holdings Corp. was the managing member of Barretta. The expected reimbursement from the forest service agencies was about $14,000.",
     "source_ids": [
-      "HOUSE_OVERSIGHT_028508"
+      "fe07468c2537b437de41f97d615c048a"
     ],
-    "rag": "*   **Orbital Sciences launch (Nov 19th):** 29 satellites (Source document IDs: HOUSE_OVERSIGHT_028508)\n*   **Kosmotras launch (30 hours later):** 32 satellites (Source document IDs: HOUSE_OVERSIGHT_028508)\n*   **Cost of the cheapest chipsat:** $25 (Source document IDs: HOUSE_OVERSIGHT_028508)",
+    "rag": "The record owner of Ranch Lake IV was explained to be **Ranch Lake 1V** (Source document IDs: fe07468c2537b437de41f97d615c048a).\n\nThe managing member of Ranch Lake IV was stated to be **Barretta LLC** (Source document IDs: fe07468c2537b437de41f97d615c048a).\n\nThe managing member of Barretta was **Wexner Personal Holdings Corp** (Source document IDs: fe07468c2537b437de41f97d615c048a).\n\nThe expected reimbursement amount from the forest service agencies was about **$14 thousand dollars** (Source document IDs: fe07468c2537b437de41f97d615c048a).",
+    "score": 4,
+    "reasoning": "The system answer contains a significant error in the first statement. It claims that 'the record owner of Ranch Lake IV was Ranch Lake 1V', whereas the gold answer states that 'Ranch Lake IV was the record owner'. This reverses the relationship and also misspells 'IV' as '1V'. The other details (managing member of Ranch Lake IV as Barretta LLC, managing member of Barretta as Wexner Personal Holdings Corp, and the reimbursement amount of $14,000) are correctly provided. However, the core factual error about the record owner reduces the accuracy and faithfulness of the response. The citations are present but do not correct the misunderstanding."
+  },
+  {
+    "question": "What did the email say had replaced 'convicted sex offender' in the Wikipedia headline, and what was the $2,500 payment to Mike for?",
+    "gold": "The Wikipedia headline had been changed to mention philanthropic work, Epstein Foundation, and promotion of scientists instead of 'convicted sex offender.' The $2,500 payment was applied toward purchasing replacement servers, with a $7,500 balance still due.",
+    "source_ids": [
+      "HOUSE_OVERSIGHT_022230"
+    ],
+    "rag": "The email mentioned that the first images that come of Jeffrey Epstein on a Google search were not of his mug shot, etc. (Source document IDs: HOUSE_OVERSIGHT_022223, HOUSE_OVERSIGHT_022230, HOUSE_OVERSIGHT_022216).\n\nThe $2,500 payment to Mike was for the purchasing of his replacement servers (Source document IDs: HOUSE_OVERSIGHT_022223, HOUSE_OVERSIGHT_022226, HOUSE_OVERSIGHT_022230, HOUSE_OVERSIGHT_022216).",
+    "score": 2,
+    "reasoning": "The system answer fails to address the first part of the question about what replaced 'convicted sex offender' in the Wikipedia headline, instead providing irrelevant information about Google search images. The second part correctly identifies the payment for replacement servers, but omits the balance due and uses incorrect source IDs. Overall, the answer is inaccurate and not faithful to the gold answer."
+  },
+  {
+    "question": "What did the storyteller claim about Clinton at the island dinner, who flew the black helicopter, and what did the account say about Clinton's actual presence?",
+    "gold": "The storyteller claimed Clinton sat on her left at the dinner on the island and arrived by black helicopter flown by Ghislaine. It said Clinton was never ever there, and this was said to punch a hole in the Andrew Dershowitz allegation.",
+    "source_ids": [
+      "HOUSE_OVERSIGHT_022660"
+    ],
+    "rag": "The storyteller claimed the following regarding the island dinner:\n*   **Seating:** \"he sat on my left\" (Source document IDs: HOUSE_OVERSIGHT_022831, HOUSE_OVERSIGHT_022665, HOUSE_OVERSIGHT_022824, HOUSE_OVERSIGHT_022663)\n*   **Black Helicopter:** The black helicopter was flown by Ghislaine (Source document IDs: HOUSE_OVERSIGHT_022831, HOUSE_OVERSIGHT_022665, HOUSE_OVERSIGHT_022824, HOUSE_OVERSIGHT_022663).\n*   **Clinton's Presence:** The account stated that \"clinton was NEVER EVER there, never\" (Source document IDs: HOUSE_OVERSIGHT_022831, HOUSE_OVERSIGHT_022665, HOUSE_OVERSIGHT_022824, HOUSE_OVERSIGHT_022663).\n\nAdditionally, other sources mention:\n*   The storyteller's first affidavit stated she claimed that \"former President Bill Clinton was present on the island [Jeffrey Epstein's private island] at a time when [Jane Doe #3] was also present on the Island\" (Source document IDs: HOUSE_OVERSIGHT_029225).\n*   Another account mentioned that \"Bill had the Secret Service with him\" (Source document IDs: HOUSE_OVERSIGHT_029225).",
+    "score": 6,
+    "reasoning": "The system answer correctly identifies the storyteller's claims about seating, the black helicopter flown by Ghislaine, and the assertion that Clinton was never present, matching the gold answer's core facts. However, it fails to cite the expected source document (HOUSE_OVERSIGHT_022660) and instead cites different document IDs, which undermines citation accuracy. Additionally, it omits the gold answer's note about the claim being used to punch a hole in the Dershowitz allegation. While the content is largely faithful, the incorrect citations and minor omission reduce the score."
+  },
+  {
+    "question": "Under the PATH Act signed on December 18, 2015, what is the new ownership threshold for foreign investors in publicly traded REITs without triggering FIRPTA tax, and what is the increased FIRPTA withholding rate for most dispositions after the 60th day following enactment?",
+    "gold": "The PATH Act increased the FIRPTA exemption threshold for foreign investors in publicly traded REITs from 5% to 10% ownership. It also raised the FIRPTA withholding rate from 10% to 15% for dispositions occurring after the 60th day following enactment, while maintaining 10% for residential property sales between $300,000 and $1,000,000.",
+    "source_ids": [
+      "HOUSE_OVERSIGHT_026829"
+    ],
+    "rag": "The new ownership threshold for foreign investors in publicly traded REITs without triggering FIRPTA tax is up to 10 percent, which is an increase from the prior 5 percent threshold (Source document IDs: HOUSE_OVERSIGHT_026829, HOUSE_OVERSIGHT_026829).\n\nThe increased FIRPTA withholding rate for purchasers of a U.S. real property interest from a non-U.S. person, for dispositions occurring after the 60th day following enactment, is 15 percent (Source document IDs: HOUSE_OVERSIGHT_026829, HOUSE_OVERSIGHT_026829).",
     "score": 10,
-    "reasoning": "The system answer exactly matches the gold answer in all key facts: Orbital Sciences launched 29 satellites, Kosmotras launched 32 satellites, and the cheapest chipsat cost $25. It also correctly cites the expected source document ID, demonstrating accurate retrieval and faithful response without any errors or unsupported claims."
+    "reasoning": "The system answer accurately provides the new ownership threshold (10%) and the increased FIRPTA withholding rate (15%) for dispositions after the 60th day, matching the gold answer. It also includes correct source citations. The response is faithful to the question and complete, with no omissions or inaccuracies."
   },
   {
-    "question": "According to Jeffrey E.'s review, what clarification should the reporter make about the young women, and what did Jeffrey E. say about the $50 million lawsuit involving VR?",
-    "gold": "Jeffrey E. said the reporter should clarify that the young women at Michael Wolff's house and later on his plane were comely but clearly not underage. He also said the $50 million VR lawsuit against Michael Wolff was not true—the case was over—and any denial should be limited to Clinton and Gore.",
+    "question": "Which virtual world platform did Ben Goertzel describe as free and open-source, and which robotics simulator did he suggest integrating into such a platform?",
+    "gold": "Ben Goertzel described OpenSim as free and open-source. He suggested integrating a robotics simulator like Player into a virtual world like OpenSim.",
     "source_ids": [
-      "HOUSE_OVERSIGHT_030751"
+      "2ea73f24de364c721502984bf93597b3"
     ],
-    "rag": "According to Jeffrey E.'s review, the reporter should clarify that the young women at his house (and later on his plane) are comely but clearly not underage (Source document IDs: HOUSE_OVERSIGHT_030751).\n\nRegarding the $50 million lawsuit involving VR, Jeffrey E. noted that \"he writes that VR is now suing you for 50M not true case over\" (Source document IDs: HOUSE_OVERSIGHT_030751, HOUSE_OVERSIGHT_030751).",
+    "rag": "The virtual world platform Ben Goertzel described as free and open-source is **OpenSim** ([Segment 1], [Segment 2]).\n\nHe suggested integrating a robotic simulator like **Player** into a virtual world (like OpenSim) ([Segment 2]).",
+    "score": 10,
+    "reasoning": "The System Answer accurately identifies OpenSim as the free and open-source virtual world platform and correctly states that Ben Goertzel suggested integrating a robotics simulator like Player. It is faithful to the Gold Answer and includes relevant citations."
+  },
+  {
+    "question": "Which sitting president was named as an unindicted co-conspirator in a criminal indictment, which judge sustained that inclusion, and in what Supreme Court case did the United States defend it?",
+    "gold": "Richard Nixon was named as an unindicted co-conspirator in the Watergate indictment. Judge John Sirica sustained that inclusion, and the United States defended it in United States v. Nixon.",
+    "source_ids": [
+      "HOUSE_OVERSIGHT_030200"
+    ],
+    "rag": "*   **Sitting President Named as Unindicted Co-conspirator:** Richard Nixon (Source document IDs: HOUSE_OVERSIGHT_030200)\n*   **Judge Who Sustained Inclusion:** Judge John Sirica (Source document IDs: HOUSE_OVERSIGHT_030200)\n*   **Supreme Court Case Where U.S. Defended It:** *United States v. Nixon* (Source document IDs: HOUSE_OVERSIGHT_030200)",
+    "score": 10,
+    "reasoning": "The System Answer accurately and completely matches the Gold Answer, correctly identifying Richard Nixon as the sitting president, Judge John Sirica as the judge who sustained the inclusion, and United States v. Nixon as the Supreme Court case. The citation to HOUSE_OVERSIGHT_030200 is also correct and matches the expected source document."
+  },
+  {
+    "question": "Who sent an email on February 16, 2017, to Reid Weingarten with a Politico link about Alexander Acosta, Donald Trump, and Jeffrey Epstein's plea?",
+    "gold": "Jeffrey E. (jeevacation@gmail.com) sent the email to Reid Weingarten on February 16, 2017. The email included a Politico link about Alexander Acosta, Donald Trump, and Jeffrey Epstein's plea.",
+    "source_ids": [
+      "HOUSE_OVERSIGHT_032054"
+    ],
+    "rag": "Jeffrey E. sent an email on February 16, 2017, to Weingarten, Reid with a Politico link about Alexander Acosta, Donald Trump, and Jeffrey Epstein's plea. (Source document IDs: HOUSE_OVERSIGHT_032056, HOUSE_OVERSIGHT_032054)",
     "score": 8,
-    "reasoning": "The system answer accurately identifies the clarification about the young women (comely but not underage) and correctly states that Jeffrey E. said the $50 million lawsuit is not true and the case is over. It also cites the correct source document. However, it omits the additional detail from the gold answer that any denial should be limited to Clinton and Gore, which is a relevant part of Jeffrey E.'s statement about the lawsuit. This omission makes the answer slightly incomplete, but it remains faithful and accurate for the core aspects."
+    "reasoning": "The system answer correctly identifies the sender as Jeffrey E. and includes the key details about the email (date, recipient, and topic). However, it omits the sender's email address (jeevacation@gmail.com) that is present in the gold answer, which is a relevant piece of information for fully identifying the sender. Additionally, the system provides extra source IDs beyond the expected one, though the correct ID is included. Overall, the answer is accurate and faithful but incomplete in a minor detail."
   },
   {
-    "question": "By what date did J. Epstein demand a wind power analysis, and what did John Amerling identify as the primary problem with wind generation in the Territory, including who promised to address it?",
-    "gold": "J. Epstein demanded the wind power analysis no later than May 15. John Amerling identified the primary problem as wind towers not being a permitted use in any zone in the Territory, and said the Governor promised to rectify that before the end of the year.",
+    "question": "What were the initial payment amounts for the DHS pilot license and Pfizer's first Chiliad license purchase?",
+    "gold": "The DHS pilot license cost $1.5 million, and Pfizer's first license purchase was worth $400,000.",
     "source_ids": [
-      "8d77193a6299d1e29b49c8d2a18f9588"
+      "cc90a281dfea4481c195f52f1844e96a"
     ],
-    "rag": "J. Epstein demanded a wind power analysis no later than May 15 (Source document IDs: bf9eb3233400e2e5880c8ee5f0147ec8, 8d77193a6299d1e29b49c8d2a18f9588, c7f4126324effa82edbd38c5f9dcf94d, 8d77193a6299d1e29b49c8d2a18f9588, 8d77193a6299d1e29b49c8d2a18f9588).\n\nJohn Amerling identified the primary problem with wind generation in the Territory as that wind towers are not a permitted use in any zone (Source document IDs: bf9eb3233400e2e5880c8ee5f0147ec8, 8d77193a6299d1e29b49c8d2a18f9588). The Governor promised to rectify this before the end of that year in the energy conference (Source document IDs: bf9eb3233400e2e5880c8ee5f0147ec8, 8d77193a6299d1e29b49c8d2a18f9588).",
+    "rag": "The initial payment for the DHS pilot license was **$1.5M** (Source document IDs: 7b92d0405e65350431a84b77db52748e, cc90a281dfea4481c195f52f1844e96a).\n\nPfizer's first Chiliad license purchase was worth **$400,000** (Source document IDs: 7b92d0405e65350431a84b77db52748e, cc90a281dfea4481c195f52f1844e96a, 00fcc4f4e1eb874616afdbd5925a2224).",
     "score": 8,
-    "reasoning": "The system answer accurately provides the key facts from the gold answer: J. Epstein demanded the analysis by May 15, John Amerling identified that wind towers are not a permitted use in any zone, and the Governor promised to rectify the issue before the end of the year. The expected source ID is included. However, the answer includes several extra and duplicated source document IDs beyond the expected single source, and it adds the detail 'in the energy conference' that is not present in the gold answer, warranting a minor deduction for citation precision and strict faithfulness."
+    "reasoning": "The System Answer accurately and faithfully provides both requested amounts: $1.5M for the DHS pilot license and $400,000 for Pfizer's first Chiliad license purchase. It includes the expected source document ID, cc90a281dfea4481c195f52f1844e96a. However, it also cites additional source document IDs beyond the expected set, which introduces some citation imprecision even if the factual content is correct."
   },
   {
-    "question": "On May 9, 2008, William Rowles of which company sent Darren Indyke an updated schedule with what attachment filename?",
-    "gold": "William Rowles of Lafayette Contractors, LLC sent the updated schedule. The attachment was named LSJMasterScheduleRev09May08.mpp.",
+    "question": "InfoSpan sought $540 million in damages after Emirates NBD ended their partnership for which mobile payment system, and who represented the bank as former White House counsel?",
+    "gold": "InfoSpan sought $540 million in damages after Emirates NBD ended their partnership for SpanCash. Kathryn Ruemmler, former White House counsel to President Obama and a Latham & Watkins partner, represented the bank.",
     "source_ids": [
-      "a8fe7c1f7482fb176fc15e7bd89551b8"
+      "HOUSE_OVERSIGHT_012037"
     ],
-    "rag": "William Rowles of Lafayette Contractors, LLC sent Darren Indyke an updated schedule with the attachment filename LSJMasterScheduleRev09May08.mpp (Source document IDs: a8fe7c1f7482fb176fc15e7bd89551b8).",
-    "score": 10,
-    "reasoning": "The System Answer accurately identifies both the company, Lafayette Contractors, LLC, and the attachment filename, LSJMasterScheduleRev09May08.mpp, exactly matching the Gold Answer. It also provides the correct source document ID, matching the expected citation. The response is faithful, complete, and correctly cited."
-  },
-  {
-    "question": "What annual salary and contract term were proposed for Caroline Poznanski, and what prior lawsuit amount did Nathalie report from Next when she left for Elite?",
-    "gold": "Caroline's contract called for a salary of $250,000 per year with a 1-year term subject to auto-renewal. Nathalie said Next sued her when she left to work for Elite, and the legal bill amounted to approximately $70,000 even though she ultimately prevailed.",
-    "source_ids": [
-      "4f4dde3e4d531f89b5bb8e3046df9aa4"
-    ],
-    "rag": "The proposed annual salary for Caroline Poznanski was **$250,000** per year, and the contract term with E NY was **1 year** subject to autorenewal (Source document IDs: 4f4dde3e4d531f89b5bb8e3046df9aa4).\n\nNathalie reported that the legal bill when she sued after leaving for Elite amounted to approximately **$70,000** (Source document IDs: 4f4dde3e4d531f89b5bb8e3046df9aa4).",
-    "score": 9,
-    "reasoning": "The System Answer correctly provides the proposed salary of $250,000, the 1-year contract term with auto-renewal, and the reported $70,000 legal bill. It also includes the correct source document ID. However, it slightly misstates the lawsuit direction by saying 'when she sued' instead of 'Next sued her,' and omits the detail that Nathalie ultimately prevailed. These are minor accuracy issues, so a small deduction applies."
-  },
-  {
-    "question": "Which two researchers are linked to the two different project objectives for pattern-recognition models, and what are their respective institutions?",
-    "gold": "Yann LeCun, at Courant, is aligned with the most successful pattern-recognition model, while Misha Tsodyks, at the Weizmann Institute, is aligned with the most biologically accurate model.",
-    "source_ids": [
-      "ec65abcca7f581f39a090551045e5430"
-    ],
-    "rag": "The two researchers linked to the two different project objectives for pattern-recognition models are:\n\n1. **Yann LeCun:** Linked to objective (1), the most successful pattern-recognition model. His institution is Courant Institute, NYU (Source document IDs: ec65abcca7f581f39a090551045e5430).\n2. **Misha Tsodyks:** Linked to objective (2), the most biologically accurate pattern-recognition model. His institution is the Weizmann Institute (Source document IDs: ec65abcca7f581f39a090551045e5430).",
-    "score": 10,
-    "reasoning": "The system answer correctly identifies both researchers (Yann LeCun and Misha Tsodyks), their respective institutions (Courant and Weizmann Institute), and their alignment with the two project objectives (most successful vs. most biologically accurate pattern-recognition models). It also provides the correct source document ID, matching the expected citation. The response is accurate, faithful to the gold answer, and properly cited."
+    "rag": "InfoSpan sought $540 million in damages after Emirates NBD ended their partnership for a mobile payment system (Source document IDs: HOUSE_OVERSIGHT_026005, HOUSE_OVERSIGHT_012037, HOUSE_OVERSIGHT_030101, HOUSE_OVERSIGHT_030098, HOUSE_OVERSIGHT_030105).\n\nThe former White House counsel to President Obama was among the high-profile attorneys involved in the trial, but the source segments do not specify which attorney represented the bank (Source document IDs: HOUSE_OVERSIGHT_012037, HOUSE_OVERSIGHT_030101, HOUSE_OVERSIGHT_030098, HOUSE_OVERSIGHT_030105).",
+    "score": 2,
+    "reasoning": "The system answer fails to provide the specific mobile payment system name (SpanCash) and incorrectly claims the attorney representing the bank is not specified, whereas the gold answer identifies Kathryn Ruemmler. The citations are also inaccurate, listing multiple source IDs instead of the expected HOUSE_OVERSIGHT_012037. The response is incomplete and not faithful to the gold answer."
   }
 ]

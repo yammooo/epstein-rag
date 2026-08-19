@@ -232,25 +232,24 @@ def load_or_ocr_pdfs(
     pdf_dir: Path,
     cache_path: Path,
     force: bool = False,
-    dpi: int = 300,
 ) -> pd.DataFrame:
-    """Extract page text from PDF files via Tesseract OCR, cached with file fingerprinting.
-
-    Renders each PDF page to an image, executes PyTesseract optical character recognition,
-    normalizes the extracted body text, and produces document records for each valid page.
-    Automatically invalidates cache if input PDFs or rendering settings change.
-
-    Args:
-        pdf_dir: Directory containing input '.pdf' files.
-        cache_path: Path to Parquet cache file.
-        force: If True, bypass cache and re-run OCR execution.
-        dpi: Image rendering resolution for pdf2image conversion (default 300).
-
-    Returns:
-        pd.DataFrame: DataFrame conforming to DOCUMENT_COLUMNS with source_type='pdf'.
-    """
+    """OCR PDFs with layout-aware PP-OCRv6 into one record per page."""
     pdf_paths = sorted(pdf_dir.glob("*.pdf")) if pdf_dir.exists() else []
-    fingerprint = _files_fingerprint(pdf_paths, {"dpi": dpi})
+    settings = {
+        "text_detection_model_name": "PP-OCRv6_medium_det",
+        "text_recognition_model_name": "PP-OCRv6_medium_rec",
+        "engine": "transformers",
+        "use_doc_orientation_classify": False,
+        "use_doc_unwarping": False,
+        "use_textline_orientation": False,
+        "use_seal_recognition": False,
+        "use_table_recognition": False,
+        "use_formula_recognition": False,
+        "use_chart_recognition": False,
+        "use_region_detection": True,
+        "format_block_content": False,
+    }
+    fingerprint = _files_fingerprint(pdf_paths, {"pipeline": "PPStructureV3", **settings})
     cached = _load_frame_if_current(cache_path, fingerprint, force)
     if cached is not None:
         return cached
@@ -258,19 +257,19 @@ def load_or_ocr_pdfs(
     if not pdf_paths:
         return pd.DataFrame(columns=DOCUMENT_COLUMNS)
 
-    import cv2
-    import numpy as np
-    import pytesseract
-    from pdf2image import convert_from_path
+    import torch
+    from paddleocr import PPStructureV3
+
+    device = "gpu" if torch.cuda.is_available() else "cpu"
+    ocr = PPStructureV3(**settings, device=device)
 
     records: list[dict[str, object]] = []
     for pdf_path in pdf_paths:
         print(f"Processing {pdf_path.name}...")
-        pages = convert_from_path(pdf_path, dpi=dpi)
-        for page_number, page in enumerate(pages, start=1):
-            image = np.array(page)[:, :, ::-1].copy()
-            text = normalize_body(pytesseract.image_to_string(image, config="--psm 3"))
+        for page_number, result in enumerate(ocr.predict(str(pdf_path)), start=1):
+            text = _ocr_result_text(result)
             if not text:
+                print(f"Skipping empty OCR page {page_number} in {pdf_path.name}.")
                 continue
 
             records.append(
@@ -290,6 +289,48 @@ def load_or_ocr_pdfs(
     documents = pd.DataFrame(records, columns=DOCUMENT_COLUMNS)
     _save_frame_with_fingerprint(documents, cache_path, fingerprint)
     return documents
+
+
+def _ocr_result_text(result) -> str:
+    """Order every OCR line by layout region, ignoring region labels."""
+    data = result.json["res"]
+    ocr = data["overall_ocr_res"]
+    texts = ocr["rec_texts"]
+    boxes = ocr.get("rec_boxes", [])
+    lines = [
+        (text.strip(), list(map(float, box)))
+        for text, box in zip(texts, boxes)
+        if text and text.strip()
+    ]
+    blocks = [
+        list(map(float, block["block_bbox"]))
+        for block in data.get("parsing_res_list", [])
+    ]
+
+    if not lines or not blocks:
+        return normalize_body("\n".join(text.strip() for text in texts if text and text.strip()))
+
+    grouped: list[list[tuple[list[float], str]]] = [[] for _ in blocks]
+    for text, box in lines:
+        center_x = (box[0] + box[2]) / 2
+        center_y = (box[1] + box[3]) / 2
+
+        def distance(block):
+            dx = max(block[0] - center_x, 0, center_x - block[2])
+            dy = max(block[1] - center_y, 0, center_y - block[3])
+            area = (block[2] - block[0]) * (block[3] - block[1])
+            return dx * dx + dy * dy, area
+
+        grouped[min(range(len(blocks)), key=lambda index: distance(blocks[index]))].append(
+            (box, text)
+        )
+
+    paragraphs = [
+        " ".join(text for _, text in sorted(group, key=lambda line: (line[0][1], line[0][0])))
+        for group in grouped
+        if group
+    ]
+    return normalize_body("\n\n".join(paragraphs))
 
 
 def combine_documents(*frames: pd.DataFrame) -> pd.DataFrame:
