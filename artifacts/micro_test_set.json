@@ -1,129 +1,129 @@
 [
   {
-    "question": "Jeffrey Epstein was indicted on which charge at age 53, and which 48-year-old police chief did his lawyers blame for the case?",
-    "answer": "Epstein was indicted on felony solicitation of prostitution at age 53. His lawyers blamed Palm Beach Police Chief Michael Reiter, 48, for the case.",
+    "question": "What category and type are listed for every entry on pages 257 through 310?",
+    "answer": "Every entry is categorized as 'OTHER' and lists 'Court Sealing Order'.",
     "source_ids": [
-      "pdf:Jeffrey Epstein Part 01 of 08:p22"
+      "pdf:Jeffrey Epstein Part 01 of 08:p5"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "What tasks did Ghislaine Maxwell say her job involved, and what did she say about construction projects in 1992?",
-    "answer": "She said her job entailed running the homes and overseeing construction, including hiring architects and builders, reviewing contracts, and coordinating building projects. She also stated that in 1992 there was no construction project, but construction projects began after that time.",
+    "question": "Which three page numbers between 54 and 64 list b7D with a -2 subnumber, and which two of those also list b7D with a -1 subnumber?",
+    "answer": "Between pages 54 and 64, b7D - 2 appears on pages 58, 63, and 64. Of those, pages 58 and 63 also have b7D - 1.",
     "source_ids": [
-      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p13"
+      "pdf:Jeffrey Epstein Part 01 of 08:p2"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "According to the index, what are the first listed page and line numbers for the words 'unethical' and 'various'?",
-    "answer": "Unethical appears on page 182, line 21. Various appears on page 12, line 19.",
+    "question": "What job positions did Maxwell say she helped fill at the house, and what did she claim about the ages of the people she met for these roles?",
+    "answer": "Maxwell said she helped fill positions such as pool, gardener, chef, and exercise instructor. She claimed that all the people she met to work at the house were adults over the age of 18.",
     "source_ids": [
-      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p461"
+      "pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p247"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "What two work orders for LSJ did McGuire ask Darren Indyke to sign, and who approved both before Indyke sought Epstein's approval?",
-    "answer": "McGuire asked Indyke to sign work orders for a Master Plan and Site Utilities (water and power) with a $127,454 budget, and for General Civil Engineering Services for an Environmental Assessment Report with a $12,000 budget. Doug Schoettle approved both work orders.",
+    "question": "According to Darren Indyke, which two work orders for LSJ did McGuire want signed, and what were their estimated fee and disbursement budgets?",
+    "answer": "The two work orders were Master Plan and Site Utilities (Water and Power) with an estimated budget of $127,454.00, and General Civil Engineering Services for Environmental Assessment Report and Updates thereto with an estimated budget of $12,000. Doug Schoettle approved both work orders and asked Indyke to sign them.",
     "source_ids": [
       "3085adf8cf97d680f50d22626d8fcc40"
     ],
     "source_type": "email"
   },
   {
-    "question": "What percentage discount is offered for the 26-week digital subscription, and at what exact time and date does the sale expire?",
-    "answer": "The discount is 50% off for a 26-week digital subscription. The sale expires at 9 a.m. ET on February 19, 2014.",
+    "question": "What discount is offered for a 26-week digital subscription, and at what exact time does the sale expire on February 19, 2014?",
+    "answer": "The email offers a 50% discount for a 26-week digital subscription, and the sale expires on February 19, 2014, at 9 a.m. E.T.",
     "source_ids": [
       "af8704adccb9f628d70b7a89f63a3629"
     ],
     "source_type": "email"
   },
   {
-    "question": "Due to a friend's tooth problem, what altitude was requested for the Friday flight, and what speed could the Hawker fly at 10,000 feet?",
-    "answer": "The flight was initially requested at 5,000 or 7,000 feet. At 10,000 feet, the Hawker could fly at 310 knots.",
+    "question": "Why was a flight needed for Friday, and what speed restriction applied if the aircraft flew below 10,000 feet instead of at the requested 5,000 or 7,000 feet?",
+    "answer": "A friend had a tooth problem, so Jeffrey Epstein requested a Friday flight at 5,000 or 7,000 feet. Below 10,000 feet, the speed limit was 250 knots; at 10,000 feet, a Hawker could use 310 knots.",
     "source_ids": [
       "ce7f6d3e024e7d99dfd480769ff800ce"
     ],
     "source_type": "email"
   },
   {
-    "question": "Mark Patzelt of SKAPA Mining&Trading GmbH in Vienna attached latest information on which technology, and what did the analysis in the 'Details' say about its impact?",
-    "answer": "Mark Patzelt of SKAPA Mining&Trading GmbH in Vienna attached the latest information on the 'Hydraulic Compression Motor.' The analysis in the 'Details' indicated the technology's unavoidable impact on the energy market.",
+    "question": "Mark A. Patzelt, from which company, sent an email with the subject 'Lisa Gassner - Energy Vienna' about the Hydraulic Compression Motor, and what did the analysis indicate?",
+    "answer": "Mark A. Patzelt of SKAPA Mining & Trading GmbH sent the email. The analysis indicated the technology would have an unavoidable impact on the energy market.",
     "source_ids": [
       "0e726724f1ea0872021a0487a1d27dc0"
     ],
     "source_type": "email"
   },
   {
-    "question": "Who went to the house to measure for curtains, which rooms did he exclude from blinds, and what color did he propose for the blinds?",
-    "answer": "Marcus went to the house to measure for curtains. He said he could do blinds everywhere except guest rooms, and suggested using the same colour blinds as the floor.",
+    "question": "Marcus measured for curtains and suggested the blinds match the floor colour. What did J. Epstein say about the guest rooms, and when should the discount be mentioned?",
+    "answer": "Marcus measured for curtains and suggested blinds in the same colour as the floor, except in the guest rooms. J. Epstein said Marcus should do the guest rooms using the same palette and ambience, and the discount should be mentioned only after everything is in the house.",
     "source_ids": [
       "ea5958800631884860731c2242751e16"
     ],
     "source_type": "email"
   },
   {
-    "question": "According to the police report, which police chief wrote to State Attorney Barry Krischer in May, and what was the maximum prison term for Epstein's felony solicitation charge?",
-    "answer": "Police Chief Michael Reiter wrote the memo, and the charge carried a maximum of five years in prison.",
+    "question": "What civil action number and total deleted page count are listed on the FBI's deleted page information sheet?",
+    "answer": "The civil action number is 17-cv-03956 and the total deleted pages are 258.",
     "source_ids": [
-      "pdf:Jeffrey Epstein Part 01 of 08:p16"
+      "pdf:Jeffrey Epstein Part 01 of 08:p1"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "How many acres were offered to Jeffrey Epstein, which airport was it near, and what meeting date did the owners request in the email about the Florida land?",
-    "answer": "The parcel was 98,776 acres near the new Bay County International Airport. The owners requested a meeting on May 23rd if Epstein was interested in purchasing the parcel.",
+    "question": "Who sent the maps of the 98,776 acres in Northwest Florida and what date was proposed for a meeting with the owners?",
+    "answer": "Sheridan Gibson sent the maps, and the owners proposed a meeting on May 23rd.",
     "source_ids": [
       "63a7b0f798d177cc3484daeb1bc8c36c"
     ],
     "source_type": "email"
   },
   {
-    "question": "What types of positions were considered for hiring, and what was the mandatory step before Mr. Epstein decided?",
-    "answer": "The positions were pool, gardener, chef, and exercise instructor. A mandatory home visit was conducted, and Mr. Epstein would meet with them to decide.",
+    "question": "When asked if she ever said she recruited girls to take pressure off herself and avoid sex with Jeffrey, what did Ghislaine Maxwell say about recruiting underage girls, and how long ago did she say the conversation was?",
+    "answer": "She denied recruiting underage girls, stating \"I told you no\" and \"I don't do that with underage people.\" She also noted the conversation was about almost 17 years ago.",
     "source_ids": [
-      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p248"
+      "pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p94"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "What are the page numbers for the terms 'bought', 'bikini', and 'boulevard' in the index?",
-    "answer": "The term 'bought' appears on pages 233 and 341; 'bikini' on page 404; and 'boulevard' on page 2.",
+    "question": "What was Jeffrey Epstein’s occupation and age, and how many underage girls did police say were involved?",
+    "answer": "Jeffrey Epstein was a Palm Beach money manager, age 53, and police said he committed unlawful sex acts with five underage girls.",
     "source_ids": [
-      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p423"
+      "pdf:Jeffrey Epstein Part 01 of 08:p20"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "What are the maximum and approximate current widths of the console, and what do its controls control regarding the aft bench passengers?",
-    "answer": "The console should be no wider than 10 inches from outside to outside, and it is currently approximately 8 inches wide. The controls control which headsets of the aft bench passengers may participate in the cell phone conversation initiated through the console's cell phone connection.",
+    "question": "What maximum console width did JE specify, what material and color did he want for the forward interior wall, and which passengers' headsets do the console controls affect?",
+    "answer": "The console must be no wider than 10 inches. The forward interior wall should be all leather and white. The console controls affect the headsets of the aft bench passengers.",
     "source_ids": [
       "44aad7aa01e3091f5e5446a5c2b4d2f0"
     ],
     "source_type": "email"
   },
   {
-    "question": "How many attachments were in the January 14, 2008 email from LVJET@aol.com to JEEPROJECT@YAHOO.COM with subject 'Nautica Shop Photo's'?",
-    "answer": "There were 39 attachments. The email was sent by LVJET@aol.com to JEEPROJECT@YAHOO.COM, cc'ing kellens@earthlink.net, on January 14, 2008, with the subject 'Nautica Shop Photo's'.",
+    "question": "What subject line and number of attachments accompanied a message sent by LVJET@aol.com on Jan 14, 2008?",
+    "answer": "LVJET@aol.com sent a message with the subject line \"Nautica Shop Photo's\" and 39 attachments on Jan 14, 2008.",
     "source_ids": [
       "25c7d6638a764d4f62a3241c913f70f6"
     ],
     "source_type": "email"
   },
   {
-    "question": "In the indexed body, the terms 'convicted' and 'defamation' are followed by which page:line references, and what is the page number indicated by the source document ID?",
-    "answer": "The index lists 'convicted' at 172:20 and 'defamation' at 53:15. The source document ID includes 'p427', indicating page 427.",
+    "question": "Who was the 53-year-old Manhattan money manager indicted on one felony count of solicitation of prostitution, and which two attorneys did he hire?",
+    "answer": "Jeffrey Epstein, a 53-year-old Manhattan money manager, was indicted on one felony count of solicitation of prostitution. He hired Harvard law professor Alan Dershowitz and defense attorney Jack Goldberger.",
     "source_ids": [
-      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p427"
+      "pdf:Jeffrey Epstein Part 01 of 08:p19"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "Maxwell said she hired people for every conceivable proper job within the context of Jeffrey's life and homes, listing at least architects, decorators, pool people, exercise instructors, cooks, and cleaning people. Who were those hired workers for?",
-    "answer": "Maxwell said she hired architects, decorators, pool people, exercise instructors, gardeners, cooks, chefs, and cleaning people. She said she hired these people to work for Jeffrey Epstein.",
+    "question": "What was Jeffrey Epstein's age and bond amount when he faced a felony solicitation charge that carried a five-year maximum penalty?",
+    "answer": "Jeffrey Epstein was 53 years old and was released on $3,000 bond after being charged with one count of felony solicitation of prostitution, which carried a maximum penalty of five years in prison.",
     "source_ids": [
-      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p246"
+      "pdf:Jeffrey Epstein Part 01 of 08:p35"
     ],
     "source_type": "pdf"
   }
