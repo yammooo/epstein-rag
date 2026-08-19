@@ -1,152 +1,162 @@
 [
   {
-    "question": "On July 16, 2014, Tyler Shears reported how many negative results existed and what was his stated goal to achieve by the end of the year?",
-    "gold": "Tyler Shears reported three negatives and said the goal was to be clean by end of year, assuming no new negative press appeared.",
+    "question": "Jeffrey Epstein was indicted on which charge at age 53, and which 48-year-old police chief did his lawyers blame for the case?",
+    "gold": "Epstein was indicted on felony solicitation of prostitution at age 53. His lawyers blamed Palm Beach Police Chief Michael Reiter, 48, for the case.",
     "source_ids": [
-      "HOUSE_OVERSIGHT_025812"
+      "pdf:Jeffrey Epstein Part 01 of 08:p22"
     ],
-    "rag": "On July 16, 2014, Tyler Shears stated that they were down to 1 negative (forbes) before recent negative press, and that the goal was for the negative results to get back to 1 and then 0 so long as negative things stop coming out (Source document IDs: HOUSE_OVERSIGHT_025812).",
-    "score": 4,
-    "reasoning": "The system answer provides the correct source document ID and captures the idea that the goal depends on stopping negative press, but it is inaccurate on key facts: it states '1 negative' instead of the gold answer's 'three negatives', and it frames the goal as getting back to 1 then 0 rather than the stated goal of being clean by end of year. The citation is correct, but the factual mismatch significantly harms accuracy and faithfulness."
-  },
-  {
-    "question": "What job did J. Epstein offer Ekaterina, and what were the salary and housing benefits, and when does the current assistant leave?",
-    "gold": "He offered her the role of Sarah's assistant, with a salary of $45,000 per year and an apartment in the building she stayed in. The current assistant, Adriana, is leaving in January to be closer to her husband.",
-    "source_ids": [
-      "f59278350702cda011a0aa4b04a3f08b"
-    ],
-    "rag": "J. Epstein offered Ekaterina a job related to **Adriana**, who was leaving his employ in January to be closer to her husband (Segment 1, Segment 2, Segment 3, Segment 4).\n\nThe benefits mentioned were:\n*   **Salary:** 45,000 per year (Segment 1, Segment 2, Segment 3, Segment 4).\n*   **Housing:** An apartment in the building where she stayed (Segment 1, Segment 2, Segment 3, Segment 4).\n\nThe current assistant (Adriana) leaves in **January** (Segment 1, Segment 2, Segment 3, Segment 4).",
-    "score": 7,
-    "reasoning": "The System Answer correctly conveys the salary ($45,000/year), housing benefit (apartment in the building where she stayed), and that the current assistant (Adriana) leaves in January. However, it fails to clearly state the actual job offered (Sarah's assistant), instead vaguely describing it as 'related to Adriana.' Additionally, the citations cite Segments 1-4 for every claim, which appears formulaic and potentially hallucinated, though the key factual information about salary, housing, and timing is accurate overall."
-  },
-  {
-    "question": "What is the proposed charter term, the repair cost for the LCM 8 in Puerto Rico, and the hourly rate for the General II barge?",
-    "gold": "The proposed charter term is 2 years. The repair cost for the LCM 8 in Puerto Rico is $55,000, and the hourly rate for the General II is $300.",
-    "source_ids": [
-      "d693266b145a5b704064d9adf6d0031a"
-    ],
-    "rag": "The proposed charter term is 2 years (Source document IDs: d693266b145a5b704064d9adf6d0031a).\nThe repair cost for the LCM 8 in Puerto Rico is $55,000 (Source document IDs: d693266b145a5b704064d9adf6d0031a).\nThe hourly rate for the General II barge is $300 an hour (Source document IDs: d693266b145a5b704064d9adf6d0031a).",
-    "score": 10,
-    "reasoning": "The system answer provides all three requested values exactly matching the gold answer: 2 years, $55,000, and $300 per hour. It includes the correct source document ID for each piece of information, matching the expected source. The response is accurate, faithful, and properly cited."
-  },
-  {
-    "question": "What internship did Ekaterina Mitr complete and for how long, and what kind of job is she seeking in Moscow?",
-    "gold": "Ekaterina Mitr completed a 3-month internship at Dresdner Bank (investment banking) in Munich. She is seeking a job in the finance field in Moscow and asked J. Epstein for contacts with finance companies there.",
-    "source_ids": [
-      "87a37dfb42737c66260e44cdd490d7d6"
-    ],
-    "rag": "Ekaterina Mitr completed an internship at Dresdner bank (investment banking) in Munich for 3 months (Source document IDs: c6ed95f50137500f2bcc52cfa5c7f1fe, b425bdaee7067575326d15501664c28b, 7ddc4965ea0e4660b1289f2232bb1747, a5b8b75c61d0b804bd2d48b84e7ef85d, a5b8b75c61d0b804bd2d48b84e7ef85d). She is seeking a job in the finance field in Moscow (Source document IDs: c6ed95f50137500f2bcc52cfa5c7f1fe, b425bdaee7067575326d15501664c28b, 7ddc4965ea0e4660b1289f2232bb1747, a5b8b75c61d0b804bd2d48b84e7ef85d, a5b8b75c61d0b804bd2d48b84e7ef85d).",
-    "score": 7,
-    "reasoning": "The system answer accurately and faithfully matches the gold answer regarding the internship details (3 months at Dresdner Bank in Munich, investment banking) and the job seeking (finance field in Moscow). However, the source document IDs provided are incorrect; the expected source document ID is '87a37dfb42737c66260e44cdd490d7d6', but the system lists other IDs. This citation mismatch reduces the score despite the factual correctness."
-  },
-  {
-    "question": "In the email sent by jeffrey on July 13, 2018, what was said about the SPY trades, what was the one-day dip percentage, and which company was referenced?",
-    "gold": "The email said the SPY trades were the results of a rank amateur, mentioned a one-day dip of 25%, and referenced Broadcom.",
-    "source_ids": [
-      "HOUSE_OVERSIGHT_031806"
-    ],
-    "rag": "The following information was provided regarding the email sent by Jeffrey on July 13, 2018:\n\n*   **SPY trades:** The spy trades were the results of a rank amateur (Source document IDs: HOUSE_OVERSIGHT_033097, HOUSE_OVERSIGHT_031804).\n*   **One-day dip percentage:** The one-day dip was 25% (Source document IDs: HOUSE_OVERSIGHT_033097, HOUSE_OVERSIGHT_031804).\n*   **Company referenced:** Broadcom (Source document IDs: HOUSE_OVERSIGHT_033097, HOUSE_OVERSIGHT_031804).",
-    "score": 8,
-    "reasoning": "The System Answer correctly provides all three requested pieces of information (SPY trades as rank amateur, 25% one-day dip, and Broadcom), matching the Gold Answer in content and faithfulness. However, the cited source document IDs (HOUSE_OVERSIGHT_033097 and HOUSE_OVERSIGHT_031804) do not match the expected source document ID (HOUSE_OVERSIGHT_031806). While the response is accurate, the incorrect citations reduce the score."
-  },
-  {
-    "question": "According to the email correspondence, what website did Emad Hanna initially reference, which website did Jeffrey Epstein correct it to, and what was the approximate cost of the Rhino parts before shipping?",
-    "gold": "Emad Hanna initially referenced www.yamahasportscenter.com, but Jeffrey Epstein corrected it to www.Yamaharhino.com. The cost was around $800 before shipping.",
-    "source_ids": [
-      "e9ac1adf0f890edd2722db26714f1a04"
-    ],
-    "rag": "Emad Hanna initially referenced the website **www.yamahasportscenter.com** (Source document IDs: 53d2b1f8a92628dab90393e39e66416d). Jeffrey Epstein corrected it to **www.Yamaharhino.com** (Source document IDs: e9ac1adf0f890edd2722db26714f1a04, 53d2b1f8a92628dab90393e39e66416d). The approximate cost of the Rhino parts before shipping was **around $800** (Source document IDs: e9ac1adf0f890edd2722db26714f1a04, 53d2b1f8a92628dab90393e39e66416d).",
-    "score": 9,
-    "reasoning": "The system answer accurately and faithfully matches the gold answer for all three components: initial website, corrected website, and approximate cost. It provides citations for each fact, but includes an extra source ID (53d2b1f8a92628dab90393e39e66416d) for the initial website that is not in the expected source list. The expected ID is only e9ac1adf0f890edd2722db26714f1a04, so the additional citation is unnecessary but not incorrect. Since the content is fully correct and the citations are relevant, the minor over-citation warrants a small deduction, resulting in a score of 9."
-  },
-  {
-    "question": "In the exchange about Ranch Lake IV, which entity was the record owner, which entity was its managing member, which entity was the managing member of Barretta, and what reimbursement amount was expected from the forest service agencies?",
-    "gold": "Ranch Lake IV was the record owner. Barretta LLC was its managing member, and Wexner Personal Holdings Corp. was the managing member of Barretta. The expected reimbursement from the forest service agencies was about $14,000.",
-    "source_ids": [
-      "fe07468c2537b437de41f97d615c048a"
-    ],
-    "rag": "The record owner of Ranch Lake 1V was stated to be **Ranch Lake 1V** itself (Source document IDs: fe07468c2537b437de41f97d615c048a).\n\nThe managing member of Ranch Lake 1V was **Barretta LLC** (Source document IDs: fe07468c2537b437de41f97d615c048a).\n\nThe managing member of Barretta was **Wexner Personal Holdings Corp** (Source document IDs: fe07468c2537b437de41f97d615c048a).\n\nThe expected reimbursement amount from the forest service agencies was about **$14 thousand dollars** (Source document IDs: fe07468c2537b437de41f97d615c048a).",
-    "score": 10,
-    "reasoning": "The System Answer accurately identifies all required entities and the reimbursement amount, matching the Gold Answer. The minor rendering of 'IV' as '1V' does not affect factual accuracy. The citation is correct and supports the response."
-  },
-  {
-    "question": "What did the email say had replaced 'convicted sex offender' in the Wikipedia headline, and what was the $2,500 payment to Mike for?",
-    "gold": "The Wikipedia headline had been changed to mention philanthropic work, Epstein Foundation, and promotion of scientists instead of 'convicted sex offender.' The $2,500 payment was applied toward purchasing replacement servers, with a $7,500 balance still due.",
-    "source_ids": [
-      "HOUSE_OVERSIGHT_022230"
-    ],
-    "rag": "The email mentioned that the search on Jeffrey Epstein's name had \"nine/10 very toxic prominent stories, and toxic Wiki article and headline\" (Source document IDs: HOUSE_OVERSIGHT_022230, HOUSE_OVERSIGHT_022223, HOUSE_OVERSIGHT_022226, HOUSE_OVERSIGHT_022216).\n\nThe $2,500 payment to Mike was for the purchasing of his replacement servers (Source document IDs: HOUSE_OVERSIGHT_022230, HOUSE_OVERSIGHT_022223, HOUSE_OVERSIGHT_022226, HOUSE_OVERSIGHT_022216).",
-    "score": 2,
-    "reasoning": "The system answer fails to address the first part of the question about what replaced 'convicted sex offender' in the Wikipedia headline, only noting that the headline was described as 'toxic' without specifying the philanthropic/Epstein Foundation/scientist promotion content. For the second part, it correctly mentions the $2,500 payment was for replacement servers but omits the balance due detail. Additionally, it cites multiple source IDs beyond the expected single source (HOUSE_OVERSIGHT_022230), including irrelevant ones. The answer is incomplete and partially inaccurate, with poor citation precision."
-  },
-  {
-    "question": "What did the storyteller claim about Clinton at the island dinner, who flew the black helicopter, and what did the account say about Clinton's actual presence?",
-    "gold": "The storyteller claimed Clinton sat on her left at the dinner on the island and arrived by black helicopter flown by Ghislaine. It said Clinton was never ever there, and this was said to punch a hole in the Andrew Dershowitz allegation.",
-    "source_ids": [
-      "HOUSE_OVERSIGHT_022660"
-    ],
-    "rag": "The storyteller claimed that during a dinner on the island with Clinton, \"he sat on my left. came by black. heli. flown by ghislaine\" (Source document IDs: HOUSE_OVERSIGHT_022831, HOUSE_OVERSIGHT_022829, HOUSE_OVERSIGHT_022661, HOUSE_OVERSIGHT_022663).\n\nThe account stated that Clinton was \"NEVER EVER there, never\" (Source document IDs: HOUSE_OVERSIGHT_022831, HOUSE_OVERSIGHT_022829, HOUSE_OVERSIGHT_022661, HOUSE_OVERSIGHT_022663).\n\nThe evidence suggests that the story teller crafted much of her story \"out of whole cloth\" (Source document IDs: HOUSE_OVERSIGHT_022831, HOUSE_OVERSIGHT_022829, HOUSE_OVERSIGHT_022661, HOUSE_OVERSIGHT_022663).",
+    "rag": "Jeffrey Epstein was indicted on a single, less serious charge of felony solicitation of prostitution (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08:p21, pdf:Jeffrey Epstein Part 01 of 08:p16).\n\nHis lawyers blamed Police Chief Michael Reiter for the indictment, with one lawyer stating his client was indicted only \"because of the craziness of the police chief\" (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08:p17).",
     "score": 6,
-    "reasoning": "The system answer correctly identifies the storyteller's claim about Clinton sitting on her left and the helicopter flown by Ghislaine, and that the account said Clinton was never there. However, it omits the purpose of punching a hole in the Andrew Dershowitz allegation, which is part of the gold answer. Additionally, the cited source document IDs (HOUSE_OVERSIGHT_022831, etc.) do not match the expected ID (HOUSE_OVERSIGHT_022660), indicating a citation error. The system also adds an unsupported inference about the story being 'out of whole cloth,' which is not in the gold answer. These issues reduce accuracy and faithfulness, so a score of 6 is appropriate."
+    "reasoning": "The system answer correctly identifies the charge (felony solicitation of prostitution) and the police chief (Michael Reiter), but it omits the specified ages from the question: Epstein's age at indictment (53) and the chief's age (48). Additionally, the provided source document IDs do not match the expected source ('pdf:Jeffrey Epstein Part 01 of 08:p22'), though the system does cite some documents. The answer is partially faithful and accurate but incomplete and has citation inconsistencies."
   },
   {
-    "question": "Under the PATH Act signed on December 18, 2015, what is the new ownership threshold for foreign investors in publicly traded REITs without triggering FIRPTA tax, and what is the increased FIRPTA withholding rate for most dispositions after the 60th day following enactment?",
-    "gold": "The PATH Act increased the FIRPTA exemption threshold for foreign investors in publicly traded REITs from 5% to 10% ownership. It also raised the FIRPTA withholding rate from 10% to 15% for dispositions occurring after the 60th day following enactment, while maintaining 10% for residential property sales between $300,000 and $1,000,000.",
+    "question": "What tasks did Ghislaine Maxwell say her job involved, and what did she say about construction projects in 1992?",
+    "gold": "She said her job entailed running the homes and overseeing construction, including hiring architects and builders, reviewing contracts, and coordinating building projects. She also stated that in 1992 there was no construction project, but construction projects began after that time.",
     "source_ids": [
-      "HOUSE_OVERSIGHT_026829"
+      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p13"
     ],
-    "rag": "The new ownership threshold for foreign investors in publicly traded REITs without triggering FIRPTA tax is up to 10 percent (Source document IDs: HOUSE_OVERSIGHT_026829).\n\nThe increased FIRPTA withholding rate for the purchaser of a U.S. real property interest from a non-U.S. person, for dispositions occurring after the 60th day following enactment, is 15 percent (Source document IDs: HOUSE_OVERSIGHT_026829).",
+    "rag": "Ghislaine Maxwell's job involved:\n*   Helping with decorating houses and hiring staff to help run those houses when she was first employed in 1992 (pdf:Ghislaine-Maxwell-Deposition-Transcript:p12).\n*   Running the homes that Jeffrey had (pdf:Ghislaine-Maxwell-Deposition-Transcript:p13).\n*   Being in charge of hiring architects, overseeing all the filings, and acting like a general contractor (pdf:Ghislaine-Maxwell-Deposition-Transcript:p13).\n*   Helping with hiring builders, reviewing contracts for the builders, coordinating building projects, coordinating project layouts, the timing of projects, and the various materials required for a substantial building project (pdf:Ghislaine-Maxwell-Deposition-Transcript:p13).\n*   Being a general help, helping with moving in and out of houses, and helping with buying things (pdf:Ghislaine-Maxwell-Deposition-Transcript:p67).\n*   Consulting (pdf:Ghislaine-Maxwell-Deposition-Transcript:p12).\n\nRegarding construction projects in 1992:\n*   In 1992, there was no construction project, but there were construction projects that began after that time (pdf:Ghislaine-Maxwell-Deposition-Transcript:p13).",
     "score": 10,
-    "reasoning": "The System Answer accurately and faithfully reflects the Gold Answer, correctly stating the new ownership threshold as 10 percent and the increased FIRPTA withholding rate as 15 percent for dispositions after the 60th day. It also provides the expected source document ID."
+    "reasoning": "The system answer accurately reflects the gold answer's content, covering the main points about Ghislaine Maxwell's job responsibilities (running homes, overseeing construction, hiring architects/builders, reviewing contracts, coordinating projects) and the specific statement about construction projects in 1992 (no project, but projects began after that). The system answer provides additional details and page citations, which are consistent with the gold answer and do not introduce any contradictions. Citations are given for each claim, enhancing faithfulness. No errors or omissions detected relative to the gold answer."
   },
   {
-    "question": "Which virtual world platform did Ben Goertzel describe as free and open-source, and which robotics simulator did he suggest integrating into such a platform?",
-    "gold": "Ben Goertzel described OpenSim as free and open-source. He suggested integrating a robotics simulator like Player into a virtual world like OpenSim.",
+    "question": "According to the index, what are the first listed page and line numbers for the words 'unethical' and 'various'?",
+    "gold": "Unethical appears on page 182, line 21. Various appears on page 12, line 19.",
     "source_ids": [
-      "2ea73f24de364c721502984bf93597b3"
+      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p461"
     ],
-    "rag": "The virtual world platform Ben Goertzel described as free and open-source is **OpenSim** (Source document IDs: 2ea73f24de364c721502984bf93597b3).\n\nHe mentioned **Player/Stage/Gazebo** as robotics simulators (Source document IDs: 2ea73f24de364c721502984bf93597b3).",
-    "score": 10,
-    "reasoning": "The System Answer accurately identifies OpenSim as the free and open-source virtual world platform and correctly mentions Player/Stage/Gazebo as robotics simulators, matching the Gold Answer's substance. It also provides the expected source document ID, maintaining faithfulness and proper citation."
-  },
-  {
-    "question": "Which sitting president was named as an unindicted co-conspirator in a criminal indictment, which judge sustained that inclusion, and in what Supreme Court case did the United States defend it?",
-    "gold": "Richard Nixon was named as an unindicted co-conspirator in the Watergate indictment. Judge John Sirica sustained that inclusion, and the United States defended it in United States v. Nixon.",
-    "source_ids": [
-      "HOUSE_OVERSIGHT_030200"
-    ],
-    "rag": "*   **Sitting President Named as Unindicted Co-conspirator:** Richard Nixon (Source document IDs: HOUSE_OVERSIGHT_030200)\n*   **Judge Who Sustained Inclusion:** Judge John Sirica (Source document IDs: HOUSE_OVERSIGHT_030200)\n*   **Supreme Court Case Where the U.S. Defended It:** *United States v. Nixon* (Source document IDs: HOUSE_OVERSIGHT_030200)",
-    "score": 10,
-    "reasoning": "The system answer accurately identifies Richard Nixon, Judge John Sirica, and United States v. Nixon, matching the gold answer exactly. The citation to HOUSE_OVERSIGHT_030200 aligns with the expected source document ID. The response is faithful and complete."
-  },
-  {
-    "question": "Who sent an email on February 16, 2017, to Reid Weingarten with a Politico link about Alexander Acosta, Donald Trump, and Jeffrey Epstein's plea?",
-    "gold": "Jeffrey E. (jeevacation@gmail.com) sent the email to Reid Weingarten on February 16, 2017. The email included a Politico link about Alexander Acosta, Donald Trump, and Jeffrey Epstein's plea.",
-    "source_ids": [
-      "HOUSE_OVERSIGHT_032054"
-    ],
-    "rag": "Jeffrey E. sent an email on February 16, 2017, to Weingarten, Reid with a Politico link about Alexander Acosta, Donald Trump, and Jeffrey Epstein's plea. (Source document IDs: HOUSE_OVERSIGHT_032056)",
+    "rag": "The first listed page and line numbers for 'unethical' are **182:21** (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Transcript:p461).\n\nThe first listed page and line numbers for 'various' are **51:10** (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Transcript:p461).",
     "score": 7,
-    "reasoning": "The system answer correctly identifies Jeffrey E. as the sender and includes the date, recipient, and topic, matching the gold answer. However, it omits the sender's email address ('jeevacation@gmail.com') which is part of the gold answer's detail. More critically, the cited source document ID (HOUSE_OVERSIGHT_032056) is incorrect; the expected ID is HOUSE_OVERSIGHT_032054. This citation error reduces faithfulness and reliability. The core factual answer is accurate but incomplete, and the citation mismatch is a significant flaw."
+    "reasoning": "The system correctly identifies the page and line for 'unethical' (182:21) and provides the correct source document ID. However, it gives incorrect page and line numbers for 'various' (51:10 instead of 12:19), so one of the two required answers is wrong. The citation is accurate."
   },
   {
-    "question": "What were the initial payment amounts for the DHS pilot license and Pfizer's first Chiliad license purchase?",
-    "gold": "The DHS pilot license cost $1.5 million, and Pfizer's first license purchase was worth $400,000.",
+    "question": "What two work orders for LSJ did McGuire ask Darren Indyke to sign, and who approved both before Indyke sought Epstein's approval?",
+    "gold": "McGuire asked Indyke to sign work orders for a Master Plan and Site Utilities (water and power) with a $127,454 budget, and for General Civil Engineering Services for an Environmental Assessment Report with a $12,000 budget. Doug Schoettle approved both work orders.",
     "source_ids": [
-      "cc90a281dfea4481c195f52f1844e96a"
+      "3085adf8cf97d680f50d22626d8fcc40"
     ],
-    "rag": "The initial payment for the DHS pilot license was $1.5M, which was transferred to the AFRL vehicle on Friday (Source document IDs: 7b92d0405e65350431a84b77db52748e, cc90a281dfea4481c195f52f1844e96a, 53afef8a75318bc167cfea7290604700). Pfizer's formal procurement of their first Chiliad licenses was worth $400,000 (Source document IDs: 7b92d0405e65350431a84b77db52748e, cc90a281dfea4481c195f52f1844e96a, 53afef8a75318bc167cfea7290604700).",
-    "score": 9,
-    "reasoning": "The System Answer accurately identifies both required payment amounts: $1.5 million for the DHS pilot license and $400,000 for Pfizer's first Chiliad license purchase. It is faithful to the Gold Answer and adds a plausible contextual detail about the transfer to the AFRL vehicle. The citations include the expected source document ID and also list additional source IDs, which may be unnecessary or not strictly tied to the expected evidence, so a minor deduction is applied."
+    "rag": "The provided source segments do not specify two work orders for LSJ that McGuire asked Darren Indyke to sign, nor do they name who approved both before Indyke sought Epstein's approval. (Source document IDs: 3085adf8cf97d680f50d22626d8fcc40)",
+    "score": 1,
+    "reasoning": "The system answer fails to answer the question, incorrectly claiming the source does not specify the work orders or approver, while the gold answer provides the exact details. It gives the correct source ID but no substantive content, so accuracy and faithfulness are both lacking."
   },
   {
-    "question": "InfoSpan sought $540 million in damages after Emirates NBD ended their partnership for which mobile payment system, and who represented the bank as former White House counsel?",
-    "gold": "InfoSpan sought $540 million in damages after Emirates NBD ended their partnership for SpanCash. Kathryn Ruemmler, former White House counsel to President Obama and a Latham & Watkins partner, represented the bank.",
+    "question": "What percentage discount is offered for the 26-week digital subscription, and at what exact time and date does the sale expire?",
+    "gold": "The discount is 50% off for a 26-week digital subscription. The sale expires at 9 a.m. ET on February 19, 2014.",
     "source_ids": [
-      "HOUSE_OVERSIGHT_012037"
+      "af8704adccb9f628d70b7a89f63a3629"
     ],
-    "rag": "InfoSpan sought $540 million in damages after Emirates NBD ended their partnership for a mobile payment system called SpanCash (Source document IDs: HOUSE_OVERSIGHT_026005, Segment 3).\n\nThe former White House counsel who represented the bank was Kathryn Ruemmler (Source document IDs: HOUSE_OVERSIGHT_026005, Segment 3).",
+    "rag": "The discount offered for the 26-week digital subscription is 50% off (Source document IDs: 67e84b5fde5b88864398af02b20c08bb). The sale expires on December 3, 2014, at 9 a.m. ET (Source document IDs: 67e84b5fde5b88864398af02b20c08bb).",
+    "score": 4,
+    "reasoning": "The system correctly identifies the 50% discount for the 26-week digital subscription, but it gives the wrong expiration date: December 3, 2014 instead of February 19, 2014. The time is correct (9 a.m. ET), but the date error is a key factual mismatch. The cited source ID also does not match the expected source document, so the citation is not fully accurate."
+  },
+  {
+    "question": "Due to a friend's tooth problem, what altitude was requested for the Friday flight, and what speed could the Hawker fly at 10,000 feet?",
+    "gold": "The flight was initially requested at 5,000 or 7,000 feet. At 10,000 feet, the Hawker could fly at 310 knots.",
+    "source_ids": [
+      "ce7f6d3e024e7d99dfd480769ff800ce"
+    ],
+    "rag": "The requested altitudes for the Friday flight, due to a tooth problem, were 5,000 or 7,000 feet (Source document IDs: ce7f6d3e024e7d99dfd480769ff800ce). The Hawker could fly at a speed of 310 kts at 10,000 feet (Source document IDs: ce7f6d3e024e7d99dfd480769ff800ce).",
+    "score": 10,
+    "reasoning": "The system answer accurately and faithfully reproduces the gold answer, providing the requested altitudes (5,000 or 7,000 feet) for the Friday flight due to a tooth problem and the Hawker's speed at 10,000 feet (310 knots). It also includes the correct source document IDs, matching the expected citation. There are no errors or omissions, so a perfect score is warranted."
+  },
+  {
+    "question": "Mark Patzelt of SKAPA Mining&Trading GmbH in Vienna attached latest information on which technology, and what did the analysis in the 'Details' say about its impact?",
+    "gold": "Mark Patzelt of SKAPA Mining&Trading GmbH in Vienna attached the latest information on the 'Hydraulic Compression Motor.' The analysis in the 'Details' indicated the technology's unavoidable impact on the energy market.",
+    "source_ids": [
+      "0e726724f1ea0872021a0487a1d27dc0"
+    ],
+    "rag": "Mark Patzelt of SKAPA Mining&Trading GmbH in Vienna attached the latest information on the **\"Hydraulic Compression Motor\"** (Source document IDs: 0e726724f1ea0872021a0487a1d27dc0). The analysis in the \"Details\" indicated the **unavoidable impact on the energy market** (Source document IDs: 0e726724f1ea0872021a0487a1d27dc0).",
+    "score": 10,
+    "reasoning": "The system answer accurately matches the gold answer for both key details: the technology ('Hydraulic Compression Motor') and the analysis impact ('unavoidable impact on the energy market'). It also provides correct source document IDs, which align with the expected IDs. The response is faithful to the gold answer and includes proper citations."
+  },
+  {
+    "question": "Who went to the house to measure for curtains, which rooms did he exclude from blinds, and what color did he propose for the blinds?",
+    "gold": "Marcus went to the house to measure for curtains. He said he could do blinds everywhere except guest rooms, and suggested using the same colour blinds as the floor.",
+    "source_ids": [
+      "ea5958800631884860731c2242751e16"
+    ],
+    "rag": "Marcus went to the house to measure for the curtains (Source document IDs: 9d2faec7acbb5dbc0d9765da047575a4, 5775e796d691dc55d4fdd2dfced8a01c). He excluded the guest rooms from blinds (Source document IDs: 9d2faec7acbb5dbc0d9765da047575a4, 5775e796d691dc55d4fdd2dfced8a01c). He suggested the same color blinds as the floor (Source document IDs: 9d2faec7acbb5dbc0d9765da047575a4, 765bf475dcfc345ce14a9c9a44caa2c6).",
+    "score": 6,
+    "reasoning": "The system answer accurately captures all factual elements from the gold answer: Marcus went to measure, excluded guest rooms from blinds, and proposed blinds matching the floor color. The response is faithful to the gold answer without adding extraneous information. However, the source document IDs cited by the system (9d2faec7acbb5dbc0d9765da047575a4, 5775e796d691dc55d4fdd2dfced8a01c, 765bf475dcfc345ce14a9c9a44caa2c6) do not match the expected source document ID (ea5958800631884860731c2242751e16), indicating incorrect citation grounding. This citation error reduces the overall score despite the high content accuracy and faithfulness."
+  },
+  {
+    "question": "According to the police report, which police chief wrote to State Attorney Barry Krischer in May, and what was the maximum prison term for Epstein's felony solicitation charge?",
+    "gold": "Police Chief Michael Reiter wrote the memo, and the charge carried a maximum of five years in prison.",
+    "source_ids": [
+      "pdf:Jeffrey Epstein Part 01 of 08:p16"
+    ],
+    "rag": "*   **Police Chief who wrote to State Attorney Barry Krischer:** Michael Reiter (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08:p29)\n*   **Maximum prison term for felony solicitation charge:** Five years in prison (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08:p29)",
     "score": 8,
-    "reasoning": "The system answer correctly identifies SpanCash as the mobile payment system and Kathryn Ruemmler as the former White House counsel representing the bank, matching the gold answer on both key facts. The response is accurate and faithful to the gold answer. However, the cited source document IDs (HOUSE_OVERSIGHT_026005) differ from the expected source (HOUSE_OVERSIGHT_012037), indicating a citation mismatch. This detracts from the overall score due to incorrect sourcing, despite the factual correctness."
+    "reasoning": "The system answer correctly identifies Police Chief Michael Reiter and the maximum prison term of five years, matching the gold answer in accuracy and faithfulness. However, the cited source document ID (p29) does not match the expected source document ID (p16), indicating a citation error. Since the factual content is correct but the source attribution is inaccurate, a score of 8 reflects strong performance on content with a deduction for the citation mismatch."
+  },
+  {
+    "question": "How many acres were offered to Jeffrey Epstein, which airport was it near, and what meeting date did the owners request in the email about the Florida land?",
+    "gold": "The parcel was 98,776 acres near the new Bay County International Airport. The owners requested a meeting on May 23rd if Epstein was interested in purchasing the parcel.",
+    "source_ids": [
+      "63a7b0f798d177cc3484daeb1bc8c36c"
+    ],
+    "rag": "The land offered to Jeffrey Epstein was 98,776 acres (Source document IDs: 63a7b0f798d177cc3484daeb1bc8c36c). It was near the new Bay County International Airport (Source document IDs: 63a7b0f798d177cc3484daeb1bc8c36c). The owners requested a meeting on May 23rd (Source document IDs: 63a7b0f798d177cc3484daeb1bc8c36c).",
+    "score": 10,
+    "reasoning": "The system answer accurately and completely provides all three requested details: the acreage (98,776), the airport (new Bay County International Airport), and the meeting date (May 23rd), matching the gold answer exactly. The inclusion of source document IDs is appropriate and does not affect accuracy or faithfulness. Therefore, a perfect score is warranted."
+  },
+  {
+    "question": "What types of positions were considered for hiring, and what was the mandatory step before Mr. Epstein decided?",
+    "gold": "The positions were pool, gardener, chef, and exercise instructor. A mandatory home visit was conducted, and Mr. Epstein would meet with them to decide.",
+    "source_ids": [
+      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p248"
+    ],
+    "rag": "The types of positions considered for hiring include:\n*   A position in the music industry (Source document IDs: b48ade26bd9257286b141852ba67aa3e)\n*   A position as Barry Diller's assistant (Source document IDs: b48ade26bd9257286b141852ba67aa3e)\n*   A business-oriented role, such as a junior Doug Band or JayDunn (Source document IDs: b53f178fb16d397d048657bc174d06eb)\n*   A role involving residences (Source document IDs: b53f178fb16d397d048657bc174d06eb)\n\nThe mandatory step before Mr. Epstein decided was that potential new employers needed to know both Jeffrey Epstein and G in some capacity, making it a \"tremendous conflict of interest\" to proceed without first consulting him (Source document IDs: b48ade26bd9257286b141852ba67aa3e).",
+    "score": 1,
+    "reasoning": "The system answer is entirely different from the gold answer. The gold answer specifies positions (pool, gardener, chef, exercise instructor) and a mandatory home visit before Mr. Epstein decided. The system answer lists unrelated roles (music industry, assistant, business-oriented, residences) and describes a different mandatory step (involving knowledge of Epstein and G, conflict of interest). The citations also do not match the expected source (pdf:Ghislaine-Maxwell-Deposition-Transcript:p248). This indicates low accuracy, lack of faithfulness to the reference, and incorrect source attribution."
+  },
+  {
+    "question": "What are the page numbers for the terms 'bought', 'bikini', and 'boulevard' in the index?",
+    "gold": "The term 'bought' appears on pages 233 and 341; 'bikini' on page 404; and 'boulevard' on page 2.",
+    "source_ids": [
+      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p423"
+    ],
+    "rag": "The page numbers for the terms 'bought', 'bikini', and 'boulevard' in the index are not available in the retrieved data.\n\n*   **'bought'**: Not available in the retrieved data.\n*   **'bikini'**: Not available in the retrieved data.\n*   **'boulevard'**: Not available in the retrieved data.",
+    "score": 1,
+    "reasoning": "The System Answer does not provide the requested page numbers and incorrectly states the information is unavailable, contradicting the Gold Answer which supplies specific pages for 'bought' (233, 341), 'bikini' (404), and 'boulevard' (2). It is inaccurate, unfaithful to the source, and lacks citations."
+  },
+  {
+    "question": "What are the maximum and approximate current widths of the console, and what do its controls control regarding the aft bench passengers?",
+    "gold": "The console should be no wider than 10 inches from outside to outside, and it is currently approximately 8 inches wide. The controls control which headsets of the aft bench passengers may participate in the cell phone conversation initiated through the console's cell phone connection.",
+    "source_ids": [
+      "44aad7aa01e3091f5e5446a5c2b4d2f0"
+    ],
+    "rag": "The maximum width of the console is not explicitly stated, but the user wants to know if it can be no wider than 10\" from outside to outside (Segment 1). At the concept phase, the console is approximately 8\" wide (Segment 1). The controls on the console control which of the headsets of the aft bench passengers may participate in the cell phone conversation which the user initiates through the console cell phone connection (Segment 1).",
+    "score": 7,
+    "reasoning": "The system answer accurately provides the approximate current width (8 inches) and correctly describes the controls regarding aft bench passengers' headsets and the cell phone conversation. However, it fails to directly state the maximum width as 'no wider than 10 inches' from outside to outside; instead it says the maximum is not explicitly stated and frames 10 inches only as the user's query. This is less faithful and complete than the Gold Answer. Additionally, citations are limited to segment references rather than the expected source document ID."
+  },
+  {
+    "question": "How many attachments were in the January 14, 2008 email from LVJET@aol.com to JEEPROJECT@YAHOO.COM with subject 'Nautica Shop Photo's'?",
+    "gold": "There were 39 attachments. The email was sent by LVJET@aol.com to JEEPROJECT@YAHOO.COM, cc'ing kellens@earthlink.net, on January 14, 2008, with the subject 'Nautica Shop Photo's'.",
+    "source_ids": [
+      "25c7d6638a764d4f62a3241c913f70f6"
+    ],
+    "rag": "There were 39 attachments in the January 14, 2008 email from LVJET@aol.com to JEEPROJECT@YAHOO.COM with the subject 'Nautica Shop Photo's' (Source document IDs: 25c7d6638a764d4f62a3241c913f70f6).",
+    "score": 10,
+    "reasoning": "The system answer accurately states the number of attachments (39) and correctly identifies the email metadata as specified. It also provides a source document ID that matches the expected citation, demonstrating faithfulness and correct attribution. No errors or omissions are present."
+  },
+  {
+    "question": "In the indexed body, the terms 'convicted' and 'defamation' are followed by which page:line references, and what is the page number indicated by the source document ID?",
+    "gold": "The index lists 'convicted' at 172:20 and 'defamation' at 53:15. The source document ID includes 'p427', indicating page 427.",
+    "source_ids": [
+      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p427"
+    ],
+    "rag": "The terms 'convicted' and 'defamation' are followed by the following page:line references and page numbers:\n\n*   **defamatory**: 210:22 (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Transcript:p427)\n*   **criminal**: 168:19 (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Transcript:p427)\n\n*(Note: The term 'convicted' itself is not explicitly listed with a direct following page:line reference in the provided segments, but 'criminal' is listed, which is related to legal status.)*",
+    "score": 1,
+    "reasoning": "The system answer fails to provide the correct page:line references for the terms 'convicted' and 'defamation' as requested. It substitutes different terms ('defamatory' and 'criminal') with incorrect coordinates (210:22 and 168:19) instead of the gold references (172:20 and 53:15). The only correct element is the source document ID, which matches. The overall response is inaccurate and does not satisfy the question."
+  },
+  {
+    "question": "Maxwell said she hired people for every conceivable proper job within the context of Jeffrey's life and homes, listing at least architects, decorators, pool people, exercise instructors, cooks, and cleaning people. Who were those hired workers for?",
+    "gold": "Maxwell said she hired architects, decorators, pool people, exercise instructors, gardeners, cooks, chefs, and cleaning people. She said she hired these people to work for Jeffrey Epstein.",
+    "source_ids": [
+      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p246"
+    ],
+    "rag": "Maxwell stated that she hired people for every conceivable proper job within the context of Jeffrey's life and homes, listing architects, decorators, pool people, exercise instructors, cooks, and cleaning people. These workers were hired for Jeffrey's life and homes (pdf:Ghislaine-Maxwell-Deposition-Transcript:p246).",
+    "score": 9,
+    "reasoning": "The system answer correctly identifies that the hired workers were for Jeffrey's life and homes, which aligns with the gold answer's 'to work for Jeffrey Epstein.' It provides the correct citation (pdf:Ghislaine-Maxwell-Deposition-Transcript:p246). The list of workers matches the question's enumeration, though it omits gardeners and chefs mentioned in the gold answer. However, the question specifically asks 'Who were those hired workers for?' and the system answer directly addresses that, making it accurate and faithful. The minor omission of additional job categories does not affect the core answer, so a high score is warranted."
   }
 ]

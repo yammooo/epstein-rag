@@ -1,107 +1,130 @@
 [
   {
-    "question": "On July 16, 2014, Tyler Shears reported how many negative results existed and what was his stated goal to achieve by the end of the year?",
-    "answer": "Tyler Shears reported three negatives and said the goal was to be clean by end of year, assuming no new negative press appeared.",
+    "question": "Jeffrey Epstein was indicted on which charge at age 53, and which 48-year-old police chief did his lawyers blame for the case?",
+    "answer": "Epstein was indicted on felony solicitation of prostitution at age 53. His lawyers blamed Palm Beach Police Chief Michael Reiter, 48, for the case.",
     "source_ids": [
-      "HOUSE_OVERSIGHT_025812"
-    ]
+      "pdf:Jeffrey Epstein Part 01 of 08:p22"
+    ],
+    "source_type": "pdf"
   },
   {
-    "question": "What job did J. Epstein offer Ekaterina, and what were the salary and housing benefits, and when does the current assistant leave?",
-    "answer": "He offered her the role of Sarah's assistant, with a salary of $45,000 per year and an apartment in the building she stayed in. The current assistant, Adriana, is leaving in January to be closer to her husband.",
+    "question": "What tasks did Ghislaine Maxwell say her job involved, and what did she say about construction projects in 1992?",
+    "answer": "She said her job entailed running the homes and overseeing construction, including hiring architects and builders, reviewing contracts, and coordinating building projects. She also stated that in 1992 there was no construction project, but construction projects began after that time.",
     "source_ids": [
-      "f59278350702cda011a0aa4b04a3f08b"
-    ]
+      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p13"
+    ],
+    "source_type": "pdf"
   },
   {
-    "question": "What is the proposed charter term, the repair cost for the LCM 8 in Puerto Rico, and the hourly rate for the General II barge?",
-    "answer": "The proposed charter term is 2 years. The repair cost for the LCM 8 in Puerto Rico is $55,000, and the hourly rate for the General II is $300.",
+    "question": "According to the index, what are the first listed page and line numbers for the words 'unethical' and 'various'?",
+    "answer": "Unethical appears on page 182, line 21. Various appears on page 12, line 19.",
     "source_ids": [
-      "d693266b145a5b704064d9adf6d0031a"
-    ]
+      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p461"
+    ],
+    "source_type": "pdf"
   },
   {
-    "question": "What internship did Ekaterina Mitr complete and for how long, and what kind of job is she seeking in Moscow?",
-    "answer": "Ekaterina Mitr completed a 3-month internship at Dresdner Bank (investment banking) in Munich. She is seeking a job in the finance field in Moscow and asked J. Epstein for contacts with finance companies there.",
+    "question": "What two work orders for LSJ did McGuire ask Darren Indyke to sign, and who approved both before Indyke sought Epstein's approval?",
+    "answer": "McGuire asked Indyke to sign work orders for a Master Plan and Site Utilities (water and power) with a $127,454 budget, and for General Civil Engineering Services for an Environmental Assessment Report with a $12,000 budget. Doug Schoettle approved both work orders.",
     "source_ids": [
-      "87a37dfb42737c66260e44cdd490d7d6"
-    ]
+      "3085adf8cf97d680f50d22626d8fcc40"
+    ],
+    "source_type": "email"
   },
   {
-    "question": "In the email sent by jeffrey on July 13, 2018, what was said about the SPY trades, what was the one-day dip percentage, and which company was referenced?",
-    "answer": "The email said the SPY trades were the results of a rank amateur, mentioned a one-day dip of 25%, and referenced Broadcom.",
+    "question": "What percentage discount is offered for the 26-week digital subscription, and at what exact time and date does the sale expire?",
+    "answer": "The discount is 50% off for a 26-week digital subscription. The sale expires at 9 a.m. ET on February 19, 2014.",
     "source_ids": [
-      "HOUSE_OVERSIGHT_031806"
-    ]
+      "af8704adccb9f628d70b7a89f63a3629"
+    ],
+    "source_type": "email"
   },
   {
-    "question": "According to the email correspondence, what website did Emad Hanna initially reference, which website did Jeffrey Epstein correct it to, and what was the approximate cost of the Rhino parts before shipping?",
-    "answer": "Emad Hanna initially referenced www.yamahasportscenter.com, but Jeffrey Epstein corrected it to www.Yamaharhino.com. The cost was around $800 before shipping.",
+    "question": "Due to a friend's tooth problem, what altitude was requested for the Friday flight, and what speed could the Hawker fly at 10,000 feet?",
+    "answer": "The flight was initially requested at 5,000 or 7,000 feet. At 10,000 feet, the Hawker could fly at 310 knots.",
     "source_ids": [
-      "e9ac1adf0f890edd2722db26714f1a04"
-    ]
+      "ce7f6d3e024e7d99dfd480769ff800ce"
+    ],
+    "source_type": "email"
   },
   {
-    "question": "In the exchange about Ranch Lake IV, which entity was the record owner, which entity was its managing member, which entity was the managing member of Barretta, and what reimbursement amount was expected from the forest service agencies?",
-    "answer": "Ranch Lake IV was the record owner. Barretta LLC was its managing member, and Wexner Personal Holdings Corp. was the managing member of Barretta. The expected reimbursement from the forest service agencies was about $14,000.",
+    "question": "Mark Patzelt of SKAPA Mining&Trading GmbH in Vienna attached latest information on which technology, and what did the analysis in the 'Details' say about its impact?",
+    "answer": "Mark Patzelt of SKAPA Mining&Trading GmbH in Vienna attached the latest information on the 'Hydraulic Compression Motor.' The analysis in the 'Details' indicated the technology's unavoidable impact on the energy market.",
     "source_ids": [
-      "fe07468c2537b437de41f97d615c048a"
-    ]
+      "0e726724f1ea0872021a0487a1d27dc0"
+    ],
+    "source_type": "email"
   },
   {
-    "question": "What did the email say had replaced 'convicted sex offender' in the Wikipedia headline, and what was the $2,500 payment to Mike for?",
-    "answer": "The Wikipedia headline had been changed to mention philanthropic work, Epstein Foundation, and promotion of scientists instead of 'convicted sex offender.' The $2,500 payment was applied toward purchasing replacement servers, with a $7,500 balance still due.",
+    "question": "Who went to the house to measure for curtains, which rooms did he exclude from blinds, and what color did he propose for the blinds?",
+    "answer": "Marcus went to the house to measure for curtains. He said he could do blinds everywhere except guest rooms, and suggested using the same colour blinds as the floor.",
     "source_ids": [
-      "HOUSE_OVERSIGHT_022230"
-    ]
+      "ea5958800631884860731c2242751e16"
+    ],
+    "source_type": "email"
   },
   {
-    "question": "What did the storyteller claim about Clinton at the island dinner, who flew the black helicopter, and what did the account say about Clinton's actual presence?",
-    "answer": "The storyteller claimed Clinton sat on her left at the dinner on the island and arrived by black helicopter flown by Ghislaine. It said Clinton was never ever there, and this was said to punch a hole in the Andrew Dershowitz allegation.",
+    "question": "According to the police report, which police chief wrote to State Attorney Barry Krischer in May, and what was the maximum prison term for Epstein's felony solicitation charge?",
+    "answer": "Police Chief Michael Reiter wrote the memo, and the charge carried a maximum of five years in prison.",
     "source_ids": [
-      "HOUSE_OVERSIGHT_022660"
-    ]
+      "pdf:Jeffrey Epstein Part 01 of 08:p16"
+    ],
+    "source_type": "pdf"
   },
   {
-    "question": "Under the PATH Act signed on December 18, 2015, what is the new ownership threshold for foreign investors in publicly traded REITs without triggering FIRPTA tax, and what is the increased FIRPTA withholding rate for most dispositions after the 60th day following enactment?",
-    "answer": "The PATH Act increased the FIRPTA exemption threshold for foreign investors in publicly traded REITs from 5% to 10% ownership. It also raised the FIRPTA withholding rate from 10% to 15% for dispositions occurring after the 60th day following enactment, while maintaining 10% for residential property sales between $300,000 and $1,000,000.",
+    "question": "How many acres were offered to Jeffrey Epstein, which airport was it near, and what meeting date did the owners request in the email about the Florida land?",
+    "answer": "The parcel was 98,776 acres near the new Bay County International Airport. The owners requested a meeting on May 23rd if Epstein was interested in purchasing the parcel.",
     "source_ids": [
-      "HOUSE_OVERSIGHT_026829"
-    ]
+      "63a7b0f798d177cc3484daeb1bc8c36c"
+    ],
+    "source_type": "email"
   },
   {
-    "question": "Which virtual world platform did Ben Goertzel describe as free and open-source, and which robotics simulator did he suggest integrating into such a platform?",
-    "answer": "Ben Goertzel described OpenSim as free and open-source. He suggested integrating a robotics simulator like Player into a virtual world like OpenSim.",
+    "question": "What types of positions were considered for hiring, and what was the mandatory step before Mr. Epstein decided?",
+    "answer": "The positions were pool, gardener, chef, and exercise instructor. A mandatory home visit was conducted, and Mr. Epstein would meet with them to decide.",
     "source_ids": [
-      "2ea73f24de364c721502984bf93597b3"
-    ]
+      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p248"
+    ],
+    "source_type": "pdf"
   },
   {
-    "question": "Which sitting president was named as an unindicted co-conspirator in a criminal indictment, which judge sustained that inclusion, and in what Supreme Court case did the United States defend it?",
-    "answer": "Richard Nixon was named as an unindicted co-conspirator in the Watergate indictment. Judge John Sirica sustained that inclusion, and the United States defended it in United States v. Nixon.",
+    "question": "What are the page numbers for the terms 'bought', 'bikini', and 'boulevard' in the index?",
+    "answer": "The term 'bought' appears on pages 233 and 341; 'bikini' on page 404; and 'boulevard' on page 2.",
     "source_ids": [
-      "HOUSE_OVERSIGHT_030200"
-    ]
+      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p423"
+    ],
+    "source_type": "pdf"
   },
   {
-    "question": "Who sent an email on February 16, 2017, to Reid Weingarten with a Politico link about Alexander Acosta, Donald Trump, and Jeffrey Epstein's plea?",
-    "answer": "Jeffrey E. (jeevacation@gmail.com) sent the email to Reid Weingarten on February 16, 2017. The email included a Politico link about Alexander Acosta, Donald Trump, and Jeffrey Epstein's plea.",
+    "question": "What are the maximum and approximate current widths of the console, and what do its controls control regarding the aft bench passengers?",
+    "answer": "The console should be no wider than 10 inches from outside to outside, and it is currently approximately 8 inches wide. The controls control which headsets of the aft bench passengers may participate in the cell phone conversation initiated through the console's cell phone connection.",
     "source_ids": [
-      "HOUSE_OVERSIGHT_032054"
-    ]
+      "44aad7aa01e3091f5e5446a5c2b4d2f0"
+    ],
+    "source_type": "email"
   },
   {
-    "question": "What were the initial payment amounts for the DHS pilot license and Pfizer's first Chiliad license purchase?",
-    "answer": "The DHS pilot license cost $1.5 million, and Pfizer's first license purchase was worth $400,000.",
+    "question": "How many attachments were in the January 14, 2008 email from LVJET@aol.com to JEEPROJECT@YAHOO.COM with subject 'Nautica Shop Photo's'?",
+    "answer": "There were 39 attachments. The email was sent by LVJET@aol.com to JEEPROJECT@YAHOO.COM, cc'ing kellens@earthlink.net, on January 14, 2008, with the subject 'Nautica Shop Photo's'.",
     "source_ids": [
-      "cc90a281dfea4481c195f52f1844e96a"
-    ]
+      "25c7d6638a764d4f62a3241c913f70f6"
+    ],
+    "source_type": "email"
   },
   {
-    "question": "InfoSpan sought $540 million in damages after Emirates NBD ended their partnership for which mobile payment system, and who represented the bank as former White House counsel?",
-    "answer": "InfoSpan sought $540 million in damages after Emirates NBD ended their partnership for SpanCash. Kathryn Ruemmler, former White House counsel to President Obama and a Latham & Watkins partner, represented the bank.",
+    "question": "In the indexed body, the terms 'convicted' and 'defamation' are followed by which page:line references, and what is the page number indicated by the source document ID?",
+    "answer": "The index lists 'convicted' at 172:20 and 'defamation' at 53:15. The source document ID includes 'p427', indicating page 427.",
     "source_ids": [
-      "HOUSE_OVERSIGHT_012037"
-    ]
+      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p427"
+    ],
+    "source_type": "pdf"
+  },
+  {
+    "question": "Maxwell said she hired people for every conceivable proper job within the context of Jeffrey's life and homes, listing at least architects, decorators, pool people, exercise instructors, cooks, and cleaning people. Who were those hired workers for?",
+    "answer": "Maxwell said she hired architects, decorators, pool people, exercise instructors, gardeners, cooks, chefs, and cleaning people. She said she hired these people to work for Jeffrey Epstein.",
+    "source_ids": [
+      "pdf:Ghislaine-Maxwell-Deposition-Transcript:p246"
+    ],
+    "source_type": "pdf"
   }
 ]
