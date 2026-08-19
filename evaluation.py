@@ -61,39 +61,57 @@ def generate_ground_truth(
     generate_text,
     cache_path: Path,
     force: bool = False,
-    n: int = 15,
+    n: int = 16,
     request_delay: int = 13,
     random_state: int = 42,
 ) -> list[dict]:
     """Generate or load a reproducible benchmark test set of source-grounded question/answer pairs.
 
-    Samples candidate documents longer than 1000 characters, prompts the generation model to
-    create multi-fact questions and ground-truth gold answers, attaches document source IDs,
-    and caches the test set as a JSON file.
+    Samples an equal number of eligible PDF OCR pages and emails, prompts the generation
+    model to create multi-fact questions and ground-truth gold answers, attaches document
+    source IDs and types, and caches the test set as a JSON file.
 
     Args:
         documents: Master document DataFrame complying with DOCUMENT_COLUMNS.
         generate_text: Text generation closure returned by make_text_generator().
         cache_path: File system path for JSON test set cache.
         force: If True, bypass cache and regenerate test set.
-        n: Number of document evaluation cases to generate (default 15).
+        n: Even number of document evaluation cases to generate (default 16; half PDF, half email).
         request_delay: Delay in seconds between API calls for rate limiting (default 13).
         random_state: Random seed for reproducible document sampling (default 42).
 
     Returns:
-        list[dict]: List of test item dicts containing 'question', 'answer', and 'source_ids'.
+        list[dict]: List of test item dicts containing 'question', 'answer', 'source_ids',
+            and 'source_type'.
     """
     if cache_path.exists() and not force:
         with cache_path.open(encoding="utf-8") as handle:
             cached = json.load(handle)
-        if _has_source_ids(cached):
+        if _is_balanced_test_set(cached, n):
             return cached
-        print("Cached test set has no source IDs; generating a replacement.")
+        print("Cached test set does not have the requested PDF/email balance; generating a replacement.")
     if generate_text is None:
         return []
 
+    if n % 2:
+        raise ValueError("n must be even to generate an equal number of PDF and email questions.")
+
+    per_source = n // 2
     candidates = documents[documents["text"].str.len() > 1000]
-    sample = candidates.sample(n=min(n, len(candidates)), random_state=random_state)
+    pdf_candidates = candidates[candidates["source_type"] == "pdf"]
+    email_candidates = candidates[candidates["source_type"] == "email"]
+    if len(pdf_candidates) < per_source or len(email_candidates) < per_source:
+        raise ValueError(
+            f"Need {per_source} eligible PDF pages and emails; found "
+            f"{len(pdf_candidates)} PDFs and {len(email_candidates)} emails."
+        )
+
+    sample = pd.concat(
+        [
+            pdf_candidates.sample(n=per_source, random_state=random_state),
+            email_candidates.sample(n=per_source, random_state=random_state),
+        ]
+    ).sample(frac=1, random_state=random_state)
     test_set = []
 
     for _, document in sample.iterrows():
@@ -130,6 +148,7 @@ BODY:
         try:
             item = _parse_json_response(generate_text(prompt))
             item["source_ids"] = document["source_ids"]
+            item["source_type"] = document["source_type"]
             test_set.append(item)
             time.sleep(request_delay)
         except Exception as error:
@@ -255,19 +274,26 @@ Return only JSON with keys 'score' (int) and 'reasoning' (string)."""
     return results
 
 
-def _has_source_ids(test_set: object) -> bool:
-    """Validate that a cached test set is a non-empty list of items with valid source_ids.
+def _is_balanced_test_set(test_set: object, n: int) -> bool:
+    """Validate that a cached test set has source IDs and an equal PDF/email split.
 
     Args:
         test_set: Object loaded from JSON cache.
 
     Returns:
-        bool: True if test set structure is valid and contains source IDs; False otherwise.
+        bool: True if test set structure is valid and has the requested source split; False otherwise.
     """
     return (
         isinstance(test_set, list)
-        and bool(test_set)
-        and all(isinstance(item.get("source_ids"), list) and item["source_ids"] for item in test_set)
+        and len(test_set) == n
+        and all(
+            isinstance(item.get("source_ids"), list)
+            and item["source_ids"]
+            and item.get("source_type") in {"pdf", "email"}
+            for item in test_set
+        )
+        and sum(item["source_type"] == "pdf" for item in test_set) == n // 2
+        and sum(item["source_type"] == "email" for item in test_set) == n // 2
     )
 
 
@@ -298,4 +324,3 @@ def _parse_json_response(text: str) -> dict:
         dict: Parsed dictionary payload.
     """
     return json.loads(text.strip().removeprefix("```json").removesuffix("```").strip())
-
