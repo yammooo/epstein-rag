@@ -1,129 +1,121 @@
 [
   {
-    "question": "What category and type are listed for every entry on pages 257 through 310?",
-    "answer": "Every entry is categorized as 'OTHER' and lists 'Court Sealing Order'.",
+    "question": "Which presidential bid and which New Mexico governor's reelection were among the campaigns supported by Epstein's donations exceeding $100,000?",
+    "answer": "Epstein donated more than $100,000 to Democratic candidates, including John Kerry's presidential bid and the reelection campaign of New Mexico Gov. Bill Richardson.",
     "source_ids": [
-      "pdf:Jeffrey Epstein Part 01 of 08:p5"
+      "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p19"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "Which three page numbers between 54 and 64 list b7D with a -2 subnumber, and which two of those also list b7D with a -1 subnumber?",
-    "answer": "Between pages 54 and 64, b7D - 2 appears on pages 58, 63, and 64. Of those, pages 58 and 63 also have b7D - 1.",
+    "question": "In the March 11, 2011 email from Maxwell to Jeffrey titled 'Daily Mail,' what did the March 10, 2011 note say about Florida law for a 16-year-old with someone aged 18 to 24, and when does a felony occur?",
+    "answer": "The March 10, 2011 note said a sexual relationship between a 16-year-old and someone aged 18 to 24 is legal in Florida under statute 794.05. A person 24 or older who engages in sexual activity with a 16- or 17-year-old commits a second-degree felony.",
     "source_ids": [
-      "pdf:Jeffrey Epstein Part 01 of 08:p2"
+      "pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p353"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "What job positions did Maxwell say she helped fill at the house, and what did she claim about the ages of the people she met for these roles?",
-    "answer": "Maxwell said she helped fill positions such as pool, gardener, chef, and exercise instructor. She claimed that all the people she met to work at the house were adults over the age of 18.",
+    "question": "What charge did the grand jury indict Epstein on, what is the maximum penalty, and into which facility was he booked?",
+    "answer": "Epstein was charged with one count of felony solicitation of prostitution, which carries a maximum penalty of five years in prison. He was booked into the Palm Beach County Jail.",
     "source_ids": [
-      "pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p247"
+      "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p23"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "According to Darren Indyke, which two work orders for LSJ did McGuire want signed, and what were their estimated fee and disbursement budgets?",
-    "answer": "The two work orders were Master Plan and Site Utilities (Water and Power) with an estimated budget of $127,454.00, and General Civil Engineering Services for Environmental Assessment Report and Updates thereto with an estimated budget of $12,000. Doug Schoettle approved both work orders and asked Indyke to sign them.",
+    "question": "What two Engineering/Architectural services were covered by the work orders McGuire wanted Darren K. Indyke to sign for LSJ, what was each estimated fee, and who approved both orders?",
+    "answer": "The two work orders were for a Master Plan and Site Utilities (Water and Power) with an estimated fee and disbursement budget of $127,454, and General Civil Engineering Services for Environmental Assessment Report and Updates with a budget of $12,000. Doug Schoettle approved both work orders.",
     "source_ids": [
       "3085adf8cf97d680f50d22626d8fcc40"
     ],
     "source_type": "email"
   },
   {
-    "question": "What discount is offered for a 26-week digital subscription, and at what exact time does the sale expire on February 19, 2014?",
-    "answer": "The email offers a 50% discount for a 26-week digital subscription, and the sale expires on February 19, 2014, at 9 a.m. E.T.",
+    "question": "What percentage discount is offered on a 26-week digital subscription, and what is the exact date and time the sale expires?",
+    "answer": "The email offers a 50% discount on a 26-week digital subscription to The New York Times. The sale expires on February 19, 2014, at 9 a.m. E.T.",
     "source_ids": [
       "af8704adccb9f628d70b7a89f63a3629"
     ],
     "source_type": "email"
   },
   {
-    "question": "Why was a flight needed for Friday, and what speed restriction applied if the aircraft flew below 10,000 feet instead of at the requested 5,000 or 7,000 feet?",
-    "answer": "A friend had a tooth problem, so Jeffrey Epstein requested a Friday flight at 5,000 or 7,000 feet. Below 10,000 feet, the speed limit was 250 knots; at 10,000 feet, a Hawker could use 310 knots.",
+    "question": "What was the reason for the flight request, what altitude was initially requested, and what speed restriction applies below 10,000 feet?",
+    "answer": "The flight was for a friend with a tooth problem, initially requested at 5000 or 7000 feet, and below 10,000 feet the speed is restricted to 250 knots.",
     "source_ids": [
       "ce7f6d3e024e7d99dfd480769ff800ce"
     ],
     "source_type": "email"
   },
   {
-    "question": "Mark A. Patzelt, from which company, sent an email with the subject 'Lisa Gassner - Energy Vienna' about the Hydraulic Compression Motor, and what did the analysis indicate?",
-    "answer": "Mark A. Patzelt of SKAPA Mining & Trading GmbH sent the email. The analysis indicated the technology would have an unavoidable impact on the energy market.",
+    "question": "Who represented SKAPA Mining&Trading GmbH when forwarding the Hydraulic Compression Motor details, and what impact did the attached analysis indicate?",
+    "answer": "Mark A. Patzelt represented SKAPA Mining&Trading GmbH. The analysis indicated the technology's unavoidable impact on the energy market.",
     "source_ids": [
       "0e726724f1ea0872021a0487a1d27dc0"
     ],
     "source_type": "email"
   },
   {
-    "question": "Marcus measured for curtains and suggested the blinds match the floor colour. What did J. Epstein say about the guest rooms, and when should the discount be mentioned?",
-    "answer": "Marcus measured for curtains and suggested blinds in the same colour as the floor, except in the guest rooms. J. Epstein said Marcus should do the guest rooms using the same palette and ambience, and the discount should be mentioned only after everything is in the house.",
+    "question": "After measuring for curtains yesterday, which rooms did Marcus say he could not install blinds in, and what color blinds did he suggest for the other rooms?",
+    "answer": "Marcus said he could not install blinds in the guest rooms. He suggested using the same colour blinds as the floor for the rest of the house. He had measured for curtains at the house yesterday.",
     "source_ids": [
       "ea5958800631884860731c2242751e16"
     ],
     "source_type": "email"
   },
   {
-    "question": "What civil action number and total deleted page count are listed on the FBI's deleted page information sheet?",
-    "answer": "The civil action number is 17-cv-03956 and the total deleted pages are 258.",
-    "source_ids": [
-      "pdf:Jeffrey Epstein Part 01 of 08:p1"
-    ],
-    "source_type": "pdf"
-  },
-  {
-    "question": "Who sent the maps of the 98,776 acres in Northwest Florida and what date was proposed for a meeting with the owners?",
-    "answer": "Sheridan Gibson sent the maps, and the owners proposed a meeting on May 23rd.",
+    "question": "What was the size and location of the parcel offered to Jeffrey Epstein, and what meeting date did the owners propose if he was interested in purchasing?",
+    "answer": "The parcel was 98,776 acres in Northwest Florida, described as the only large parcel not owned by St. Joe near the new Bay County International Airport. The owners proposed a meeting on May 23rd if Jeffrey Epstein was interested in purchasing.",
     "source_ids": [
       "63a7b0f798d177cc3484daeb1bc8c36c"
     ],
     "source_type": "email"
   },
   {
-    "question": "When asked if she ever said she recruited girls to take pressure off herself and avoid sex with Jeffrey, what did Ghislaine Maxwell say about recruiting underage girls, and how long ago did she say the conversation was?",
-    "answer": "She denied recruiting underage girls, stating \"I told you no\" and \"I don't do that with underage people.\" She also noted the conversation was about almost 17 years ago.",
+    "question": "Who flew President Clinton and Kevin Spacey to Africa on his private Boeing 727, and pleaded guilty to what federal crime resulting in a five-year probation sentence?",
+    "answer": "Jeffrey Epstein flew President Clinton and Kevin Spacey to Africa on his private Boeing 727. He pleaded guilty to conspiring to steal U.S. Treasury checks from residential mailboxes and received five years' probation.",
     "source_ids": [
-      "pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p94"
+      "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p6"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "What was Jeffrey Epstein’s occupation and age, and how many underage girls did police say were involved?",
-    "answer": "Jeffrey Epstein was a Palm Beach money manager, age 53, and police said he committed unlawful sex acts with five underage girls.",
+    "question": "What positions did Maxwell say she filled at Epstein's home, what step was mandatory before Epstein decided to hire someone, and what did she claim about their ages?",
+    "answer": "Maxwell said she filled positions such as pool, gardener, chef, and/or exercise instructor. A home visit was mandatory, and Epstein would meet with the person and decide whether to have them come back or hire them. She claimed the people she met to work at the house were all adults.",
     "source_ids": [
-      "pdf:Jeffrey Epstein Part 01 of 08:p20"
+      "pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p247"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "What maximum console width did JE specify, what material and color did he want for the forward interior wall, and which passengers' headsets do the console controls affect?",
-    "answer": "The console must be no wider than 10 inches. The forward interior wall should be all leather and white. The console controls affect the headsets of the aft bench passengers.",
+    "question": "What maximum width does J. Epstein require for the console on Air Ghislaine, and what function do the console controls serve regarding the aft bench passengers' headsets?",
+    "answer": "JE requires the console to be no wider than 10 inches from outside to outside; it is currently approximately 8 inches. The controls determine which aft bench passengers' headsets may participate in cell phone conversations initiated through the console cell phone connection.",
     "source_ids": [
       "44aad7aa01e3091f5e5446a5c2b4d2f0"
     ],
     "source_type": "email"
   },
   {
-    "question": "What subject line and number of attachments accompanied a message sent by LVJET@aol.com on Jan 14, 2008?",
-    "answer": "LVJET@aol.com sent a message with the subject line \"Nautica Shop Photo's\" and 39 attachments on Jan 14, 2008.",
+    "question": "What are the sender's email address and the primary recipient's email address of the email with subject 'Nautica Shop Photo's' dated January 14, 2008?",
+    "answer": "The sender is LVJET@aol.com, and the primary recipient (To) is JEEPROJECT@YAHOO.COM.",
     "source_ids": [
       "25c7d6638a764d4f62a3241c913f70f6"
     ],
     "source_type": "email"
   },
   {
-    "question": "Who was the 53-year-old Manhattan money manager indicted on one felony count of solicitation of prostitution, and which two attorneys did he hire?",
-    "answer": "Jeffrey Epstein, a 53-year-old Manhattan money manager, was indicted on one felony count of solicitation of prostitution. He hired Harvard law professor Alan Dershowitz and defense attorney Jack Goldberger.",
+    "question": "Which 53-year-old Manhattan money manager, indicted on one felony count of solicitation of prostitution, hired Harvard law professor Alan Dershowitz and defense attorney Jack Goldberger?",
+    "answer": "Jeffrey Epstein, a 53-year-old Manhattan money manager, was indicted on one felony count of solicitation of prostitution and hired Alan Dershowitz and Jack Goldberger.",
     "source_ids": [
-      "pdf:Jeffrey Epstein Part 01 of 08:p19"
+      "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p13"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "What was Jeffrey Epstein's age and bond amount when he faced a felony solicitation charge that carried a five-year maximum penalty?",
-    "answer": "Jeffrey Epstein was 53 years old and was released on $3,000 bond after being charged with one count of felony solicitation of prostitution, which carried a maximum penalty of five years in prison.",
+    "question": "How old was Jeffrey Epstein when a grand jury indicted him, what single felony charge did the grand jury return, and what more serious crimes did police believe there was probable cause to charge?",
+    "answer": "Epstein, 53, was indicted on one count of felony solicitation of prostitution. Police believed probable cause existed to charge him with unlawful sex acts with a minor and lewd and lascivious molestation.",
     "source_ids": [
-      "pdf:Jeffrey Epstein Part 01 of 08:p35"
+      "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p10"
     ],
     "source_type": "pdf"
   }
