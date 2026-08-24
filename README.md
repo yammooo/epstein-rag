@@ -21,6 +21,10 @@ Run Jupyter from the repository root so the notebook can import these modules:
 jupyter lab PART2.ipynb
 ```
 
+> **Cached run:** All `FORCE_*` flags default to `False`, so valid committed
+> artifacts are loaded. Enable only the stage you want to regenerate; test-set
+> or evaluation regeneration requires an OpenRouter or Gemini API key.
+
 ---
 
 ## Python dependencies
