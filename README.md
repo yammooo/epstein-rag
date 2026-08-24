@@ -104,13 +104,3 @@ All intermediate data artifacts are cached in `artifacts/` to enable fast, deter
 - `evaluation_results.json` & `evaluation_results_hybrid.json`: Evaluation judgments and scores.
 
 Cache integrity is maintained via `.meta.json` sidecar files containing SHA-256 fingerprints, automatically invalidating stale caches when source data or hyperparameters change.
-
----
-
-## Running Tests
-
-The test suite covers OCR parsing, chunking, retrieval logic, neighbor expansion, and evaluation JSON extraction:
-
-```bash
-python -m unittest discover -s tests -p "test_*.py"
-```
