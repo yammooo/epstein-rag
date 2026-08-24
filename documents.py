@@ -491,7 +491,7 @@ def _truncate(value: object, limit: int) -> str:
 
 
 def _files_fingerprint(paths: list[Path], settings: dict[str, object]) -> str:
-    """Compute deterministic SHA-256 fingerprint for a set of files and configuration settings.
+    """Fingerprint file contents and settings independently of filesystem timestamps.
 
     Args:
         paths: List of file system paths.
@@ -500,11 +500,14 @@ def _files_fingerprint(paths: list[Path], settings: dict[str, object]) -> str:
     Returns:
         64-character SHA-256 hex digest string.
     """
+    files = []
+    for path in sorted(paths, key=lambda path: path.name):
+        with path.open("rb") as handle:
+            digest = hashlib.file_digest(handle, "sha256").hexdigest()
+        files.append({"name": path.name, "sha256": digest})
+
     payload = {
-        "files": [
-            {"name": path.name, "size": path.stat().st_size, "mtime_ns": path.stat().st_mtime_ns}
-            for path in paths
-        ],
+        "files": files,
         "settings": settings,
     }
     return _fingerprint(payload)
