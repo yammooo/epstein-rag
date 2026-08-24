@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import time
 from pathlib import Path
 
@@ -275,26 +276,28 @@ Return only JSON with keys 'score' (int) and 'reasoning' (string)."""
 
 
 def _is_balanced_test_set(test_set: object, n: int) -> bool:
-    """Validate that a cached test set has source IDs and an equal PDF/email split.
+    """Validate that a cached test set has source IDs and a balanced PDF/email split.
 
     Args:
         test_set: Object loaded from JSON cache.
+        n: Target number of test cases.
 
     Returns:
         bool: True if test set structure is valid and has the requested source split; False otherwise.
     """
-    return (
-        isinstance(test_set, list)
-        and len(test_set) == n
-        and all(
-            isinstance(item.get("source_ids"), list)
-            and item["source_ids"]
-            and item.get("source_type") in {"pdf", "email"}
-            for item in test_set
-        )
-        and sum(item["source_type"] == "pdf" for item in test_set) == n // 2
-        and sum(item["source_type"] == "email" for item in test_set) == n // 2
-    )
+    if not isinstance(test_set, list) or len(test_set) != n:
+        return False
+    if not all(
+        isinstance(item.get("source_ids"), list)
+        and item["source_ids"]
+        and item.get("source_type") in {"pdf", "email"}
+        for item in test_set
+    ):
+        return False
+
+    pdf_count = sum(item["source_type"] == "pdf" for item in test_set)
+    email_count = sum(item["source_type"] == "email" for item in test_set)
+    return (pdf_count + email_count == n) and abs(pdf_count - email_count) <= 1
 
 
 def _matches_test_set(results: object, test_set: list[dict]) -> bool:
@@ -315,7 +318,7 @@ def _matches_test_set(results: object, test_set: list[dict]) -> bool:
 
 
 def _parse_json_response(text: str) -> dict:
-    """Strip markdown code fences and parse JSON string into a Python dictionary.
+    """Strip markdown code fences, preambles, and parse JSON string into a Python dictionary.
 
     Args:
         text: Raw text output string from LLM response.
@@ -323,4 +326,12 @@ def _parse_json_response(text: str) -> dict:
     Returns:
         dict: Parsed dictionary payload.
     """
-    return json.loads(text.strip().removeprefix("```json").removesuffix("```").strip())
+    text = text.strip()
+    fence_match = re.search(r"```(?:json)?\s*([\s\S]*?)\s*```", text, re.IGNORECASE)
+    if fence_match:
+        text = fence_match.group(1).strip()
+    else:
+        brace_match = re.search(r"\{[\s\S]*\}", text)
+        if brace_match:
+            text = brace_match.group(0).strip()
+    return json.loads(text)

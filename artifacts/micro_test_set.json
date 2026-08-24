@@ -1,119 +1,127 @@
 [
   {
-    "question": "Which presidential bid and which New Mexico governor's reelection were among the campaigns supported by Epstein's donations exceeding $100,000?",
-    "answer": "Epstein donated more than $100,000 to Democratic candidates, including John Kerry's presidential bid and the reelection campaign of New Mexico Gov. Bill Richardson.",
+    "question": "What was the amount Epstein donated to Democratic candidates, which specific campaigns did he contribute to, and which three people were named as his friends in the document?",
+    "answer": "He donated more than $100,000 to Democratic candidates. He supported John Kerry's presidential bid, Bill Richardson's reelection, and Senate bids by Joe Lieberman, Hillary Clinton, Christopher Dodd, and Charles Schumer. His friends included former President Bill Clinton, Donald Trump, and Prince Andrew.",
     "source_ids": [
       "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p19"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "In the March 11, 2011 email from Maxwell to Jeffrey titled 'Daily Mail,' what did the March 10, 2011 note say about Florida law for a 16-year-old with someone aged 18 to 24, and when does a felony occur?",
-    "answer": "The March 10, 2011 note said a sexual relationship between a 16-year-old and someone aged 18 to 24 is legal in Florida under statute 794.05. A person 24 or older who engages in sexual activity with a 16- or 17-year-old commits a second-degree felony.",
+    "question": "What is the date and title of the email from Maxwell to Jeffrey, and what does the forwarded chain from 3/10/2011 say about the legal status of a person 24 or older engaging in sexual activity with a 16 or 17 year old in Florida?",
+    "answer": "The email is dated Friday March 11, 2011, titled 'Daily Mail' from Maxwell to Jeffrey. The chain from 3/10/2011 states that a person 24 years or older who engages in sexual activity with a 16 or 17 year old commits a felony in the second degree under Florida law.",
     "source_ids": [
       "pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p353"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "What charge did the grand jury indict Epstein on, what is the maximum penalty, and into which facility was he booked?",
-    "answer": "Epstein was charged with one count of felony solicitation of prostitution, which carries a maximum penalty of five years in prison. He was booked into the Palm Beach County Jail.",
+    "question": "What charges did Palm Beach police seek against Epstein and Sarah Kellen on May 1, and what single charge did the grand jury instead bring against Epstein in July?",
+    "answer": "On May 1, police sought warrants to arrest Epstein on four counts of unlawful sexual activity with a minor and to charge Sarah Kellen for arranging visits. The grand jury indictment in July charged Epstein with one count of felony solicitation of prostitution, carrying a maximum penalty of five years.",
     "source_ids": [
       "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p23"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "What two Engineering/Architectural services were covered by the work orders McGuire wanted Darren K. Indyke to sign for LSJ, what was each estimated fee, and who approved both orders?",
-    "answer": "The two work orders were for a Master Plan and Site Utilities (Water and Power) with an estimated fee and disbursement budget of $127,454, and General Civil Engineering Services for Environmental Assessment Report and Updates with a budget of $12,000. Doug Schoettle approved both work orders.",
+    "question": "In the email about work orders for LSJ, what are the two specific services and their estimated budgets, and who approved them?",
+    "answer": "The two work orders are for Master Plan and Site Utilities (Water and Power) with an estimated budget of $127,454.00, and General Civil Services for Environmental Assessment Report and Updates with an estimated budget of $12,000.00. Doug Schoettle approved both work orders.",
     "source_ids": [
       "3085adf8cf97d680f50d22626d8fcc40"
     ],
     "source_type": "email"
   },
   {
-    "question": "What percentage discount is offered on a 26-week digital subscription, and what is the exact date and time the sale expires?",
-    "answer": "The email offers a 50% discount on a 26-week digital subscription to The New York Times. The sale expires on February 19, 2014, at 9 a.m. E.T.",
+    "question": "What discount is offered for a 26-week digital subscription, and by what exact date and time does the sale expire?",
+    "answer": "The discount is 50% off for a full 26 weeks of a digital subscription. The sale expires on February 19, 2014, at 9 a.m. E.T.",
     "source_ids": [
       "af8704adccb9f628d70b7a89f63a3629"
     ],
     "source_type": "email"
   },
   {
-    "question": "What was the reason for the flight request, what altitude was initially requested, and what speed restriction applies below 10,000 feet?",
-    "answer": "The flight was for a friend with a tooth problem, initially requested at 5000 or 7000 feet, and below 10,000 feet the speed is restricted to 250 knots.",
+    "question": "Why did JE request a Friday flight for a friend, and what speeds applied at 10,000 feet versus below 10,000 feet?",
+    "answer": "JE requested the flight because the friend had a tooth problem. At 10,000 feet, the Hawker could fly at 310 kts; below 10,000 feet, the speed was restricted to 250 kts.",
     "source_ids": [
       "ce7f6d3e024e7d99dfd480769ff800ce"
     ],
     "source_type": "email"
   },
   {
-    "question": "Who represented SKAPA Mining&Trading GmbH when forwarding the Hydraulic Compression Motor details, and what impact did the attached analysis indicate?",
-    "answer": "Mark A. Patzelt represented SKAPA Mining&Trading GmbH. The analysis indicated the technology's unavoidable impact on the energy market.",
+    "question": "Which company and city did Mark Patzelt represent when he sent Jeffrey Epstein the Hydraulic Compression Motor details, and what impact did the analysis indicate?",
+    "answer": "Mark A. Patzelt from SKAPA Mining & Trading GmbH in Vienna sent the details, and the analysis indicated an unavoidable impact on the energy market.",
     "source_ids": [
       "0e726724f1ea0872021a0487a1d27dc0"
     ],
     "source_type": "email"
   },
   {
-    "question": "After measuring for curtains yesterday, which rooms did Marcus say he could not install blinds in, and what color blinds did he suggest for the other rooms?",
-    "answer": "Marcus said he could not install blinds in the guest rooms. He suggested using the same colour blinds as the floor for the rest of the house. He had measured for curtains at the house yesterday.",
+    "question": "What did Marcus go to the house to measure for, which rooms were excluded from his blinds installation, and what colour blinds did he suggest?",
+    "answer": "Marcus went to the house to measure for curtains. He said he can do blinds everywhere except guest rooms, and he suggested the same colour blinds as the floor.",
     "source_ids": [
       "ea5958800631884860731c2242751e16"
     ],
     "source_type": "email"
   },
   {
-    "question": "What was the size and location of the parcel offered to Jeffrey Epstein, and what meeting date did the owners propose if he was interested in purchasing?",
-    "answer": "The parcel was 98,776 acres in Northwest Florida, described as the only large parcel not owned by St. Joe near the new Bay County International Airport. The owners proposed a meeting on May 23rd if Jeffrey Epstein was interested in purchasing.",
+    "question": "When Epstein was indicted on felony solicitation of prostitution, how old were Epstein and Palm Beach Police Chief Michael Reiter, and from whom had Reiter filed for divorce after 24 years of marriage?",
+    "answer": "Epstein was 53 and Reiter was 48. Reiter had filed for divorce from his wife, Jill, after 24 years of marriage.",
+    "source_ids": [
+      "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p16"
+    ],
+    "source_type": "pdf"
+  },
+  {
+    "question": "Who stated that the 98,776-acre parcel is the only large one not owned by St. Joe near the new Bay County International Airport, and what date did the owners propose for a meeting?",
+    "answer": "Sheridan Gibson of Sheridan Enterprises, LLC wrote that the 98,776-acre parcel in Northwest Florida is the only large one not owned by St. Joe near the new Bay County International Airport. The owners proposed a meeting on May 23rd.",
     "source_ids": [
       "63a7b0f798d177cc3484daeb1bc8c36c"
     ],
     "source_type": "email"
   },
   {
-    "question": "Who flew President Clinton and Kevin Spacey to Africa on his private Boeing 727, and pleaded guilty to what federal crime resulting in a five-year probation sentence?",
-    "answer": "Jeffrey Epstein flew President Clinton and Kevin Spacey to Africa on his private Boeing 727. He pleaded guilty to conspiring to steal U.S. Treasury checks from residential mailboxes and received five years' probation.",
+    "question": "What was Jeffrey Epstein's bond amount after his arrest for soliciting a prostitute, and what previous federal crime did he plead guilty to in 1993?",
+    "answer": "He was released on $3,000 bond. In 1993, he pleaded guilty to a single charge of conspiring to steal U.S. Treasury checks from residential mailboxes and received 5 years' probation.",
     "source_ids": [
       "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p6"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "What positions did Maxwell say she filled at Epstein's home, what step was mandatory before Epstein decided to hire someone, and what did she claim about their ages?",
-    "answer": "Maxwell said she filled positions such as pool, gardener, chef, and/or exercise instructor. A home visit was mandatory, and Epstein would meet with the person and decide whether to have them come back or hire them. She claimed the people she met to work at the house were all adults.",
+    "question": "Which positions did Maxwell say she hired for, and what did she state about the ages of all individuals for those roles?",
+    "answer": "She listed pool, gardener, chef, and/or exercise instructor. She stated that all people she met for any such position were adults.",
     "source_ids": [
       "pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p247"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "What maximum width does J. Epstein require for the console on Air Ghislaine, and what function do the console controls serve regarding the aft bench passengers' headsets?",
-    "answer": "JE requires the console to be no wider than 10 inches from outside to outside; it is currently approximately 8 inches. The controls determine which aft bench passengers' headsets may participate in cell phone conversations initiated through the console cell phone connection.",
+    "question": "What maximum width did JE set for the console, what function do the console controls serve regarding aft bench passengers' headsets, and what material and color did he require for the forward interior wall?",
+    "answer": "JE required the console to be no wider than 10 inches from outside to outside. The controls determine which aft bench passengers' headsets may participate in a cell phone call initiated through the console. The forward interior wall was to be all leather and white in color.",
     "source_ids": [
       "44aad7aa01e3091f5e5446a5c2b4d2f0"
     ],
     "source_type": "email"
   },
   {
-    "question": "What are the sender's email address and the primary recipient's email address of the email with subject 'Nautica Shop Photo's' dated January 14, 2008?",
-    "answer": "The sender is LVJET@aol.com, and the primary recipient (To) is JEEPROJECT@YAHOO.COM.",
+    "question": "Who sent the email on January 14, 2008, with the subject 'Nautica Shop Photo's' to JEEPROJECT@YAHOO.COM, and how many attachments were included?",
+    "answer": "LVJET@aol.com sent the email on January 14, 2008, with subject 'Nautica Shop Photo's' to JEEPROJECT@YAHOO.COM, and it included 39 attachments.",
     "source_ids": [
       "25c7d6638a764d4f62a3241c913f70f6"
     ],
     "source_type": "email"
   },
   {
-    "question": "Which 53-year-old Manhattan money manager, indicted on one felony count of solicitation of prostitution, hired Harvard law professor Alan Dershowitz and defense attorney Jack Goldberger?",
-    "answer": "Jeffrey Epstein, a 53-year-old Manhattan money manager, was indicted on one felony count of solicitation of prostitution and hired Alan Dershowitz and Jack Goldberger.",
+    "question": "Which 53-year-old Manhattan money manager was indicted on one felony count of solicitation of prostitution, and who were the two lawyers he hired?",
+    "answer": "Jeffrey Epstein, a 53-year-old Manhattan money manager, was indicted on one felony count of solicitation of prostitution. He hired Harvard law professor Alan Dershowitz and defense attorney Jack Goldberger.",
     "source_ids": [
       "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p13"
     ],
     "source_type": "pdf"
   },
   {
-    "question": "How old was Jeffrey Epstein when a grand jury indicted him, what single felony charge did the grand jury return, and what more serious crimes did police believe there was probable cause to charge?",
-    "answer": "Epstein, 53, was indicted on one count of felony solicitation of prostitution. Police believed probable cause existed to charge him with unlawful sex acts with a minor and lewd and lascivious molestation.",
+    "question": "Which Harvard law professor provided MySpace.com information about alleged victims' alcohol and marijuana use to authorities, and what was the maximum sentence Epstein faced on his single charge?",
+    "answer": "Alan Dershowitz, a Harvard law professor, provided the Palm Beach County State Attorney's Office with MySpace.com information showing alleged victims commented on alcohol and marijuana use. Epstein, 53, was indicted on a single count of felony solicitation of prostitution, carrying a maximum of five years in prison.",
     "source_ids": [
       "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p10"
     ],

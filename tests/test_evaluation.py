@@ -42,5 +42,39 @@ class GroundTruthSamplingTest(unittest.TestCase):
         self.assertEqual(sum(item["source_type"] == "email" for item in test_set), 2)
 
 
+class JsonParserTest(unittest.TestCase):
+    def test_parses_plain_json(self):
+        from evaluation import _parse_json_response
+
+        res = _parse_json_response('{"score": 8, "reasoning": "accurate"}')
+        self.assertEqual(res, {"score": 8, "reasoning": "accurate"})
+
+    def test_parses_json_with_code_fence(self):
+        from evaluation import _parse_json_response
+
+        res = _parse_json_response('```json\n{"score": 9, "reasoning": "good"}\n```')
+        self.assertEqual(res, {"score": 9, "reasoning": "good"})
+
+    def test_parses_json_with_unlabeled_fence_and_preamble(self):
+        from evaluation import _parse_json_response
+
+        text = 'Here is the result:\n```\n{"score": 10, "reasoning": "perfect"}\n```\nDone.'
+        res = _parse_json_response(text)
+        self.assertEqual(res, {"score": 10, "reasoning": "perfect"})
+
+
+class TestSetValidationTest(unittest.TestCase):
+    def test_is_balanced_test_set(self):
+        from evaluation import _is_balanced_test_set
+
+        valid_set = [
+            {"source_ids": ["pdf:1"], "source_type": "pdf"},
+            {"source_ids": ["email:1"], "source_type": "email"},
+        ]
+        self.assertTrue(_is_balanced_test_set(valid_set, 2))
+        self.assertFalse(_is_balanced_test_set(valid_set, 4))
+        self.assertFalse(_is_balanced_test_set([], 2))
+
+
 if __name__ == "__main__":
     unittest.main()

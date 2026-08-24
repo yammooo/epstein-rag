@@ -14,7 +14,7 @@ def load_embedding_model(model_id: str, device: str):
     """Initialize and return a SentenceTransformer dense embedding model.
 
     Args:
-        model_id: Hugging Face model repository identifier (e.g. 'BAAI/bge-small-en-v1.5').
+        model_id: Hugging Face model repository identifier (e.g. 'BAAI/bge-base-en-v1.5').
         device: Hardware device for model execution ('cuda', 'cpu', 'mps').
 
     Returns:
@@ -29,7 +29,7 @@ def load_reranker(model_id: str, device: str):
     """Initialize and return a CrossEncoder model for candidate reranking.
 
     Args:
-        model_id: Hugging Face model repository identifier (e.g. 'BAAI/bge-reranker-base').
+        model_id: Hugging Face model repository identifier (e.g. 'cross-encoder/ms-marco-MiniLM-L6-v2').
         device: Hardware device for model execution ('cuda', 'cpu', 'mps').
 
     Returns:
@@ -161,6 +161,8 @@ def retrieve_dense(
     """
     if chunks.empty:
         raise ValueError("Cannot retrieve from an empty chunk collection.")
+    if k <= 0:
+        return chunks.iloc[[]].copy()
 
     k = min(k, len(chunks))
     query_embedding = embedding_model.encode([query], normalize_embeddings=True).astype("float32")
@@ -260,10 +262,12 @@ def _add_neighbors(
     if neighbors < 1 or len(anchors) >= max_chunks:
         return anchors.reset_index(drop=True)
 
-    positions = {
-        (row["document_index"], row["chunk_index"]): index
-        for index, row in chunks.iterrows()
-    }
+    positions = dict(
+        zip(
+            zip(chunks["document_index"], chunks["chunk_index"]),
+            chunks.index,
+        )
+    )
     selected = [anchors]
     seen = set(anchors["chunk_id"])
 

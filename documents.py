@@ -41,6 +41,7 @@ def load_email_dataset(cache_path: Path, force: bool = False) -> pd.DataFrame:
 
     dataset = load_dataset("KillerShoaib/Jeffrey-Epstein-Emails-From-Epstein-Files")
     emails = dataset["train"].to_pandas()
+    cache_path.parent.mkdir(parents=True, exist_ok=True)
     emails.to_parquet(cache_path, index=False)
     return emails
 

@@ -1,142 +1,162 @@
 [
   {
-    "question": "Which presidential bid and which New Mexico governor's reelection were among the campaigns supported by Epstein's donations exceeding $100,000?",
-    "gold": "Epstein donated more than $100,000 to Democratic candidates, including John Kerry's presidential bid and the reelection campaign of New Mexico Gov. Bill Richardson.",
+    "question": "What was the amount Epstein donated to Democratic candidates, which specific campaigns did he contribute to, and which three people were named as his friends in the document?",
+    "gold": "He donated more than $100,000 to Democratic candidates. He supported John Kerry's presidential bid, Bill Richardson's reelection, and Senate bids by Joe Lieberman, Hillary Clinton, Christopher Dodd, and Charles Schumer. His friends included former President Bill Clinton, Donald Trump, and Prince Andrew.",
     "source_ids": [
       "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p19"
     ],
-    "rag": "The presidential bid and New Mexico governor's reelection campaigns supported by Epstein's donations exceeding $100,000 include:\n\n*   **Presidential Bid:** John Kerry's presidential bid (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p19, pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p21, pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p9)\n*   **New Mexico Governor's Reelection:** Bill Richardson's reelection campaign (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p19, pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p21)",
-    "score": 9,
-    "reasoning": "The System Answer accurately identifies both campaigns: John Kerry's presidential bid and Bill Richardson's New Mexico gubernatorial reelection, matching the Gold Answer. It is faithful to the gold content and provides clear citations. However, it includes extra source document IDs beyond the expected p19, which may be unnecessary or unverified, so a small deduction is applied for citation precision."
+    "rag": "*   **Donation Amount and Campaigns:** Epstein donated more than $100,000 to Democratic candidates' campaigns, including John Kerry's presidential bid, the reelection campaign of New Mexico Gov. Bill Richardson, and the Senate bids of Joe Lieberman, Hillary Clinton, Christopher Dodd, and Charles Schumer (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p19; pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p21).\n*   **Named Friends:** Three people named as his friends include former President Bill Clinton, Donald Trump, and Prince Andrew (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p19).",
+    "score": 10,
+    "reasoning": "The System Answer accurately reflects the Gold Answer in terms of donation amount, specific campaigns, and the named friends. It also provides correct and specific source document IDs for both parts of the answer, demonstrating high accuracy, faithfulness, and proper citation."
   },
   {
-    "question": "In the March 11, 2011 email from Maxwell to Jeffrey titled 'Daily Mail,' what did the March 10, 2011 note say about Florida law for a 16-year-old with someone aged 18 to 24, and when does a felony occur?",
-    "gold": "The March 10, 2011 note said a sexual relationship between a 16-year-old and someone aged 18 to 24 is legal in Florida under statute 794.05. A person 24 or older who engages in sexual activity with a 16- or 17-year-old commits a second-degree felony.",
+    "question": "What is the date and title of the email from Maxwell to Jeffrey, and what does the forwarded chain from 3/10/2011 say about the legal status of a person 24 or older engaging in sexual activity with a 16 or 17 year old in Florida?",
+    "gold": "The email is dated Friday March 11, 2011, titled 'Daily Mail' from Maxwell to Jeffrey. The chain from 3/10/2011 states that a person 24 years or older who engages in sexual activity with a 16 or 17 year old commits a felony in the second degree under Florida law.",
     "source_ids": [
       "pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p353"
     ],
-    "rag": "The March 10, 2011 note stated that if you are 16 years old, a sexual relationship with someone between 18 and 24 is legal in Florida, and that a person 24 years of age or older who engages in sexual activity with a person 16 or 17 years of age commits a felony of the second degree. (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p353)",
-    "score": 10,
-    "reasoning": "The system answer is fully accurate and faithful to the gold answer, providing the same information about Florida law regarding a 16-year-old with someone aged 18-24 and the felony threshold at age 24 or older. It also includes the correct source document ID, matching the expected citation. No errors or omissions."
+    "rag": "The email from Maxwell to Jeffrey is dated Friday March 11, 2011, and has the title \"Daily Mail\" (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p353).\n\nThe forwarded chain at the bottom, dated 3/10/2011, states that a person 24 years of age or older who engages in sexual activity with a person 16 or 17 years of age commits a felony in the second degree in Florida (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p353). This is corroborated by another source stating that \"A person 24 years of age or older who engages in sexual activity with a person 16 or 17 years of age commits a felony of the second degree\" (Source document IDs: HOUSE_OVERSIGHT_030222).",
+    "score": 8,
+    "reasoning": "The System Answer accurately reflects the date and title of the email, as well as the legal status described in the forwarded chain, matching the Gold Answer. It also provides correct citations from the expected source document. However, it includes an additional citation (HOUSE_OVERSIGHT_030222) which, while corroborative, was not part of the expected sources. This slightly deviates from the Gold Answer's expected sources, hence the deduction of 2 points."
   },
   {
-    "question": "What two Engineering/Architectural services were covered by the work orders McGuire wanted Darren K. Indyke to sign for LSJ, what was each estimated fee, and who approved both orders?",
-    "gold": "The two work orders were for a Master Plan and Site Utilities (Water and Power) with an estimated fee and disbursement budget of $127,454, and General Civil Engineering Services for Environmental Assessment Report and Updates with a budget of $12,000. Doug Schoettle approved both work orders.",
+    "question": "What charges did Palm Beach police seek against Epstein and Sarah Kellen on May 1, and what single charge did the grand jury instead bring against Epstein in July?",
+    "gold": "On May 1, police sought warrants to arrest Epstein on four counts of unlawful sexual activity with a minor and to charge Sarah Kellen for arranging visits. The grand jury indictment in July charged Epstein with one count of felony solicitation of prostitution, carrying a maximum penalty of five years.",
+    "source_ids": [
+      "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p23"
+    ],
+    "rag": "On May 1, the department asked prosecutors to approve warrants to arrest Epstein on four counts of unlawful sexual activity with a minor, and to charge his personal assistant, Sarah Kellen, for her alleged role in arranging the visits. (Segment 1)\n\nThe single charge the grand jury brought against Epstein in July was one count of felony solicitation of prostitution. (Segment 3)",
+    "score": 9,
+    "reasoning": "The System Answer accurately reflects the details from the Gold Answer regarding the charges sought on May 1 and the single charge brought in July against Epstein. It also correctly identifies Sarah Kellen's role and includes the expected source document ID. The only minor discrepancy is the segmentation in the System Answer, which does not affect the accuracy or faithfulness of the content but slightly deviates from the Gold Answer's structure."
+  },
+  {
+    "question": "In the email about work orders for LSJ, what are the two specific services and their estimated budgets, and who approved them?",
+    "gold": "The two work orders are for Master Plan and Site Utilities (Water and Power) with an estimated budget of $127,454.00, and General Civil Services for Environmental Assessment Report and Updates with an estimated budget of $12,000.00. Doug Schoettle approved both work orders.",
     "source_ids": [
       "3085adf8cf97d680f50d22626d8fcc40"
     ],
-    "rag": "The two Engineering/Architectural services covered by the work orders McGuire wanted Darren K. Indyke to sign for LSJ were:\n\n1. **Master Plan and Site Utilities (Water and Power)**: Estimated Fee and Disbursement Budget of **$127,454.00** (Source document IDs: 3085adf8cf97d680f50d22626d8fcc40)\n2. **General Civil Engineering Services for Environmental Assessment Report and Updates thereto**: Estimated Fee and Disbursement Budget of **$12,000** (Source document IDs: 3085adf8cf97d680f50d22626d8fcc40)\n\n**Doug Schoettle** approved both work orders (Source document IDs: 3085adf8cf97d680f50d22626d8fcc40).",
+    "rag": "The two specific services and their estimated budgets for LSJ are:\n\n1. **Master Plan and Site Utilities (Water and Power):** Estimated Fee and Disbursement Budget of **$127,454.00** (Source document IDs: 3085adf8cf97d680f50d22626d8fcc40)\n2. **General Civil Engineering Services for Environmental Assessment Report and Updates thereto:** Estimated Fee and Disbursement Budget of **$12,000** (Source document IDs: 3085adf8cf97d680f50d22626d8fcc40)\n\n**Doug Schoettle** approved both work orders (Source document IDs: 3085adf8cf97d680f50d22626d8fcc40).",
     "score": 10,
-    "reasoning": "The system answer accurately and completely matches the gold answer, providing the same two services, their exact estimated fees, and the approver. It also includes the correct source document ID, demonstrating proper citation and faithfulness. No inaccuracies or omissions are present."
+    "reasoning": "The System Answer accurately and faithfully reproduces the information from the Gold Answer, including the two specific services, their estimated budgets, and the approver. It also correctly cites the source document IDs, which match the expected source document IDs. The answer is comprehensive and meets all criteria for accuracy, faithfulness, and proper citations."
   },
   {
-    "question": "What percentage discount is offered on a 26-week digital subscription, and what is the exact date and time the sale expires?",
-    "gold": "The email offers a 50% discount on a 26-week digital subscription to The New York Times. The sale expires on February 19, 2014, at 9 a.m. E.T.",
+    "question": "What discount is offered for a 26-week digital subscription, and by what exact date and time does the sale expire?",
+    "gold": "The discount is 50% off for a full 26 weeks of a digital subscription. The sale expires on February 19, 2014, at 9 a.m. E.T.",
     "source_ids": [
       "af8704adccb9f628d70b7a89f63a3629"
     ],
-    "rag": "The percentage discount offered on a 26-week digital subscription is 50% (Source document IDs: 182308de78c20502f23026e6c975d663, c52bf2342b52e80a7faefc29df7c36e9, 478a476a5681b249ef3f79b2a0198d18, 9a9379fb799a5042ca0a83259600fac4, cf444d02c98f76d2168a52e636f59e89).\n\nThe sale expiration dates and times vary depending on the source segment:\n*   **November 26, 2014:** December 3, 2014, 9 a.m. ET (Source document IDs: 182308de78c20502f23026e6c975d663)\n*   **February 15, 2015:** February 20, 2015, 9 a.m. ET (Source document IDs: c52bf2342b52e80a7faefc29df7c36e9)\n*   **February 13, 2014:** February 19, 2014, 9 a.m. E.T. (Source document IDs: 478a476a5681b249ef3f79b2a0198d18)\n*   **May 22, 2014:** May 28, 2014, 9 a.m. ET (Source document IDs: 9a9379fb799a5042ca0a83259600fac4)\n*   **November 30, 2014:** December 3, 2014, 9 a.m. ET (Source document IDs: cf444d02c98f76d2168a52e636f59e89)",
-    "score": 4,
-    "reasoning": "The system correctly identifies the 50% discount on the 26-week digital subscription, matching the gold answer. However, for the sale expiration, it provides multiple conflicting dates/times instead of the single exact date and time: February 19, 2014, at 9 a.m. E.T. Although one listed option is correct, the answer is ambiguous and unfaithful to the targeted source. Additionally, the cited source document IDs do not include the expected source document ID af8704adccb9f628d70b7a89f63a3629, so the citations are inaccurate."
+    "rag": "The discount offered for a 26-week digital subscription is 50% off (Segment 1, Segment 2, Segment 3, Segment 4, Segment 5).\n\nThe sale expiration dates and times vary depending on the source segment:\n\n*   **February 13, 2014:** The sale ends on February 18 (Segment 1).\n*   **February 17, 2014:** The sale expires on February 19, 2014, 9 a.m. E.T. (Segment 2).\n*   **February 15, 2015:** The sale expires on February 20, 2015, 9 a.m. ET (Segment 3).\n*   **February 18, 2014:** The sale expires on February 19, 2014, 9 a.m. E.T. (Segment 4).\n*   **August 27, 2014:** The sale expires on September 4, 2014, 9 a.m. ET (Segment 5).",
+    "score": 5,
+    "reasoning": "The System Answer correctly identifies the 50% discount for a 26-week digital subscription, matching the Gold Answer. However, it fails to provide a single, accurate expiration date and time as required by the question. Instead, it lists multiple conflicting dates from different segments, none of which are correctly cited from the expected source document ID 'af8704adccb9f628d70b7a89f63a3629'. This lack of accuracy and faithfulness to the Gold Answer and source document significantly reduces the score."
   },
   {
-    "question": "What was the reason for the flight request, what altitude was initially requested, and what speed restriction applies below 10,000 feet?",
-    "gold": "The flight was for a friend with a tooth problem, initially requested at 5000 or 7000 feet, and below 10,000 feet the speed is restricted to 250 knots.",
+    "question": "Why did JE request a Friday flight for a friend, and what speeds applied at 10,000 feet versus below 10,000 feet?",
+    "gold": "JE requested the flight because the friend had a tooth problem. At 10,000 feet, the Hawker could fly at 310 kts; below 10,000 feet, the speed was restricted to 250 kts.",
     "source_ids": [
       "ce7f6d3e024e7d99dfd480769ff800ce"
     ],
-    "rag": "The reason for the flight request was due to a tooth problem (Segment 1, Segment 2). The initially requested altitudes were 5,000 or 7,000 feet (Segment 1, Segment 2). The speed restriction that applies below 10,000 feet is 250 kts (Segment 1, Segment 2, Segment 8, Segment 9).",
-    "score": 10,
-    "reasoning": "The system answer accurately and completely addresses all parts of the question: the reason (tooth problem), the initially requested altitude (5,000 or 7,000 feet), and the speed restriction below 10,000 feet (250 kts). It also provides segment citations, demonstrating faithfulness to the source. The answer matches the gold answer exactly."
+    "rag": "JE requested a Friday flight for a friend due to a tooth problem (Source document IDs: ce7f6d3e024e7d99dfd480769ff800ce).\n\nRegarding speeds:\n*   Below 10,000 feet, there is a speed restriction of 250 kts (Source document IDs: ce7f6d3e024e7d99dfd480769ff800ce).\n*   If flown at 10,000 feet, a speed of 310 kts could be used in a Hawker (Source document IDs: ce7f6d3e024e7d99dfd480769ff800ce).\n\nAdditionally, another source mentions that if the aircraft flies at Vmo for the Hawker at 10,000 feet, the speed may be 320 kts (Source document IDs: ce7f6d3e024e7d99dfd480769ff800ce).",
+    "score": 8,
+    "reasoning": "The System Answer accurately captures the reason for JE's flight request and the speed restrictions at different altitudes, matching the Gold Answer. It also provides correct citations. However, it includes an additional detail about Vmo speed (320 kts) which, while plausible, is not confirmed in the Gold Answer and could be considered extraneous. This minor deviation affects the score slightly."
   },
   {
-    "question": "Who represented SKAPA Mining&Trading GmbH when forwarding the Hydraulic Compression Motor details, and what impact did the attached analysis indicate?",
-    "gold": "Mark A. Patzelt represented SKAPA Mining&Trading GmbH. The analysis indicated the technology's unavoidable impact on the energy market.",
+    "question": "Which company and city did Mark Patzelt represent when he sent Jeffrey Epstein the Hydraulic Compression Motor details, and what impact did the analysis indicate?",
+    "gold": "Mark A. Patzelt from SKAPA Mining & Trading GmbH in Vienna sent the details, and the analysis indicated an unavoidable impact on the energy market.",
     "source_ids": [
       "0e726724f1ea0872021a0487a1d27dc0"
     ],
-    "rag": "The following individuals represented SKAPA Mining&Trading GmbH when forwarding the Hydraulic Compression Motor details:\n\n*   Mark Patzelt (Source document IDs: 0e726724f1ea0872021a0487a1d27dc0)\n*   Mark A. Patzelt (Source document IDs: 0e726724f1ea0872021a0487a1d27dc0)\n*   \"SKAPA M&T Mark Patzelt\" (Source document IDs: b9b297590b2849639b5818aac5cafb54)\n*   Mark A. Patzelt (Source document IDs: b9b297590b2849639b5818aac5cafb54)\n*   \"SKAPA M&T Mark Patzelt\" (Source document IDs: cc58b2c198e79557bb55b60411514ad8)\n*   Mark A. Patzelt (Source document IDs: cc58b2c198e79557bb55b60411514ad8)\n\nThe attached analysis indicated the unavoidable impact on the energy market (Source document IDs: 0e726724f1ea0872021a0487a1d27dc0).",
-    "score": 8,
-    "reasoning": "The system answer correctly identifies Mark A. Patzelt as the representative and correctly states that the analysis indicated the unavoidable impact on the energy market. It includes the expected source document ID (0e726724f1ea0872021a0487a1d27dc0) for both claims. However, it redundantly lists multiple variations of the same person (e.g., Mark Patzelt, 'SKAPA M&T Mark Patzelt') and includes extra source document IDs not present in the expected list, which reduces precision and clarity. The answer is faithful and accurate but over-includes details."
+    "rag": "Mark Patzelt represented **SKAPA Mining&Trading GmbH** in **Wien** (Vienna) when sending the details about the \"Hydraulic Compression Motor\" (Source document IDs: b9b297590b2849639b5818aac5cafb54, 0e726724f1ea0872021a0487a1d27dc0).\n\nThe analysis indicated the **unavoidable impact on the energy market** (Source document IDs: 0e726724f1ea0872021a0487a1d27dc0).",
+    "score": 10,
+    "reasoning": "The System Answer accurately matches the Gold Answer in all details, including the company (SKAPA Mining & Trading GmbH), the city (Vienna/Wien), and the impact indicated (unavoidable impact on the energy market). The citations provided are also correct and relevant, confirming the faithfulness and accuracy of the response."
   },
   {
-    "question": "After measuring for curtains yesterday, which rooms did Marcus say he could not install blinds in, and what color blinds did he suggest for the other rooms?",
-    "gold": "Marcus said he could not install blinds in the guest rooms. He suggested using the same colour blinds as the floor for the rest of the house. He had measured for curtains at the house yesterday.",
+    "question": "What did Marcus go to the house to measure for, which rooms were excluded from his blinds installation, and what colour blinds did he suggest?",
+    "gold": "Marcus went to the house to measure for curtains. He said he can do blinds everywhere except guest rooms, and he suggested the same colour blinds as the floor.",
     "source_ids": [
       "ea5958800631884860731c2242751e16"
     ],
-    "rag": "Marcus said he could not install blinds in the **guest rooms** (Source document IDs: ea5958800631884860731c2242751e16, 9d2faec7acbb5dbc0d9765da047575a4, 5775e796d691dc55d4fdd2dfced8a01c, 765bf475dcfc345ce14a9c9a44caa2c6). He suggested the **same colour blinds as the floor** for the other rooms (Source document IDs: ea5958800631884860731c2242751e16, 9d2faec7acbb5dbc0d9765da047575a4, 5775e796d691dc55d4fdd2dfced8a01c, 765bf475dcfc345ce14a9c9a44caa2c6).",
+    "rag": "Marcus went to the house to measure for the curtains (Segment 1, Segment 2, Segment 3). The guest rooms were excluded from his blinds installation (Segment 1, Segment 2, Segment 3, Segment 8). He suggested the same colour blinds as the floor (Segment 1, Segment 2, Segment 3, Segment 8).",
     "score": 8,
-    "reasoning": "The system answer accurately and faithfully identifies the guest rooms as the ones where blinds could not be installed and states that Marcus suggested the same colour blinds as the floor for the other rooms. However, the citation set includes three extra source document IDs beyond the single expected source, which reduces citation precision even though the content itself is correct."
+    "reasoning": "The System Answer accurately reflects the Gold Answer in terms of content, mentioning that Marcus went to measure for curtains, excluded guest rooms from blinds installation, and suggested blinds matching the floor color. However, the citations provided ('Segment 1, Segment 2, Segment 3, Segment 8') are overly verbose and do not align with the expected source document ID ('ea5958800631884860731c2242751e16'), affecting the faithfulness score. The answer is correct but could improve citation accuracy."
   },
   {
-    "question": "What was the size and location of the parcel offered to Jeffrey Epstein, and what meeting date did the owners propose if he was interested in purchasing?",
-    "gold": "The parcel was 98,776 acres in Northwest Florida, described as the only large parcel not owned by St. Joe near the new Bay County International Airport. The owners proposed a meeting on May 23rd if Jeffrey Epstein was interested in purchasing.",
+    "question": "When Epstein was indicted on felony solicitation of prostitution, how old were Epstein and Palm Beach Police Chief Michael Reiter, and from whom had Reiter filed for divorce after 24 years of marriage?",
+    "gold": "Epstein was 53 and Reiter was 48. Reiter had filed for divorce from his wife, Jill, after 24 years of marriage.",
+    "source_ids": [
+      "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p16"
+    ],
+    "rag": "*   **Epstein's Age:** 53 (Source document IDs: HOUSE_OVERSIGHT_021761, HOUSE_OVERSIGHT_031217, HOUSE_OVERSIGHT_030311, HOUSE_OVERSIGHT_021790, HOUSE_OVERSIGHT_021790, HOUSE_OVERSIGHT_030311)\n*   **Michael Reiter's Age:** 48 (Source document IDs: HOUSE_OVERSIGHT_021761, HOUSE_OVERSIGHT_030311, HOUSE_OVERSIGHT_021790, HOUSE_OVERSIGHT_021790)\n*   **Divorce Filing:** Reiter filed for divorce from his wife, Jill, after 24 years of marriage (Source document IDs: HOUSE_OVERSIGHT_030311, HOUSE_OVERSIGHT_021761, HOUSE_OVERSIGHT_021790, HOUSE_OVERSIGHT_021790).",
+    "score": 9,
+    "reasoning": "The System Answer accurately matches the Gold Answer in terms of content, providing the correct ages for Epstein (53) and Reiter (48), as well as correctly identifying Jill as the person from whom Reiter filed for divorce after 24 years of marriage. The citations provided are detailed and appear to support the information given. However, the expected source document ID is not fully matched in the citations, which slightly affects the faithfulness score."
+  },
+  {
+    "question": "Who stated that the 98,776-acre parcel is the only large one not owned by St. Joe near the new Bay County International Airport, and what date did the owners propose for a meeting?",
+    "gold": "Sheridan Gibson of Sheridan Enterprises, LLC wrote that the 98,776-acre parcel in Northwest Florida is the only large one not owned by St. Joe near the new Bay County International Airport. The owners proposed a meeting on May 23rd.",
     "source_ids": [
       "63a7b0f798d177cc3484daeb1bc8c36c"
     ],
-    "rag": "The parcel offered to Jeffrey Epstein was 98,776 acres in Northwest Florida (Source document IDs: 63a7b0f798d177cc3484daeb1bc8c36c). The owners proposed a meeting on May 23rd if he was interested in purchasing this parcel (Source document IDs: 63a7b0f798d177cc3484daeb1bc8c36c).",
+    "rag": "The person who stated that the 98,776-acre parcel is the only large one not owned by St. Joe near the new Bay County International Airport was Sheridan Gibson (Source document IDs: 63a7b0f798d177cc3484daeb1bc8c36c). The owners proposed a meeting on May 23rd (Source document IDs: 63a7b0f798d177cc3484daeb1bc8c36c).",
     "score": 10,
-    "reasoning": "The system answer accurately and faithfully reproduces all key details from the gold answer: parcel size of 98,776 acres, location in Northwest Florida, and proposed meeting date of May 23rd. It also includes the correct expected source document ID. No errors or omissions."
+    "reasoning": "The System Answer accurately matches the Gold Answer in both content and details, including the correct name (Sheridan Gibson) and the proposed meeting date (May 23rd). It also correctly cites the expected source document IDs, demonstrating faithfulness to the source material and providing accurate citations."
   },
   {
-    "question": "Who flew President Clinton and Kevin Spacey to Africa on his private Boeing 727, and pleaded guilty to what federal crime resulting in a five-year probation sentence?",
-    "gold": "Jeffrey Epstein flew President Clinton and Kevin Spacey to Africa on his private Boeing 727. He pleaded guilty to conspiring to steal U.S. Treasury checks from residential mailboxes and received five years' probation.",
+    "question": "What was Jeffrey Epstein's bond amount after his arrest for soliciting a prostitute, and what previous federal crime did he plead guilty to in 1993?",
+    "gold": "He was released on $3,000 bond. In 1993, he pleaded guilty to a single charge of conspiring to steal U.S. Treasury checks from residential mailboxes and received 5 years' probation.",
     "source_ids": [
       "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p6"
     ],
-    "rag": "*   **Who flew President Clinton and Kevin Spacey to Africa on his private Boeing 727?**\n    *   The logs show that Epstein took Clinton, Kevin Spacey, and Chris Tucker on a trip to Africa on his private jet (Source document IDs: HOUSE_OVERSIGHT_022673).\n    *   The New York Post noted that Epstein flew President Clinton and Kevin Spacey to Africa on his private Boeing 727 (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p6).\n\n*   **What federal crime did the person plead guilty to, resulting in a five-year probation sentence?**\n    *   Epstein pleaded guilty to a single charge of conspiring to steal U.S. Treasury checks from residential mailboxes (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p6).",
+    "rag": "*   **Bond Amount:** Epstein was released on a **$3,000 bond** after being picked up at his home on El Brillo Way (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p6). Another source notes he was released on **$3,000 bond** after being booked at the Palm Beach County jail (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p7).\n*   **1993 Plea:** In 1993, Epstein pleaded guilty to a single charge of **conspiring to steal U.S. Treasury checks from residential mailboxes** (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p6).",
     "score": 10,
-    "reasoning": "The system answer correctly identifies Jeffrey Epstein as the person who flew President Clinton and Kevin Spacey to Africa, and accurately states that he pleaded guilty to conspiring to steal U.S. Treasury checks from residential mailboxes with a five-year probation sentence. It matches the gold answer in all key factual details, including the specific crime and outcome. The inclusion of additional context (Chris Tucker, source IDs) does not detract from accuracy or faithfulness. Citations are provided."
+    "reasoning": "The System Answer accurately matches the Gold Answer in both the bond amount ($3,000) and the 1993 plea (conspiring to steal U.S. Treasury checks from residential mailboxes). It also provides correct and relevant citations from the expected source document IDs, demonstrating faithfulness to the sources and completeness in addressing the question."
   },
   {
-    "question": "What positions did Maxwell say she filled at Epstein's home, what step was mandatory before Epstein decided to hire someone, and what did she claim about their ages?",
-    "gold": "Maxwell said she filled positions such as pool, gardener, chef, and/or exercise instructor. A home visit was mandatory, and Epstein would meet with the person and decide whether to have them come back or hire them. She claimed the people she met to work at the house were all adults.",
+    "question": "Which positions did Maxwell say she hired for, and what did she state about the ages of all individuals for those roles?",
+    "gold": "She listed pool, gardener, chef, and/or exercise instructor. She stated that all people she met for any such position were adults.",
     "source_ids": [
       "pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p247"
     ],
-    "rag": "Maxwell stated that the positions she filled included, but were not limited to, pool, gardener, chef, and/or exercise instructor (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p247).\n\nBefore Epstein decided to hire someone, a home visit was mandatory (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p247).\n\nRegarding the ages of the people she employed or met to work at the house, she stated that they were all adults (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p247). She also stated that she found people to fill professional jobs in professional situations (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p383).",
-    "score": 10,
-    "reasoning": "The System Answer accurately and faithfully addresses all parts of the question: it lists the positions Maxwell said she filled, states the mandatory home visit step before hiring, and correctly reports her claim that all the people she met to work at the house were adults. The citations correctly reference the expected source document and page. The additional detail about professional jobs is a faithful supporting statement from another page and does not contradict or distract from the answer."
+    "rag": "Maxwell stated that her job was to find people for professional jobs, listing the following roles:\n*   person (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p383)\n*   secretary (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p383)\n*   house person (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p383)\n*   chef (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p383)\n*   pilot (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p383)\n*   architect (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p383)\n\nRegarding the ages, she stated that she looked for \"adult, professional people\" (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p383). She also mentioned that the competencies she was looking for were \"professional and adult\" (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p248).\n\nShe also mentioned that she was responsible for finding people for professional jobs (Source document IDs: pdf:Ghislaine-Maxwell-Deposition-Only-Transcript:p59).",
+    "score": 4,
+    "reasoning": "The System Answer lists roles (person, secretary, house person, chef, pilot, architect) that do not match the Gold Answer (pool, gardener, chef, and/or exercise instructor). However, it correctly mentions that Maxwell sought 'adult, professional people,' which aligns with the Gold Answer regarding age. The citations provided are partially correct but do not fully match the expected source document IDs. The answer is somewhat accurate but not fully faithful to the Gold Answer."
   },
   {
-    "question": "What maximum width does J. Epstein require for the console on Air Ghislaine, and what function do the console controls serve regarding the aft bench passengers' headsets?",
-    "gold": "JE requires the console to be no wider than 10 inches from outside to outside; it is currently approximately 8 inches. The controls determine which aft bench passengers' headsets may participate in cell phone conversations initiated through the console cell phone connection.",
+    "question": "What maximum width did JE set for the console, what function do the console controls serve regarding aft bench passengers' headsets, and what material and color did he require for the forward interior wall?",
+    "gold": "JE required the console to be no wider than 10 inches from outside to outside. The controls determine which aft bench passengers' headsets may participate in a cell phone call initiated through the console. The forward interior wall was to be all leather and white in color.",
     "source_ids": [
       "44aad7aa01e3091f5e5446a5c2b4d2f0"
     ],
-    "rag": "J. Epstein requires the console on Air Ghislaine to be no wider than 10\" from outside to outside (Segment 1). The console controls allow participation in a cell phone conversation for the aft bench passengers' headsets, which is initiated through the console cell phone connection (Segment 1).",
+    "rag": "The maximum width JE wanted for the console was no wider than 10\" from outside to outside (Segment 1). The console controls allow participation in the cell phone conversation for the headsets of the aft bench passengers, which is initiated through the console cell phone connection (Segment 1). JE wanted the forward interior wall to be all leather and for both walls to be white (Segment 1).\n\n**Source document IDs:**\n*   **Maximum width:** 44aad7aa01e3091f5e5446a5c2b4d2f0\n*   **Control function:** 44aad7aa01e3091f5e5446a5c2b4d2f0\n*   **Forward interior wall material/color:** 44aad7aa01e3091f5e5446a5c2b4d2f0",
     "score": 10,
-    "reasoning": "The system answer accurately states the required maximum width (10 inches from outside to outside) and the function of the console controls (allowing participation in cell phone conversation for aft bench passengers' headsets initiated through the console cell phone connection). It is faithful to the gold answer and provides a citation (Segment 1). The omission of the current width is irrelevant as the question did not ask for it."
+    "reasoning": "The System Answer accurately reflects all details from the Gold Answer, including the maximum width of the console (10 inches), the function of the console controls regarding aft bench passengers' headsets, and the material (leather) and color (white) of the forward interior wall. The answer is faithful to the source and correctly cites the expected source document ID for all segments."
   },
   {
-    "question": "What are the sender's email address and the primary recipient's email address of the email with subject 'Nautica Shop Photo's' dated January 14, 2008?",
-    "gold": "The sender is LVJET@aol.com, and the primary recipient (To) is JEEPROJECT@YAHOO.COM.",
+    "question": "Who sent the email on January 14, 2008, with the subject 'Nautica Shop Photo's' to JEEPROJECT@YAHOO.COM, and how many attachments were included?",
+    "gold": "LVJET@aol.com sent the email on January 14, 2008, with subject 'Nautica Shop Photo's' to JEEPROJECT@YAHOO.COM, and it included 39 attachments.",
     "source_ids": [
       "25c7d6638a764d4f62a3241c913f70f6"
     ],
-    "rag": "The sender's email address is LVJET@aol.com (Source document IDs: 25c7d6638a764d4f62a3241c913f70f6). The primary recipient's email address is <JEEPROJECT@YAHOO.COM> (Source document IDs: 25c7d6638a764d4f62a3241c913f70f6).",
+    "rag": "The email on January 14, 2008, with the subject 'Nautica Shop Photo's' was sent from **LVJET@aol.com** (Source document IDs: 25c7d6638a764d4f62a3241c913f70f6).\n\nThe number of attachments included is **39** (Source document IDs: 25c7d6638a764d4f62a3241c913f70f6).",
     "score": 10,
-    "reasoning": "The system answer accurately identifies the sender and primary recipient email addresses exactly as the gold answer. It also includes correct source document IDs matching the expected IDs, ensuring faithful and well-cited response."
+    "reasoning": "The System Answer correctly identifies the sender as LVJET@aol.com and accurately states that there were 39 attachments, which matches the Gold Answer. Additionally, the System Answer provides the correct source document IDs, ensuring proper citation and faithfulness to the source material."
   },
   {
-    "question": "Which 53-year-old Manhattan money manager, indicted on one felony count of solicitation of prostitution, hired Harvard law professor Alan Dershowitz and defense attorney Jack Goldberger?",
-    "gold": "Jeffrey Epstein, a 53-year-old Manhattan money manager, was indicted on one felony count of solicitation of prostitution and hired Alan Dershowitz and Jack Goldberger.",
+    "question": "Which 53-year-old Manhattan money manager was indicted on one felony count of solicitation of prostitution, and who were the two lawyers he hired?",
+    "gold": "Jeffrey Epstein, a 53-year-old Manhattan money manager, was indicted on one felony count of solicitation of prostitution. He hired Harvard law professor Alan Dershowitz and defense attorney Jack Goldberger.",
     "source_ids": [
       "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p13"
     ],
-    "rag": "The 53-year-old Manhattan money manager who hired Harvard law professor Alan Dershowitz and defense attorney Jack Goldberger is Mr. Epstein (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p13, HOUSE_OVERSIGHT_030311, HOUSE_OVERSIGHT_031217, HOUSE_OVERSIGHT_021790).",
+    "rag": "*   **Manhattan money manager indicted:** Jeffrey Epstein (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p6, pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p13)\n*   **Two lawyers hired:**\n    *   Harvard law professor Alan Dershowitz (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p13, HOUSE_OVERSIGHT_021790, HOUSE_OVERSIGHT_021761)\n    *   Defense attorney Jack Goldberger (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p13, HOUSE_OVERSIGHT_021790, HOUSE_OVERSIGHT_021761)",
     "score": 10,
-    "reasoning": "The system answer correctly identifies Jeffrey Epstein as the 53-year-old Manhattan money manager, matching the gold answer. It accurately includes the key details from the question and provides the expected source document ID among others. The response is faithful to the gold answer and the source material."
+    "reasoning": "The System Answer accurately identifies Jeffrey Epstein as the 53-year-old Manhattan money manager indicted for solicitation of prostitution, and correctly names Alan Dershowitz and Jack Goldberger as the two lawyers he hired. The answer is fully faithful to the Gold Answer and includes precise citations from expected and additional source documents, demonstrating thoroughness and reliability."
   },
   {
-    "question": "How old was Jeffrey Epstein when a grand jury indicted him, what single felony charge did the grand jury return, and what more serious crimes did police believe there was probable cause to charge?",
-    "gold": "Epstein, 53, was indicted on one count of felony solicitation of prostitution. Police believed probable cause existed to charge him with unlawful sex acts with a minor and lewd and lascivious molestation.",
+    "question": "Which Harvard law professor provided MySpace.com information about alleged victims' alcohol and marijuana use to authorities, and what was the maximum sentence Epstein faced on his single charge?",
+    "gold": "Alan Dershowitz, a Harvard law professor, provided the Palm Beach County State Attorney's Office with MySpace.com information showing alleged victims commented on alcohol and marijuana use. Epstein, 53, was indicted on a single count of felony solicitation of prostitution, carrying a maximum of five years in prison.",
     "source_ids": [
       "pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p10"
     ],
-    "rag": "*   **Age at Grand Jury Indictment:** Epstein was 53 when he was indicted by a grand jury (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p10, pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p13).\n*   **Single Felony Charge:** The grand jury indicted Epstein on a single count of felony solicitation of prostitution (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p10, pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p13).\n*   **More Serious Crimes:** Police believed there was probable cause to charge Epstein with unlawful sex acts with a minor and lewd and lascivious molestation (Source document IDs: pdf:Jeffrey Epstein Part 01 of 08_extracted_pages:p10).",
-    "score": 10,
-    "reasoning": "The System Answer is fully accurate and faithful to the Gold Answer. It correctly identifies Epstein's age as 53, the single felony charge as solicitation of prostitution, and the more serious crimes police believed there was probable cause to charge. Citations are provided and include the expected source document ID, with additional valid page references. No errors or omissions."
+    "rag": "The Harvard law professor who provided MySpace.com information about alleged victims' alcohol and marijuana use to authorities was Alan Dershowitz (Source document IDs: Segment 1, Segment 2, Segment 3).\n\nThe maximum sentence Epstein faced on his single charge was 15 years in prison (Source document IDs: Segment 7).",
+    "score": 6,
+    "reasoning": "The System Answer correctly identifies Alan Dershowitz as the Harvard law professor who provided the MySpace.com information, which aligns with the Gold Answer. However, it incorrectly states the maximum sentence Epstein faced as 15 years, whereas the Gold Answer specifies it was 5 years. The citations provided in the System Answer do not match the expected source document IDs, indicating potential issues with faithfulness to the sources. The score reflects partial accuracy in content but significant discrepancies in the sentence and citations."
   }
 ]
