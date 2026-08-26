@@ -320,13 +320,12 @@ def build_prompt(query: str, results: pd.DataFrame) -> str:
     )
 
 
-def load_llm(model_id: str, filename: str, token: str | None, gpu_offload: bool):
+def load_llm(model_id: str, filename: str, gpu_offload: bool):
     """Load a GGUF format quantized language model via llama-cpp-python.
 
     Args:
         model_id: Hugging Face model repository ID (e.g. 'google/gemma-2-9b-it-GGUF').
         filename: GGUF filename (e.g. 'gemma-2-9b-it-Q4_K_M.gguf').
-        token: Optional Hugging Face access token for private repositories.
         gpu_offload: If True, offload all model layers to GPU (-1); otherwise CPU (0).
 
     Returns:
@@ -339,7 +338,6 @@ def load_llm(model_id: str, filename: str, token: str | None, gpu_offload: bool)
         filename=filename,
         n_ctx=8192,
         n_gpu_layers=-1 if gpu_offload else 0,
-        token=token,
     )
 
 

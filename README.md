@@ -56,7 +56,6 @@ python -m pip install --upgrade --force-reinstall \
 Optional API keys for LLM inference and evaluation can be configured in a `.env` file at the repository root:
 
 ```env
-HF_TOKEN=your_huggingface_token
 OPENROUTER_API_KEY=your_openrouter_key
 GOOGLE_API_KEY=your_google_ai_key
 ```
